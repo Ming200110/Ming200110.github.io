@@ -18,12 +18,12 @@
   <meta name="author" content="Guoming Huang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="两点三次 Hermite 插值基函数采用基函数方法，令  $$H_3(x)&#x3D;\alpha_k(x)y_k+\alpha_{k+1}(x)y_{k+1}+\beta_k(x)m_k+\beta_{k+1}(x)m_{k+1}$$ 其中 $\alpha_k(x),\alpha_{k+1}(x),\beta_k(x),\beta_{k+1}(x)$ 是关于点 $x_k$ 及 $x_{k+1}$">
+    <meta name="description" content="两点三次 Hermite 插值 基函数 采用基函数方法，令 \[H_3(x)&#x3D;\alpha_k(x)y_k+\alpha_{k+1}(x)y_{k+1}+\beta_k(x)m_k+\beta_{k+1}(x)m_{k+1}\] 其中 \(\alpha_k(x),\alpha_{k+1}(x),\beta_k(x),\beta_{k+1}(x)\) 是关于点 \(x_k\) 及 \(x_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="两点三次 Hermite 插值">
 <meta property="og:url" content="http://example.com/2024/05/02/twoPointTripleHermiteInterpolation/index.html">
 <meta property="og:site_name" content="ChungMG">
-<meta property="og:description" content="两点三次 Hermite 插值基函数采用基函数方法，令  $$H_3(x)&#x3D;\alpha_k(x)y_k+\alpha_{k+1}(x)y_{k+1}+\beta_k(x)m_k+\beta_{k+1}(x)m_{k+1}$$ 其中 $\alpha_k(x),\alpha_{k+1}(x),\beta_k(x),\beta_{k+1}(x)$ 是关于点 $x_k$ 及 $x_{k+1}$">
+<meta property="og:description" content="两点三次 Hermite 插值 基函数 采用基函数方法，令 \[H_3(x)&#x3D;\alpha_k(x)y_k+\alpha_{k+1}(x)y_{k+1}+\beta_k(x)m_k+\beta_{k+1}(x)m_{k+1}\] 其中 \(\alpha_k(x),\alpha_{k+1}(x),\beta_k(x),\beta_{k+1}(x)\) 是关于点 \(x_k\) 及 \(x_">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-02T14:18:39.152Z">
 <meta property="article:modified_time" content="2024-05-02T14:35:44.074Z">
@@ -259,7 +259,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          769 words
+          759 words
         
       </span>
     
@@ -320,25 +320,88 @@
             
               <div class="markdown-body">
                 
-                <h1 id="两点三次-Hermite-插值"><a href="#两点三次-Hermite-插值" class="headerlink" title="两点三次 Hermite 插值"></a>两点三次 Hermite 插值</h1><h2 id="基函数"><a href="#基函数" class="headerlink" title="基函数"></a>基函数</h2><p>采用基函数方法，令 </p>
-<p>$$H_3(x)&#x3D;\alpha_k(x)y_k+\alpha_{k+1}(x)y_{k+1}+\beta_k(x)m_k+\beta_{k+1}(x)m_{k+1}$$</p>
-<p>其中 $\alpha_k(x),\alpha_{k+1}(x),\beta_k(x),\beta_{k+1}(x)$ 是关于点 $x_k$ 及 $x_{k+1}$ 的三次 Hermite 插值基函数，它们应分别满足以下条件:</p>
-<p>$$\begin{array}{lll}<br>            \alpha <em>k(x_k)&#x3D;1                        &amp; \alpha <em>k(x</em>{k+1})&#x3D;0     &amp; \alpha <em>k’(x_k)&#x3D;\alpha ‘<em>k(x</em>{k+1})&#x3D;0         \<br>            \alpha <em>{k+1}(x_k)&#x3D;0                    &amp; \alpha <em>{k+1}(x</em>{k+1})&#x3D;1 &amp; \alpha’ <em>{k+1}(x_k)&#x3D;\alpha ‘</em>{k+1}(x</em>{k+1})&#x3D;0 \<br>            \beta_k(x_k)&#x3D;\beta_k(x</em>{k+1})&#x3D;0         &amp; \beta’<em>k(x_k)&#x3D;1          &amp; \beta’<em>k(x</em>{k+1})&#x3D;0                           \<br>            \beta</em>{k+1}(x_k)&#x3D;\beta</em>{k+1}(x_{k+1})&#x3D;0 &amp; \beta’<em>{k+1}(x_k)&#x3D;0      &amp; \beta’</em>{k+1}(x_{k+1})&#x3D;1<br>        \end{array}$$</p>
+                <h1 id="两点三次-hermite-插值">两点三次 Hermite 插值</h1>
+<h2 id="基函数">基函数</h2>
+<p>采用基函数方法，令</p>
+<p><span
+class="math display">\[H_3(x)=\alpha_k(x)y_k+\alpha_{k+1}(x)y_{k+1}+\beta_k(x)m_k+\beta_{k+1}(x)m_{k+1}\]</span></p>
+<p>其中 <span
+class="math inline">\(\alpha_k(x),\alpha_{k+1}(x),\beta_k(x),\beta_{k+1}(x)\)</span>
+是关于点 <span class="math inline">\(x_k\)</span> 及 <span
+class="math inline">\(x_{k+1}\)</span> 的三次 Hermite
+插值基函数，它们应分别满足以下条件:</p>
+<p><span class="math display">\[\begin{array}{lll}
+            \alpha _k(x_k)=1                        &amp; \alpha
+_k(x_{k+1})=0     &amp; \alpha _k&#39;(x_k)=\alpha
+&#39;_k(x_{k+1})=0         \\
+            \alpha _{k+1}(x_k)=0                    &amp; \alpha
+_{k+1}(x_{k+1})=1 &amp; \alpha&#39; _{k+1}(x_k)=\alpha
+&#39;_{k+1}(x_{k+1})=0 \\
+            \beta_k(x_k)=\beta_k(x_{k+1})=0         &amp;
+\beta&#39;_k(x_k)=1          &amp;
+\beta&#39;_k(x_{k+1})=0                           \\
+            \beta_{k+1}(x_k)=\beta_{k+1}(x_{k+1})=0 &amp;
+\beta&#39;_{k+1}(x_k)=0      &amp; \beta&#39;_{k+1}(x_{k+1})=1
+        \end{array}\]</span></p>
 <p>解得基函数，那么有</p>
-<p>$H_3(x)&#x3D;\left(1+2\dfrac{x-x_k}{x_{k+1}-x_k}\right)\left(\dfrac{x-x_{k+1}}{x_k-x_{k+1}}\right)^2y_k+\left(1+2\dfrac{x-x_{k+1}}{x_k-x_{k+1}}\right)\left(\dfrac{x-x_k}{x_{k+1}-x_k}\right)^2y_{k+1}+(x-x_k)\left(\dfrac{x-x_{k+1}}{x_k-x_{k+1}}\right)^2m_k+(x-x_{k+1})\left(\dfrac{x-x_k}{x_{k+1}-x_k}\right)^2m_{k+1}.$</p>
-<h2 id="例题-1"><a href="#例题-1" class="headerlink" title="例题 1"></a>例题 1</h2><p>若函数 $f(x)\text{ 在 }[a,b]$ 上三阶可导，且 $f(a)&#x3D;c,f(b)&#x3D;d,f’(a)&#x3D;e,f’(b)&#x3D;f$，则 $\exists\xi\in(a,b)$，使得<br>$$f’’’(\xi)&#x3D;6\dfrac{f(b-a)-2(d-c)+e(b-a)}{(b-a)^3}.$$</p>
-<p>作三次 Hermite 插值多项式: </p>
-<p>$$H_3(x)&#x3D;c+e(x-a)+\dfrac{(d-c)-e(b-a)}{(b-a)^2}(x-a)^2+\dfrac{f(b-a)-2(d-c)+e(b-a)}{(b-a)^3}(x-a)^2(x-b)$$</p>
-<p>则 $H_3(x)$ 与 $f(x)$ 在 $a,b$ 两点有相同的函数值与导数值，设 $F(x)&#x3D;f(x)-H_3(x)$，则 $F(a)&#x3D;F(b)&#x3D;0$，由 Rolle 定理，$\exists\xi_1\in(a,b)$，使得 $F’(\xi_1)&#x3D;0$，<br>由于 </p>
-<p>$$F’(x)&#x3D;f’(x)-H_3’(x)&#x3D;f’(x)+e+2\dfrac{(d-c)-e(b-a)}{(b-a)^2}(x-a)+\dfrac{f(b-a)-2(d-c)+e(b-a)}{(b-a)^3}\left[2(x-a)(x-b)+(x-a)^2\right]$$</p>
-<p>则 $F’(a)&#x3D;F’(b)&#x3D;0$，在 $[a,\xi_1]$ 和 $[\xi_1,b]$ 上应用 Rolle 定理，则 $\exists\xi_2\in(a,\xi_1),\xi_3\in(\xi_1,b)$，使得 </p>
-<p>$$F’’(\xi_2)&#x3D;F’’(\xi_3)&#x3D;0$$</p>
-<p>最后在 $[\xi_2,\xi_3]$ 上应用 Rolle 定理，即 $\exists\xi\in(\xi_2,\xi_3)$，使得 $F’’’(\xi)&#x3D;0$，即得证.</p>
-<h2 id="例题-2"><a href="#例题-2" class="headerlink" title="例题 2"></a>例题 2</h2><p>设函数 $f\in C[0,1]\cap D^3(0,1),<del>f(0)&#x3D;2,</del>f(1)&#x3D;1,<del>f’(0)&#x3D;0,</del>f’(1)&#x3D;4$ 证明: 存在一点 $\xi\in(0,1)$ 使得 $f’’’(\xi)&#x3D;24+24\xi.$</p>
-<p>令 $g(x)&#x3D;f(x)-x^4$，则 $g\in C[0,1]\cap D^3(0,1)$ 那么 $\begin{cases}<br>            x_k&#x3D;0  , &amp; x_{k+1}&#x3D;1 \<br>            y_k&#x3D;2  , &amp; y_{k+1}&#x3D;0 \<br>            m_k&#x3D;0  , &amp; m_{k+1}&#x3D;0<br>        \end{cases}$，因此</p>
-<p>$$H_3(x)&#x3D;2(1+x)(x-1)^2&#x3D;4x^3-6x^2+2$$</p>
-<p>构造 $F(x)&#x3D;g(x)-H_3(x)$ 有 $F(0)&#x3D;F(1)&#x3D;0$，由 Rolle 定理 $\exists\xi_1\in(0,1)$ 使得 $F’(\xi_1)&#x3D;0$，<br>又 $F’(0)&#x3D;F’(\xi_1)&#x3D;F’(1)&#x3D;0$，由 Rolle 定理得 $\exists \xi_2\in(0,\xi_1),\xi_3\in(\xi_1,1)$ 使得 $F’’(\xi_i)&#x3D;0,i&#x3D;2,3$，<br>再根据 Rolle 定理得 $\exists\xi\in(\xi_2,\xi_3)\subset(0,1)$ 使得 $F’’’(\xi)&#x3D;0$ 即</p>
-<p>$$f’’’(\xi)-4!\xi-24&#x3D;0\Rightarrow f’’’(\xi)&#x3D;24\xi+24.$$</p>
+<p><span
+class="math inline">\(H_3(x)=\left(1+2\dfrac{x-x_k}{x_{k+1}-x_k}\right)\left(\dfrac{x-x_{k+1}}{x_k-x_{k+1}}\right)^2y_k+\left(1+2\dfrac{x-x_{k+1}}{x_k-x_{k+1}}\right)\left(\dfrac{x-x_k}{x_{k+1}-x_k}\right)^2y_{k+1}+(x-x_k)\left(\dfrac{x-x_{k+1}}{x_k-x_{k+1}}\right)^2m_k+(x-x_{k+1})\left(\dfrac{x-x_k}{x_{k+1}-x_k}\right)^2m_{k+1}.\)</span></p>
+<h2 id="例题-1">例题 1</h2>
+<p>若函数 <span class="math inline">\(f(x)\text{ 在 }[a,b]\)</span>
+上三阶可导，且 <span
+class="math inline">\(f(a)=c,f(b)=d,f&#39;(a)=e,f&#39;(b)=f\)</span>，则
+<span class="math inline">\(\exists\xi\in(a,b)\)</span>，使得 <span
+class="math display">\[f&#39;&#39;&#39;(\xi)=6\dfrac{f(b-a)-2(d-c)+e(b-a)}{(b-a)^3}.\]</span></p>
+<p>作三次 Hermite 插值多项式:</p>
+<p><span
+class="math display">\[H_3(x)=c+e(x-a)+\dfrac{(d-c)-e(b-a)}{(b-a)^2}(x-a)^2+\dfrac{f(b-a)-2(d-c)+e(b-a)}{(b-a)^3}(x-a)^2(x-b)\]</span></p>
+<p>则 <span class="math inline">\(H_3(x)\)</span> 与 <span
+class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(a,b\)</span> 两点有相同的函数值与导数值，设 <span
+class="math inline">\(F(x)=f(x)-H_3(x)\)</span>，则 <span
+class="math inline">\(F(a)=F(b)=0\)</span>，由 Rolle 定理，<span
+class="math inline">\(\exists\xi_1\in(a,b)\)</span>，使得 <span
+class="math inline">\(F&#39;(\xi_1)=0\)</span>， 由于</p>
+<p><span
+class="math display">\[F&#39;(x)=f&#39;(x)-H_3&#39;(x)=f&#39;(x)+e+2\dfrac{(d-c)-e(b-a)}{(b-a)^2}(x-a)+\dfrac{f(b-a)-2(d-c)+e(b-a)}{(b-a)^3}\left[2(x-a)(x-b)+(x-a)^2\right]\]</span></p>
+<p>则 <span class="math inline">\(F&#39;(a)=F&#39;(b)=0\)</span>，在
+<span class="math inline">\([a,\xi_1]\)</span> 和 <span
+class="math inline">\([\xi_1,b]\)</span> 上应用 Rolle 定理，则 <span
+class="math inline">\(\exists\xi_2\in(a,\xi_1),\xi_3\in(\xi_1,b)\)</span>，使得</p>
+<p><span
+class="math display">\[F&#39;&#39;(\xi_2)=F&#39;&#39;(\xi_3)=0\]</span></p>
+<p>最后在 <span class="math inline">\([\xi_2,\xi_3]\)</span> 上应用
+Rolle 定理，即 <span
+class="math inline">\(\exists\xi\in(\xi_2,\xi_3)\)</span>，使得 <span
+class="math inline">\(F&#39;&#39;&#39;(\xi)=0\)</span>，即得证.</p>
+<h2 id="例题-2">例题 2</h2>
+<p>设函数 <span class="math inline">\(f\in C[0,1]\cap
+D^3(0,1),~f(0)=2,~f(1)=1,~f&#39;(0)=0,~f&#39;(1)=4\)</span> 证明:
+存在一点 <span class="math inline">\(\xi\in(0,1)\)</span> 使得 <span
+class="math inline">\(f&#39;&#39;&#39;(\xi)=24+24\xi.\)</span></p>
+<p>令 <span class="math inline">\(g(x)=f(x)-x^4\)</span>，则 <span
+class="math inline">\(g\in C[0,1]\cap D^3(0,1)\)</span> 那么 <span
+class="math inline">\(\begin{cases}
+            x_k=0  , &amp; x_{k+1}=1 \\
+            y_k=2  , &amp; y_{k+1}=0 \\
+            m_k=0  , &amp; m_{k+1}=0
+        \end{cases}\)</span>，因此</p>
+<p><span
+class="math display">\[H_3(x)=2(1+x)(x-1)^2=4x^3-6x^2+2\]</span></p>
+<p>构造 <span class="math inline">\(F(x)=g(x)-H_3(x)\)</span> 有 <span
+class="math inline">\(F(0)=F(1)=0\)</span>，由 Rolle 定理 <span
+class="math inline">\(\exists\xi_1\in(0,1)\)</span> 使得 <span
+class="math inline">\(F&#39;(\xi_1)=0\)</span>， 又 <span
+class="math inline">\(F&#39;(0)=F&#39;(\xi_1)=F&#39;(1)=0\)</span>，由
+Rolle 定理得 <span class="math inline">\(\exists
+\xi_2\in(0,\xi_1),\xi_3\in(\xi_1,1)\)</span> 使得 <span
+class="math inline">\(F&#39;&#39;(\xi_i)=0,i=2,3\)</span>， 再根据 Rolle
+定理得 <span
+class="math inline">\(\exists\xi\in(\xi_2,\xi_3)\subset(0,1)\)</span>
+使得 <span class="math inline">\(F&#39;&#39;&#39;(\xi)=0\)</span> 即</p>
+<p><span
+class="math display">\[f&#39;&#39;&#39;(\xi)-4!\xi-24=0\Rightarrow
+f&#39;&#39;&#39;(\xi)=24\xi+24.\]</span></p>
 
                 
               </div>
