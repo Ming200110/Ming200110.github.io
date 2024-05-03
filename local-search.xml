@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>积分等式命题的证明</title>
+    <link href="/2024/05/03/proofOfThePropositionOfTheIntegralEquation/"/>
+    <url>/2024/05/03/proofOfThePropositionOfTheIntegralEquation/</url>
+    
+    <content type="html"><![CDATA[<html><script>MathJax = {  loader: {    load: ['[tex]/physics']  },  tex: {    packages: {'[+]': ['physics']}  }};</script><script id="MathJax-script" async  src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js"></script></html><h1 id="积分等式命题的证明">积分等式命题的证明</h1><ol type="1"><li><p>设 <span class="math inline">\(f(x)\inD(0,1),~f(0)=f(1)=-2,~\displaystyle\int_{0}^{1}f(x)\ddx=0\)</span>，证明: <spanclass="math inline">\(\exists\xi\in(0,1)\)</span>，使得 <spanclass="math inline">\(f&#39;(\xi)-f(\xi)=\xi.\)</span></p><p>令 <span class="math inline">\(F(x)=\e^{-x}(f(x)+x+1)\)</span>，有<span class="math inline">\(F(0)=-1,~F(1)=0\)</span>，因为 <spanclass="math inline">\(\displaystyle\int_{0}^{1}f(x)\ddx=0\)</span>，由积分中值定理知，<spanclass="math inline">\(\exists\eta\in(0,1)\)</span>，使得 <spanclass="math display">\[\displaystyle\int_{0}^{1}f(x)\ddx=f(\eta)\int_{0}^{1}\dd x=f(\eta)=0\]</span> 而 <spanclass="math inline">\(F(\eta)=\e^{-\eta}(f(\eta)+\eta+1)&gt;0\)</span>，因此<span class="math inline">\(\exists\xi\in(0,1)\)</span>，使得 <spanclass="math inline">\(F(x)\leqslant F(\xi)\)</span>，即 <spanclass="math inline">\(F(x)\)</span> 的最大值一定在区间 <spanclass="math inline">\((0,1)\)</span> 内取到， 由 Fermat 引理知，<spanclass="math inline">\(F&#39;(\xi)=0\)</span>，即 <spanclass="math display">\[\eval{-\e^{-x}(f(x)+x+1)+\e^{-x}(f&#39;(x)+1)}_{x=\xi}=f&#39;(\xi)-f(\xi)=\xi.\]</span></p></li><li><p>设 <span class="math inline">\(f(x)\)</span> 在 <spanclass="math inline">\([2,4]\)</span> 上二阶连续可导，<spanclass="math inline">\(f(3)=0\)</span>，证明: <spanclass="math inline">\(\exists\xi\in(2,4)\)</span>，使得 <spanclass="math inline">\(\displaystylef&#39;&#39;(\xi)=3\int_{2}^{4}f(x)\dd x.\)</span></p><p>构造 <span class="math inline">\(\displaystyleF(x)=\int_{2}^{x}f(t)\dd t\)</span>，那么将 <spanclass="math inline">\(F(2),F(4)\)</span> 分别在 <spanclass="math inline">\(x=3\)</span> 处 Taylor 展开，有 <spanclass="math display">\[\begin{align*}F(2)=F(3)+F&#39;(3)(2-3)+\dfrac{1}{2!}F&#39;&#39;(3)(2-3)^2+\dfrac{1}{3!}F&#39;&#39;&#39;(\xi_1)    (2-3)^3\\F(4)=F(3)+F&#39;(3)(4-3)+\dfrac{1}{2!}F&#39;&#39;(3)(4-3)^2+\dfrac{1}{3!}F&#39;&#39;&#39;(\xi_2)    (4-3)^3\end{align*}\]</span> 注意到 <spanclass="math inline">\(F(2)=F&#39;(3)=0\)</span>，那么上式化为 <spanclass="math inline">\(\begin{cases}0=F(3)+\dfrac{1}{2}F&#39;&#39;(3)-\dfrac{1}{6}F&#39;&#39;&#39;(\xi_1)\\[6pt]F(4)=F(3)+\dfrac{1}{2}F&#39;&#39;(3)+\dfrac{1}{6}F&#39;&#39;&#39;(\xi_2)\end{cases}\)</span> 即 <spanclass="math display">\[F(4)=\dfrac{1}{6}\qty(F&#39;&#39;&#39;(\xi_1)+F&#39;&#39;&#39;(\xi_2))\]</span>因为 <spanclass="math inline">\(F&#39;&#39;&#39;(x)=f&#39;&#39;(x)\)</span> 在<span class="math inline">\([2,4]\)</span> 上连续，故 <spanclass="math inline">\(F&#39;&#39;&#39;(x)\)</span> 在 <spanclass="math inline">\([2,4]\)</span> 上有最大值 <spanclass="math inline">\(M\)</span> 和最小值 <spanclass="math inline">\(m\)</span>，使得 <spanclass="math display">\[m\leqslant\dfrac{1}{2}\qty(F&#39;&#39;&#39;(\xi_1)+F&#39;&#39;&#39;(\xi_2))\leqslantM\]</span> 又由连续函数的介值定理知 <spanclass="math inline">\(\exists\xi\in(\xi_1,\xi_2)\subset(2,4)\)</span>，使得<br /><spanclass="math display">\[F&#39;&#39;&#39;(\xi)=\dfrac{1}{2}\qty(F&#39;&#39;&#39;(\xi_1)+F&#39;&#39;&#39;(\xi_2))\]</span>故 <spanclass="math inline">\(F(4)=\dfrac{1}{3}\cdot\dfrac{1}{2}\qty(F&#39;&#39;&#39;(\xi_1)+F&#39;&#39;&#39;(\xi_2))=\dfrac  {1}{3}F&#39;&#39;&#39;(\xi)\)</span>，则<span class="math display">\[F&#39;&#39;&#39;(\xi)=3F(4)\Rightarrowf&#39;&#39;(\xi)=3\int_{2}^{4}f(x)\dd x.\]</span></p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>数学笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>高等数学</tag>
+      
+      <tag>数学技巧</tag>
+      
+      <tag>中值定理</tag>
+      
+      <tag>积分证明</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Stolz 的应用</title>
     <link href="/2024/05/02/applicationsOfStolz/"/>
     <url>/2024/05/02/applicationsOfStolz/</url>
@@ -20,11 +51,11 @@
     
     <tags>
       
+      <tag>Stolz</tag>
+      
       <tag>高等数学</tag>
       
       <tag>数学技巧</tag>
-      
-      <tag>Stolz</tag>
       
       <tag>极限的求法</tag>
       
@@ -53,11 +84,11 @@
       
       <tag>高等数学</tag>
       
-      <tag>Hermite 插值</tag>
+      <tag>数学技巧</tag>
       
       <tag>中值定理</tag>
       
-      <tag>数学技巧</tag>
+      <tag>Hermite 插值</tag>
       
     </tags>
     
@@ -101,7 +132,7 @@
     <link href="/2024/05/02/pdf/"/>
     <url>/2024/05/02/pdf/</url>
     
-    <content type="html"><![CDATA[<div class="row">    <embed src="./PostgraduateMathematicsPreview.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    <content type="html"><![CDATA[<div class="row">    <embed src="./PostgraduateMathematicsPreview.pdf" width="100%" height="550" type="application/pdf"></div><p>(考研数学预览版)</p>]]></content>
     
     
     <categories>
@@ -113,11 +144,11 @@
     
     <tags>
       
+      <tag>高等数学</tag>
+      
       <tag>数学</tag>
       
       <tag>考研数学</tag>
-      
-      <tag>高等数学</tag>
       
       <tag>线性代数</tag>
       
