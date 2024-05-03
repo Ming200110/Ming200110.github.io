@@ -26,12 +26,13 @@
 <meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     积分等式命题的证明 例题 1 设 \(f(x)\in D(0,1),~f(0)&#x3D;f(1)&#x3D;-2,~\displaystyle\int_{0">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-02T23:43:35.893Z">
-<meta property="article:modified_time" content="2024-05-03T00:35:34.196Z">
+<meta property="article:modified_time" content="2024-05-03T00:45:35.243Z">
 <meta property="article:author" content="Guoming Huang">
 <meta property="article:tag" content="高等数学">
 <meta property="article:tag" content="数学技巧">
 <meta property="article:tag" content="中值定理">
 <meta property="article:tag" content="积分证明">
+<meta property="article:tag" content="一题多解">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -341,7 +342,9 @@ MathJax = {
 D(0,1),~f(0)=f(1)=-2,~\displaystyle\int_{0}^{1}f(x)\dd
 x=0\)</span>，证明: <span
 class="math inline">\(\exists\xi\in(0,1)\)</span>，使得 <span
-class="math inline">\(f&#39;(\xi)-f(\xi)=\xi.\)</span> ### 解答 令 <span
+class="math inline">\(f&#39;(\xi)-f(\xi)=\xi.\)</span></p>
+<h3 id="解答">解答</h3>
+<p>令 <span
 class="math inline">\(F(x)=\mathrm{e}^{-x}(f(x)+x+1)\)</span>，有 <span
 class="math inline">\(F(0)=-1,~F(1)=0\)</span>，因为 <span
 class="math inline">\(\displaystyle\int_{0}^{1}f(x)\dd
@@ -355,16 +358,19 @@ class="math inline">\(F(x)\leqslant F(\xi)\)</span>，即 <span
 class="math inline">\(F(x)\)</span> 的最大值一定在区间 <span
 class="math inline">\((0,1)\)</span> 内取到， 由 Fermat 引理知，<span
 class="math inline">\(F&#39;(\xi)=0\)</span>，即 <span
-class="math display">\[\eval{-\mathrm{e}^{-x}(f(x)+x+1)+\mathrm{e}^{-x}(f&#39;(x)+1)}_{x=\xi}=f&#39;(\xi)-f(\xi)=\xi.\]</span>
-## 例题 2 设 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math display">\[\eval{-\mathrm{e}^{-x}(f(x)+x+1)+\mathrm{e}^{-x}(f&#39;(x)+1)}_{x=\xi}=f&#39;(\xi)-f(\xi)=\xi.\]</span></p>
+<h2 id="例题-2">例题 2</h2>
+<p>设 <span class="math inline">\(f(x)\)</span> 在 <span
 class="math inline">\([2,4]\)</span> 上二阶连续可导，<span
 class="math inline">\(f(3)=0\)</span>，证明: <span
 class="math inline">\(\exists\xi\in(2,4)\)</span>，使得 <span
 class="math inline">\(\displaystyle
-f&#39;&#39;(\xi)=3\int_{2}^{4}f(x)\dd x.\)</span> ### 解答 构造 <span
-class="math inline">\(\displaystyle F(x)=\int_{2}^{x}f(t)\dd
-t\)</span>，那么将 <span class="math inline">\(F(2),F(4)\)</span> 分别在
-<span class="math inline">\(x=3\)</span> 处 Taylor 展开，有 <span
+f&#39;&#39;(\xi)=3\int_{2}^{4}f(x)\dd x.\)</span></p>
+<h3 id="解答-1">解答</h3>
+<p>构造 <span class="math inline">\(\displaystyle
+F(x)=\int_{2}^{x}f(t)\dd t\)</span>，那么将 <span
+class="math inline">\(F(2),F(4)\)</span> 分别在 <span
+class="math inline">\(x=3\)</span> 处 Taylor 展开，有 <span
 class="math display">\[\begin{align*}
 F(2)=F(3)+F&#39;(3)(2-3)+\dfrac{1}{2!}F&#39;&#39;(3)(2-3)^2+\dfrac{1}{3!}F&#39;&#39;&#39;(\xi_1)    (2-3)^3
 \\
@@ -399,8 +405,9 @@ f&#39;&#39;(\xi)=3\int_{2}^{4}f(x)\dd x.\]</span></p>
 class="math inline">\([-1,1]\)</span> 二阶导函数连续，证明: <span
 class="math inline">\(\exists\xi\in[-1,1]\)</span>，使得 <span
 class="math display">\[\displaystyle\int_{-1}^{1}xf(x)\dd
-x=\dfrac{1}{3}[2f&#39;(\xi)+\xi f&#39;&#39;(\xi)].\]</span> ### 解答
-构造 <span class="math inline">\(F(x)=xf(x)\)</span>，那么 <span
+x=\dfrac{1}{3}[2f&#39;(\xi)+\xi f&#39;&#39;(\xi)].\]</span></p>
+<h3 id="解答-2">解答</h3>
+<p>构造 <span class="math inline">\(F(x)=xf(x)\)</span>，那么 <span
 class="math inline">\(F(x)\)</span> 在 <span
 class="math inline">\([-1,1]\)</span> 二阶导函数连续，并且 <span
 class="math display">\[F&#39;(x)=f(x)+xf&#39;(x),~F&#39;&#39;(x)=2f&#39;(x)+xf&#39;&#39;(x)\]</span>
@@ -434,8 +441,9 @@ class="math inline">\([a, b]\)</span> 上有二阶导数，且 <span
 class="math inline">\(f^{\prime \prime}(x)\)</span> 在 <span
 class="math inline">\([a, b]\)</span> 上黎曼可积，证明: <span
 class="math display">\[f(x)=f(a)+f^{\prime}(a)(x-a)+\int_{a}^{x}(x-t)
-f^{\prime \prime}(t) \dd  t, \forall x \in[a, b] .\]</span> ### 解答 由
-N-L 公式， <span class="math display">\[\begin{align*}
+f^{\prime \prime}(t) \dd  t, \forall x \in[a, b] .\]</span></p>
+<h3 id="解答-3">解答</h3>
+<p>由 N-L 公式， <span class="math display">\[\begin{align*}
     f(x) &amp; =f(a)+\int_{a}^{x}f&#39;(t)\dd
 t=f(a)+\int_{a}^{x}f&#39;(a)\dd t+\int_{a}^{x}\dd
 t\int_{a}^{t}f&#39;&#39;(u)\dd u \\
@@ -448,8 +456,9 @@ class="math inline">\([a,b]\)</span> 上二阶可导，<span
 class="math inline">\(f(a)=f(b)=0\)</span>，试证: <span
 class="math inline">\(\exists \xi\in(a,b)\)</span>，使得 <span
 class="math display">\[\int_{a}^{b}f(x)\dd
-x=\frac{1}{12}f&#39;&#39;(\xi)(a-b)^3.\]</span> ### 解答 令 <span
-class="math inline">\(\displaystyle F(x)=\int_{a}^{x}f(t)\dd
+x=\frac{1}{12}f&#39;&#39;(\xi)(a-b)^3.\]</span></p>
+<h3 id="解答-4">解答</h3>
+<p>令 <span class="math inline">\(\displaystyle F(x)=\int_{a}^{x}f(t)\dd
 t-\frac{1}{2}(x-a)f(x)\)</span>，<span
 class="math inline">\(\displaystyle G(x)=-\frac{1}{12}(x-a)^3\)</span>，
 在 <span class="math inline">\([a,b]\)</span> 上连续两次应用 Cauchy
@@ -469,8 +478,9 @@ class="math inline">\(\displaystyle-\frac{1}{12}(b-a)^3=\frac{1}{12}(b-a)^3\)</s
 class="math inline">\([a,b]\)</span> 上二阶可导，证明至少存在一点 <span
 class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
 class="math display">\[\int_{a}^{b}f(x)\dd
-x=f(b)(b-a)-f&#39;(b)\dfrac{(b-a)^2}{2}+\dfrac{1}{6}(b-a)^3f&#39;&#39;(\xi).\]</span>
-### 解答 令 <span class="math inline">\(k\)</span> 为使 <span
+x=f(b)(b-a)-f&#39;(b)\dfrac{(b-a)^2}{2}+\dfrac{1}{6}(b-a)^3f&#39;&#39;(\xi).\]</span></p>
+<h3 id="解答-5">解答</h3>
+<p>令 <span class="math inline">\(k\)</span> 为使 <span
 class="math inline">\(\displaystyle \int_{a}^{b}f(x)\dd
 x=f(b)(b-a)-f&#39;(b)\dfrac{(b-a)^2}{2}+\dfrac{1}{6}(b-a)^3k\)</span>
 成立的实常数，构造辅助函数 <span
@@ -487,8 +497,9 @@ class="math inline">\(k=f&#39;&#39;(\eta)\)</span>，故得证.</p>
 class="math inline">\([a,b]\)</span> 上具有二阶连续的导数，证明存在
 <span class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
 class="math display">\[\int_{a}^{b}f(x)\dd
-x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f&#39;&#39;(\xi).\]</span>
-### 解答：法一 将 <span class="math inline">\(f(x)\)</span> 在 <span
+x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f&#39;&#39;(\xi).\]</span></p>
+<h3 id="解答法一">解答：法一</h3>
+<p>将 <span class="math inline">\(f(x)\)</span> 在 <span
 class="math inline">\(\dfrac{a+b}{2}\)</span> 处进行 Taylor 展开，有
 <span
 class="math display">\[f(x)=f\qty(\dfrac{a+b}{2})+f&#39;\qty(\dfrac{a+b}{2})\qty(x-\dfrac{a+b}{2})+\dfrac{f&#39;&#39;(\xi_1)}{2!}\qty(x-\dfrac{a+b}{2})\]</span>
@@ -510,10 +521,10 @@ class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
 class="math display">\[f&#39;&#39;(\xi)=\dfrac{\displaystyle\int_{a}^{b}f&#39;&#39;(\xi_1)\qty(x-\dfrac{a+b}{2})^2\dd
 x}{\displaystyle \int_{a}^{b}\qty(x-\dfrac{a+b}{2})^2\dd x}\]</span>
 即得证 <span class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd
-x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f&#39;&#39;(\xi).\)</span>
-### 解答：法二 令 <span class="math inline">\(\displaystyle
-F(x)=\int_{a}^{x}f(t)\dd t\)</span>，将 <span
-class="math inline">\(F(x)\)</span> 在 <span
+x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f&#39;&#39;(\xi).\)</span></p>
+<h3 id="解答法二">解答：法二</h3>
+<p>令 <span class="math inline">\(\displaystyle F(x)=\int_{a}^{x}f(t)\dd
+t\)</span>，将 <span class="math inline">\(F(x)\)</span> 在 <span
 class="math inline">\(x_0=\dfrac{a+b}{2}\)</span> 处 Taylor 展开得 <span
 class="math display">\[F(x)  =F\left( x_{0}\right) +F&#39;\left(
 x_{0}\right) \left( x-x_{0}\right) +\dfrac{F&#39;&#39;(x)  }{2!}\left(
@@ -540,11 +551,11 @@ class="math inline">\(f&#39;&#39;(x)\)</span> 的连续性及介值定理知，
 class="math inline">\((\xi_2,\xi_1)\subset (a,b)\)</span>，使 <span
 class="math inline">\(f&#39;&#39;(\xi)=\dfrac{f&#39;&#39;(\xi_1)+f&#39;&#39;(\xi_2)}{2}\)</span>，故
 <span class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd
-x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f&#39;&#39;(\xi).\)</span>
-### 解答：法三 设 $ k $ 为使 <span class="math inline">\(\displaystyle
-\int_{a}^{b} f(x) \dd  x=(b-a)
-f\left(\frac{a+b}{2}\right)+\frac{1}{24}(b-a)^{3} k\)</span>
-成立的实数，要证结论成立，只需证 <span
+x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f&#39;&#39;(\xi).\)</span></p>
+<h3 id="解答法三">解答：法三</h3>
+<p>设 $ k $ 为使 <span class="math inline">\(\displaystyle \int_{a}^{b}
+f(x) \dd  x=(b-a) f\left(\frac{a+b}{2}\right)+\frac{1}{24}(b-a)^{3}
+k\)</span> 成立的实数，要证结论成立，只需证 <span
 class="math inline">\(k=f&#39;&#39;(\xi)\)</span>，为此构造辅助函数
 <span class="math display">\[ \displaystyle F(x)=\int_{a}^{x} f(t)
 \dd  t-(x-a) f\left(\frac{a+x}{2}\right)-\frac{1}{24}(x-a)^{3} k
@@ -562,8 +573,9 @@ class="math display">\[f(\eta)=f\left(\dfrac{a+\eta}{2}\right)+f^{\prime}\left(\
 !}\left(\frac{\eta-a}{2}\right)^{2}\]</span> 其中 <span
 class="math inline">\(\xi \in\left(\dfrac{a+\eta}{2}, \eta\right)
 \subset(a, b)\)</span>， 比较上述两式，得 <span
-class="math inline">\(k=f^{\prime \prime}(\xi)\)</span> 故得证. ###
-解答：法四 取 <span
+class="math inline">\(k=f^{\prime \prime}(\xi)\)</span> 故得证.</p>
+<h3 id="解答法四">解答：法四</h3>
+<p>取 <span
 class="math inline">\(\rho\equiv1\)</span>，首先构造数值求积公式 <span
 class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd x\approx
 A_0f\qty(\dfrac{a+b}{2})\)</span>，使其具有尽可能高的代数精度， 为此，取
@@ -590,8 +602,9 @@ x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{f&#39;&#39;(\xi)}{2!}\cdot\dfrac{1}{12}(b-a)
 class="math inline">\([a,b]\)</span> 上具有二阶连续的导数，证明存在一点
 <span class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
 class="math display">\[\int_{a}^{b}f(x)\dd
-x=\dfrac{b-a}{2}(f(a)+f(b))-\dfrac{1}{12}f&#39;&#39;(\xi)(b-a)^3.\]</span>
-### 解答：法一 设 <span class="math inline">\(k\)</span> 为使 <span
+x=\dfrac{b-a}{2}(f(a)+f(b))-\dfrac{1}{12}f&#39;&#39;(\xi)(b-a)^3.\]</span></p>
+<h3 id="解答法一-1">解答：法一</h3>
+<p>设 <span class="math inline">\(k\)</span> 为使 <span
 class="math inline">\(\displaystyle \int_{a}^{b}f(x)\dd
 x=\dfrac{b-a}{2}(f(a)+f(b))-\dfrac{1}{12}k(b-a)^3\)</span>
 成立的实常数，则证 <span
@@ -608,8 +621,9 @@ class="math inline">\(F&#39;(a)=F&#39;(\xi_1)=0\)</span>，再由 Rolle
 class="math inline">\(\exists\xi\in(a,\xi_1)\subset(a,b)\)</span>，使得
 <span class="math inline">\(F&#39;&#39;(\xi)=0\)</span>，并且 <span
 class="math display">\[F&#39;&#39;(\xi)=-\dfrac{\xi-a}{2}f&#39;&#39;(\xi)+\dfrac{1}{2}k(\xi-a)=0\]</span>
-即得证 <span class="math inline">\(k=f&#39;&#39;(\xi).\)</span> ###
-解答：法二 取 <span
+即得证 <span class="math inline">\(k=f&#39;&#39;(\xi).\)</span></p>
+<h3 id="解答法二-1">解答：法二</h3>
+<p>取 <span
 class="math inline">\(\rho(x)\equiv1\)</span>，首先构造数值求积公式
 <span class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd x\approx
 A_0f(a)+A_1f(b)\)</span>，使其具有尽可能高的代数精度，为此， 分别取
@@ -633,13 +647,16 @@ x=-\dfrac{1}{6}(b-a)^3\]</span> 那么至少存在一点 <span
 class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
 class="math display">\[\int_{a}^{b}f(x)\dd
 x=\dfrac{b-a}{2}(f(a)+f(b))-\dfrac{f&#39;&#39;(\xi)}{2!}\cdot\dfrac{1}{6}(b-a)^3\]</span>
-即得待证等式. ## 例题 9 设函数 <span class="math inline">\(f(x)\)</span>
-在 <span class="math inline">\([a,b]\)</span>
+即得待证等式.</p>
+<h2 id="例题-9">例题 9</h2>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span>
 上有三阶连续的导数，证明至少存在一点 <span
 class="math inline">\(\eta\in(a,b)\)</span>，使得 <span
 class="math display">\[\int_{a}^{b}f(x)\dd
-x=\dfrac{b-a}{4}\qty[f(a)+3f\qty(\dfrac{a+2b}{3})]+\dfrac{(b-a)^4}{216}f&#39;&#39;&#39;(\eta).\]</span>
-### 解答 令 <span class="math inline">\(k\)</span> 为使 <span
+x=\dfrac{b-a}{4}\qty[f(a)+3f\qty(\dfrac{a+2b}{3})]+\dfrac{(b-a)^4}{216}f&#39;&#39;&#39;(\eta).\]</span></p>
+<h3 id="解答-6">解答</h3>
+<p>令 <span class="math inline">\(k\)</span> 为使 <span
 class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd
 x=\dfrac{b-a}{4}\qty[f(a)+3f\qty(\dfrac{a+2b}{3})]+\dfrac{(b-a)^4}{216}k\)</span>
 成立的实常数，要证结论成立，只需证 <span
@@ -666,14 +683,17 @@ class="math inline">\(x=\dfrac{a+2\xi_2}{3}\)</span> 处 Taylor 展开，有
 class="math display">\[f&#39;(\xi_2)=f&#39;\qty(\dfrac{a+2\xi_2}{3})+f&#39;&#39;\qty(\dfrac{a+2\xi_2}{3})\qty(\xi_2-\dfrac{a+2\xi_2}{3})+\dfrac{1}{2!}f&#39;&#39;&#39;(\eta)\qty(\xi_2-\dfrac{a+2\xi_3}{3})^2\]</span>
 其中 <span
 class="math inline">\(\eta\in\qty(\dfrac{a+2\xi_2}{3})\subset(a,b)\)</span>，比较上述两式，即得
-<span class="math inline">\(k=f&#39;&#39;&#39;(\eta)\)</span>，故得证.
-## 例题 10 设函数 <span class="math inline">\(f(x)\)</span> 在 <span
+<span
+class="math inline">\(k=f&#39;&#39;&#39;(\eta)\)</span>，故得证.</p>
+<h2 id="例题-10">例题 10</h2>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在 <span
 class="math inline">\([a,b]\)</span>
 上有三阶连续的导数，证明至少存在一点 <span
 class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
 class="math display">\[\int_{a}^{b}f(x)\dd
-x=\dfrac{b-a}{4}\qty[3f\qty(\dfrac{2a+b}{3})+f(b)]-\dfrac{(b-a)^4}{216}f&#39;&#39;&#39;(\xi).\]</span>
-### 解答 令 <span class="math inline">\(k\)</span> 为使 <span
+x=\dfrac{b-a}{4}\qty[3f\qty(\dfrac{2a+b}{3})+f(b)]-\dfrac{(b-a)^4}{216}f&#39;&#39;&#39;(\xi).\]</span></p>
+<h3 id="解答-7">解答</h3>
+<p>令 <span class="math inline">\(k\)</span> 为使 <span
 class="math inline">\(\displaystyle \int_{a}^{b}f(x)\dd
 x=\dfrac{b-a}{4}\qty[3f\qty(\dfrac{2a+b}{3})+f(b)]-\dfrac{(b-a)^4}{216}k\)</span>
 成立的实常数，要证结论成立，只需证 <span
@@ -705,8 +725,9 @@ class="math inline">\(k=f&#39;&#39;&#39;(\eta)\)</span>，故得证.</p>
 class="math inline">\([a,b]\)</span> 上具有四阶连续导数，证明存在一点
 <span class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
 class="math display">\[\int_{a}^{b}f(x)\dd
-x=\dfrac{b-a}{6}\qty[f(a)+4f\qty(\dfrac{a+b}{2})+f(b)]-\dfrac{(b-a)^5}{2880}f^{(4)}(\xi).\]</span>
-### 解答： 令 <span class="math inline">\(\begin{cases}
+x=\dfrac{b-a}{6}\qty[f(a)+4f\qty(\dfrac{a+b}{2})+f(b)]-\dfrac{(b-a)^5}{2880}f^{(4)}(\xi).\]</span></p>
+<h3 id="解答-8">解答：</h3>
+<p>令 <span class="math inline">\(\begin{cases}
         a=c-h \\b=c+h
     \end{cases}\Rightarrow \begin{cases}
         c=\dfrac{a+b}{2} \\[6pt]
@@ -756,14 +777,16 @@ class="math inline">\(f&#39;&#39;&#39;(c-\xi_3)-f&#39;&#39;&#39;(c+\xi_3)=-2\xi_
 <span
 class="math display">\[-\dfrac{2}{3}\xi_3^2f^{(4)}(\xi)+\dfrac{2}{3}\xi_3^2k=0\Rightarrow
 k=f^{(4)}(\xi)\]</span> 得证 <span
-class="math inline">\(k=f^{(4)}(x)\)</span>，即原命题成立. ## 例题 12 设
-<span class="math inline">\(f(x)\in C^4[0,1]\)</span>，且满足 <span
-class="math inline">\(\displaystyle \int_{0}^{1}f(x)\dd
+class="math inline">\(k=f^{(4)}(x)\)</span>，即原命题成立.</p>
+<h2 id="例题-12">例题 12</h2>
+<p>设 <span class="math inline">\(f(x)\in C^4[0,1]\)</span>，且满足
+<span class="math inline">\(\displaystyle \int_{0}^{1}f(x)\dd
 x+3f\qty(\dfrac{1}{2})=8\int_{\frac{1}{4}}^{\frac{3}{4}}f(x)\dd
 x\)</span>，证明: <span class="math inline">\(\exists
 c\in(0,1)\)</span>，使得 <span
-class="math inline">\(f^{(4)}(c)=0.\)</span> ### 解答 因为 <span
-class="math inline">\(\displaystyle\int_{0}^{1}f(x)\dd
+class="math inline">\(f^{(4)}(c)=0.\)</span></p>
+<h3 id="解答-9">解答</h3>
+<p>因为 <span class="math inline">\(\displaystyle\int_{0}^{1}f(x)\dd
 x\xlongequal{x=t+\frac{1}{2}}\int_{-\frac{1}{2}}^{\frac{1}{2}}f\qty(t+\dfrac{1}{2})\dd
 t,~\int_{\frac{1}{4}}^{\frac{3}{4}}f(x)\dd
 x\xlongequal{x=\frac{t}{2}+\frac{1}{2}}\dfrac{1}{2}\int_{-\frac{1}{2}}^{\frac{1}{2}}f\qty(\dfrac{t}{2}+\dfrac{1}{2})\dd
@@ -846,6 +869,8 @@ c\in\qty(-\xi_3+\dfrac{1}{2},\xi_3+\dfrac{1}{2})\subset(0,1)\)</span>
         <a href="/tags/%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86/" class="print-no-link">#中值定理</a>
       
         <a href="/tags/%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/" class="print-no-link">#积分证明</a>
+      
+        <a href="/tags/%E4%B8%80%E9%A2%98%E5%A4%9A%E8%A7%A3/" class="print-no-link">#一题多解</a>
       
     </div>
   
