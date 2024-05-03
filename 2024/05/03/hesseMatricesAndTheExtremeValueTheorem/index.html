@@ -18,28 +18,28 @@
   <meta name="author" content="Guoming Huang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="两点三次 Hermite 插值 基函数 采用基函数方法，令 \[H_3(x)&#x3D;\alpha_k(x)y_k+\alpha_{k+1}(x)y_{k+1}+\beta_k(x)m_k+\beta_{k+1}(x)m_{k+1}\] 其中 \(\alpha_k(x),\alpha_{k+1}(x),\beta_k(x),\beta_{k+1}(x)\) 是关于点 \(x_k\) 及 \(x_">
+    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     Hesse 矩阵与极值定理 定理 设 \(P_{0}\) 为稳定点，若在 \(P_{0}\) 处 Hesse 矩阵 \[\vb*{H}(P_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两点三次 Hermite 插值">
-<meta property="og:url" content="http://example.com/2024/05/02/twoPointTripleHermiteInterpolation/index.html">
+<meta property="og:title" content="Hesse 矩阵与极值定理">
+<meta property="og:url" content="http://example.com/2024/05/03/hesseMatricesAndTheExtremeValueTheorem/index.html">
 <meta property="og:site_name" content="ChungMG">
-<meta property="og:description" content="两点三次 Hermite 插值 基函数 采用基函数方法，令 \[H_3(x)&#x3D;\alpha_k(x)y_k+\alpha_{k+1}(x)y_{k+1}+\beta_k(x)m_k+\beta_{k+1}(x)m_{k+1}\] 其中 \(\alpha_k(x),\alpha_{k+1}(x),\beta_k(x),\beta_{k+1}(x)\) 是关于点 \(x_k\) 及 \(x_">
+<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     Hesse 矩阵与极值定理 定理 设 \(P_{0}\) 为稳定点，若在 \(P_{0}\) 处 Hesse 矩阵 \[\vb*{H}(P_">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-02T14:18:39.152Z">
-<meta property="article:modified_time" content="2024-05-03T00:51:35.653Z">
+<meta property="article:published_time" content="2024-05-03T00:51:58.925Z">
+<meta property="article:modified_time" content="2024-05-03T00:56:53.778Z">
 <meta property="article:author" content="Guoming Huang">
 <meta property="article:tag" content="高等数学">
 <meta property="article:tag" content="数学技巧">
-<meta property="article:tag" content="中值定理">
-<meta property="article:tag" content="Hermite 插值">
-<meta property="article:tag" content="一元函数微分学">
+<meta property="article:tag" content="Hesse 矩阵">
+<meta property="article:tag" content="一题多解">
+<meta property="article:tag" content="多元函数微分学">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>两点三次 Hermite 插值 - ChungMG</title>
+  <title>Hesse 矩阵与极值定理 - ChungMG</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -232,7 +232,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="两点三次 Hermite 插值"></span>
+            <span id="subtitle" data-typed-text="Hesse 矩阵与极值定理"></span>
           
         </div>
 
@@ -248,8 +248,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-02 22:18" pubdate>
-          May 2, 2024 pm
+        <time datetime="2024-05-03 08:51" pubdate>
+          May 3, 2024 am
         </time>
       </span>
     
@@ -260,7 +260,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          763 words
+          347 words
         
       </span>
     
@@ -271,7 +271,7 @@
         
         
         
-          7 mins
+          3 mins
         
       </span>
     
@@ -316,95 +316,65 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">两点三次 Hermite 插值</h1>
+            <h1 id="seo-header">Hesse 矩阵与极值定理</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="两点三次-hermite-插值">两点三次 Hermite 插值</h1>
-<h2 id="基函数">基函数</h2>
-<p>采用基函数方法，令</p>
-<p><span
-class="math display">\[H_3(x)=\alpha_k(x)y_k+\alpha_{k+1}(x)y_{k+1}+\beta_k(x)m_k+\beta_{k+1}(x)m_{k+1}\]</span></p>
-<p>其中 <span
-class="math inline">\(\alpha_k(x),\alpha_{k+1}(x),\beta_k(x),\beta_{k+1}(x)\)</span>
-是关于点 <span class="math inline">\(x_k\)</span> 及 <span
-class="math inline">\(x_{k+1}\)</span> 的三次 Hermite
-插值基函数，它们应分别满足以下条件:</p>
-<p><span class="math display">\[\begin{array}{lll}
-            \alpha _k(x_k)=1                        &amp; \alpha
-_k(x_{k+1})=0     &amp; \alpha _k&#39;(x_k)=\alpha
-&#39;_k(x_{k+1})=0         \\
-            \alpha _{k+1}(x_k)=0                    &amp; \alpha
-_{k+1}(x_{k+1})=1 &amp; \alpha&#39; _{k+1}(x_k)=\alpha
-&#39;_{k+1}(x_{k+1})=0 \\
-            \beta_k(x_k)=\beta_k(x_{k+1})=0         &amp;
-\beta&#39;_k(x_k)=1          &amp;
-\beta&#39;_k(x_{k+1})=0                           \\
-            \beta_{k+1}(x_k)=\beta_{k+1}(x_{k+1})=0 &amp;
-\beta&#39;_{k+1}(x_k)=0      &amp; \beta&#39;_{k+1}(x_{k+1})=1
-        \end{array}\]</span></p>
-<p>解得基函数，那么有</p>
-<p><span
-class="math display">\[H_3(x)=\left(1+2\dfrac{x-x_k}{x_{k+1}-x_k}\right)\left(\dfrac{x-x_{k+1}}{x_k-x_{k+1}}\right)^2y_k+\left(1+2\dfrac{x-x_{k+1}}{x_k-x_{k+1}}\right)\left(\dfrac{x-x_k}{x_{k+1}-x_k}\right)^2y_{k+1}+(x-x_k)\left(\dfrac{x-x_{k+1}}{x_k-x_{k+1}}\right)^2m_k+(x-x_{k+1})\left(\dfrac{x-x_k}{x_{k+1}-x_k}\right)^2m_{k+1}.\]</span></p>
+                <html>
+<script>
+MathJax = {
+  loader: {
+    load: ['[tex]/physics']
+  },
+  tex: {
+    packages: {'[+]': ['physics']}
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js">
+</script>
+</html>
+<h1 id="hesse-矩阵与极值定理">Hesse 矩阵与极值定理</h1>
+<h2 id="定理">定理</h2>
+<p>设 <span class="math inline">\(P_{0}\)</span> 为稳定点，若在 <span
+class="math inline">\(P_{0}\)</span> 处 Hesse 矩阵 <span
+class="math display">\[\vb*{H}(P_0)=\mqty(f_{x_{1} x_{1}}^{\prime
+\prime} &amp; f_{x_{1} x_{2}}^{\prime \prime} &amp; \cdots &amp;
+f_{x_{1} x_{n}}^{\prime \prime} \\f_{x_{2} x_{1}}^{\prime \prime} &amp;
+f_{x_{2} x_{2}}^{\prime \prime} &amp; \cdots &amp; f_{x_{2}
+x_{n}}^{\prime \prime} \\
+\vdots &amp; \vdots &amp; &amp; \vdots \\
+f_{x_{n} x_{1}}^{\prime \prime} &amp; f_{x_{n} x_{2}}^{\prime \prime}
+&amp; \cdots &amp; f_{x_{n} x_{n}}^{\prime \prime})\]</span>
+为正定的，则 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(P_{0}\)</span> 处取极小值; 若 <span
+class="math inline">\(\boldsymbol{H}\left(P_{0}\right)\)</span>
+为负定的，则 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(P_{0}\)</span> 处取极大值; 若 <span
+class="math inline">\(\boldsymbol{H}\left(P_{0}\right)\)</span>
+为不定的, 则 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(P_{0}\)</span> 处无极值.</p>
 <h2 id="例题-1">例题 1</h2>
-<p>若函数 <span class="math inline">\(f(x)\text{ 在 }[a,b]\)</span>
-上三阶可导，且 <span
-class="math inline">\(f(a)=c,f(b)=d,f&#39;(a)=e,f&#39;(b)=f\)</span>，则
-<span class="math inline">\(\exists\xi\in(a,b)\)</span>，使得 <span
-class="math display">\[f&#39;&#39;&#39;(\xi)=6\dfrac{f(b-a)-2(d-c)+e(b-a)}{(b-a)^3}.\]</span></p>
-<h3 id="解答">解答</h3>
-<p>作三次 Hermite 插值多项式:</p>
-<p><span
-class="math display">\[H_3(x)=c+e(x-a)+\dfrac{(d-c)-e(b-a)}{(b-a)^2}(x-a)^2+\dfrac{f(b-a)-2(d-c)+e(b-a)}{(b-a)^3}(x-a)^2(x-b)\]</span></p>
-<p>则 <span class="math inline">\(H_3(x)\)</span> 与 <span
-class="math inline">\(f(x)\)</span> 在 <span
-class="math inline">\(a,b\)</span> 两点有相同的函数值与导数值，设 <span
-class="math inline">\(F(x)=f(x)-H_3(x)\)</span>，则 <span
-class="math inline">\(F(a)=F(b)=0\)</span>，由 Rolle 定理，<span
-class="math inline">\(\exists\xi_1\in(a,b)\)</span>，使得 <span
-class="math inline">\(F&#39;(\xi_1)=0\)</span>， 由于</p>
-<p><span
-class="math display">\[F&#39;(x)=f&#39;(x)-H_3&#39;(x)=f&#39;(x)+e+2\dfrac{(d-c)-e(b-a)}{(b-a)^2}(x-a)+\dfrac{f(b-a)-2(d-c)+e(b-a)}{(b-a)^3}\left[2(x-a)(x-b)+(x-a)^2\right]\]</span></p>
-<p>则 <span class="math inline">\(F&#39;(a)=F&#39;(b)=0\)</span>，在
-<span class="math inline">\([a,\xi_1]\)</span> 和 <span
-class="math inline">\([\xi_1,b]\)</span> 上应用 Rolle 定理，则 <span
-class="math inline">\(\exists\xi_2\in(a,\xi_1),\xi_3\in(\xi_1,b)\)</span>，使得</p>
-<p><span
-class="math display">\[F&#39;&#39;(\xi_2)=F&#39;&#39;(\xi_3)=0\]</span></p>
-<p>最后在 <span class="math inline">\([\xi_2,\xi_3]\)</span> 上应用
-Rolle 定理，即 <span
-class="math inline">\(\exists\xi\in(\xi_2,\xi_3)\)</span>，使得 <span
-class="math inline">\(F&#39;&#39;&#39;(\xi)=0\)</span>，即得证.</p>
-<h2 id="例题-2">例题 2</h2>
-<p>设函数 <span class="math inline">\(f\in C[0,1]\cap
-D^3(0,1),~f(0)=2,~f(1)=1,~f&#39;(0)=0,~f&#39;(1)=4\)</span> 证明:
-存在一点 <span class="math inline">\(\xi\in(0,1)\)</span> 使得 <span
-class="math inline">\(f&#39;&#39;&#39;(\xi)=24+24\xi.\)</span></p>
-<h3 id="解答-1">解答</h3>
-<p>令 <span class="math inline">\(g(x)=f(x)-x^4\)</span>，则 <span
-class="math inline">\(g\in C[0,1]\cap D^3(0,1)\)</span> 那么 <span
-class="math inline">\(\begin{cases}
-            x_k=0  , &amp; x_{k+1}=1 \\
-            y_k=2  , &amp; y_{k+1}=0 \\
-            m_k=0  , &amp; m_{k+1}=0
-        \end{cases}\)</span>，因此</p>
-<p><span
-class="math display">\[H_3(x)=2(1+x)(x-1)^2=4x^3-6x^2+2\]</span></p>
-<p>构造 <span class="math inline">\(F(x)=g(x)-H_3(x)\)</span> 有 <span
-class="math inline">\(F(0)=F(1)=0\)</span>，由 Rolle 定理 <span
-class="math inline">\(\exists\xi_1\in(0,1)\)</span> 使得 <span
-class="math inline">\(F&#39;(\xi_1)=0\)</span>， 又 <span
-class="math inline">\(F&#39;(0)=F&#39;(\xi_1)=F&#39;(1)=0\)</span>，由
-Rolle 定理得 <span class="math inline">\(\exists
-\xi_2\in(0,\xi_1),\xi_3\in(\xi_1,1)\)</span> 使得 <span
-class="math inline">\(F&#39;&#39;(\xi_i)=0,i=2,3\)</span>， 再根据 Rolle
-定理得 <span
-class="math inline">\(\exists\xi\in(\xi_2,\xi_3)\subset(0,1)\)</span>
-使得 <span class="math inline">\(F&#39;&#39;&#39;(\xi)=0\)</span> 即</p>
-<p><span
-class="math display">\[f&#39;&#39;&#39;(\xi)-4!\xi-24=0\Rightarrow
-f&#39;&#39;&#39;(\xi)=24\xi+24.\]</span></p>
+<p>求函数 <span class="math inline">\(f(x,y)=x^4+y^4-(x+y)^2\)</span>
+的极值. ### 解答 令 <span class="math inline">\(\begin{cases}
+    f_x&#39;(x,y)=4x^3-2(x+y)=0\\
+    f_y&#39;(x,y)=4y^3-2(x+y)=0
+\end{cases}\)</span> 解得驻点 <span
+class="math inline">\(P_1(0,0),~P_2(1,1),~P_3(-1,-1)\)</span>，又 <span
+class="math display">\[\displaystyle
+\pdv[2]{f}{x}=12x^2-2,~\pdv[2]{f}{y}=12y^2-2,~\pdv{f}{x}{y}=-2,~\pdv{f}{y}{x}=-2\]</span>
+由 Hesse 矩阵 <span
+class="math inline">\(\vb*{H}(P_1)=\mqty(-2&amp;-2\\-2&amp;-2),~\vb*{H}(P_2)=\mqty(10&amp;-2\\-2&amp;10),~\vb*{H}(P_3)=\mqty(10&amp;-2\\-2&amp;10)\)</span>
+且 <span class="math inline">\(\vb*{H}(P_1)\)</span> 不定，故 <span
+class="math inline">\((0,0)\)</span> 不是极值点; <span
+class="math inline">\(\vb*{H}(P_2)\)</span> 正定，故 <span
+class="math inline">\((1,1)\)</span> 为极小值点; <span
+class="math inline">\(\vb*{H}(P_3)\)</span> 正定，故 <span
+class="math inline">\((-1,-1)\)</span> 为极小值点， 综上，<span
+class="math inline">\(f\)</span> 的极小值为 <span
+class="math inline">\(f(1,1)=f(-1,-1)=-2.\)</span></p>
 
                 
               </div>
@@ -442,11 +412,11 @@ f&#39;&#39;&#39;(\xi)=24\xi+24.\]</span></p>
       
         <a href="/tags/%E6%95%B0%E5%AD%A6%E6%8A%80%E5%B7%A7/" class="print-no-link">#数学技巧</a>
       
-        <a href="/tags/%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86/" class="print-no-link">#中值定理</a>
+        <a href="/tags/Hesse-%E7%9F%A9%E9%98%B5/" class="print-no-link">#Hesse 矩阵</a>
       
-        <a href="/tags/Hermite-%E6%8F%92%E5%80%BC/" class="print-no-link">#Hermite 插值</a>
+        <a href="/tags/%E4%B8%80%E9%A2%98%E5%A4%9A%E8%A7%A3/" class="print-no-link">#一题多解</a>
       
-        <a href="/tags/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/" class="print-no-link">#一元函数微分学</a>
+        <a href="/tags/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/" class="print-no-link">#多元函数微分学</a>
       
     </div>
   
@@ -458,8 +428,8 @@ f&#39;&#39;&#39;(\xi)=24\xi+24.\]</span></p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>两点三次 Hermite 插值</div>
-      <div>http://example.com/2024/05/02/twoPointTripleHermiteInterpolation/</div>
+      <div>Hesse 矩阵与极值定理</div>
+      <div>http://example.com/2024/05/03/hesseMatricesAndTheExtremeValueTheorem/</div>
     </div>
     <div class="license-meta">
       
@@ -471,7 +441,7 @@ f&#39;&#39;&#39;(\xi)=24\xi+24.\]</span></p>
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 2, 2024</div>
+          <div>May 3, 2024</div>
         </div>
       
       
@@ -508,18 +478,12 @@ f&#39;&#39;&#39;(\xi)=24\xi+24.\]</span></p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/05/02/applicationsOfStolz/" title="Stolz 的应用">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Stolz 的应用</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/05/02/HarmonyOS%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" title="HarmonyOS 应用开发">
-                        <span class="hidden-mobile">HarmonyOS 应用开发</span>
+                      <a href="/2024/05/03/proofOfThePropositionOfTheIntegralEquation/" title="积分等式命题的证明">
+                        <span class="hidden-mobile">积分等式命题的证明</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
