@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>极大似然估计</title>
+    <link href="/2024/05/03/greatLikelihoodEstimation/"/>
+    <url>/2024/05/03/greatLikelihoodEstimation/</url>
+    
+    <content type="html"><![CDATA[<html><script>MathJax = {  loader: {    load: ['[tex]/physics']  },  tex: {    packages: {'[+]': ['physics']}  }};</script><script id="MathJax-script" async  src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js"></script></html><h1 id="极大似然估计">极大似然估计</h1><p>极大似然估计法是参数估计使用的最广泛的方法，最早由德国数学家 Gauss 在1821 年提出， 但是此法一般归功于英国统计学家 Fisher，因为 Fisher 于 1922年再次提出了这个思想，并且证明了这种方法的一些性质，从而使得极大似然法得到更普遍的应用.</p><h2 id="例题-1">例题 1</h2><p>设总体概率函数如下，<spanclass="math inline">\(x_1,x_2,\cdots,x_n\)</span>是样本，试求未知参数的极大似然估计: <spanclass="math display">\[\displaystylep(x;\theta)=\sqrt{\theta}x^{\sqrt{\theta}-1},0&lt;x&lt;1,\theta&gt;0;\]</span></p><h3 id="解答">解答</h3><p>似然函数 <span class="math inline">\(\displaystyle L(\theta)=\left(\sqrt{\theta }\right) ^{n}\left( \prod ^{n}_{i=1}x_{i}\right)^{\sqrt{\theta }-1}\)</span>，取对数得 <span class="math display">\[\lnL\left( \theta \right) =\dfrac{n}{2}\ln \theta +\left( \sqrt{\theta}-1\right) \sum ^{n}_{i=1}\ln x_{i}\]</span> 将 <spanclass="math inline">\(\ln L(\theta)\)</span> 关于 <spanclass="math inline">\(\theta\)</span> 求导，并令其值为 <spanclass="math inline">\(0\)</span> 即得到似然函数 <spanclass="math display">\[\dfrac{\partial \ln L\left( \theta \right)}{\partial \theta }=\dfrac{n}{2\theta }+\dfrac{1}{2\sqrt{\theta }}\sum^{n}_{i=1}x_{i}=0\]</span> 解得 <spanclass="math inline">\(\displaystyle\widehat{\theta }=\left(\dfrac{1}{n}\sum ^{n}_{i=1}\ln x_{i}\right) ^{-2}\)</span>，并且 <spanclass="math display">\[ \dfrac{\partial ^{2}\ln L\left( \theta \right)}{\partial \theta ^{2}}\bigg | _{\theta=\widehat{\theta }}= \left(-\dfrac{n}{2\theta ^{2}}-\dfrac{1}{4\theta ^{3/2}}\sum ^{n}_{i=1}\lnx_{i}\right) \bigg | _{\theta=\widehat{\theta}}=-\dfrac{3}{4n^{3}}\left( \sum ^{n}_{i=1}\ln x_{i}\right)^{4}&lt;0\]</span> 所以 <spanclass="math inline">\(\widehat{\theta}\)</span> 是 <spanclass="math inline">\(\theta\)</span> 的极大似然估计.</p><h2 id="例题-2">例题 2</h2><p>设总体概率函数如下，<spanclass="math inline">\(x_1,x_2,\cdots,x_n\)</span>是样本，试求未知参数的极大似然估计: <spanclass="math display">\[\displaystyle p(x;\theta)=\theta c^\thetax^{-(\theta+1)},x&gt;c&gt;0,\theta&gt;1.\]</span></p><h3 id="解答-1">解答</h3><p>似然函数 <span class="math inline">\(\displaystyle L(\theta)=\theta^{n}c^{n\theta }\left( \prod ^{n}_{i=1}x_{i}\right) ^{-\left( \theta+1\right) }\)</span>，取对数得 <span class="math display">\[\ln L\left(\theta \right) =n\ln \theta +n\theta \ln c-\left( \theta +1\right) \sum^{n}_{i=1}\ln x_{i}\]</span> 将 <span class="math inline">\(\lnL(\theta)\)</span> 关于 <span class="math inline">\(\theta\)</span>求导，并令其值为 <span class="math inline">\(0\)</span> 即得到似然函数<span class="math display">\[\dfrac{\partial \ln L\left( \theta \right)}{\partial \theta }=\dfrac{n}{\theta }+n\ln c-\sum ^{n}_{i=1}\lnx_{i}=0\]</span> 解得 <span class="math inline">\(\displaystyle\widehat{\theta }=\left[ \dfrac{1}{n}\sum ^{n}_{i=1}\left( \ln x_{i}-\lnc\right) \right] ^{-1}\)</span>， 并且 <spanclass="math inline">\(\displaystyle \dfrac{\partial ^{2}\ln L\left(\theta \right) }{\partial \theta ^{2}}=\dfrac{-n}{\theta ^{2}}&lt;0\)</span>，所以 <spanclass="math inline">\(\widehat{\theta}\)</span> 是 <spanclass="math inline">\(\theta\)</span> 的极大似然估计.</p><h2 id="例题-3">例题 3</h2><p>设某种元件的使用寿命 <span class="math inline">\(T\)</span>的分布函数为 <span class="math display">\[F(t)=\begin{cases}            1-\mathrm{e}^{-\qty(\frac{t}{\theta})^m} &amp; ,t\geqslant 0\\            0                                        &amp; ,\text{其他}        \end{cases}\]</span> 其中 <spanclass="math inline">\(m,~\theta\)</span> 为参数且大于 0，任取 <spanclass="math inline">\(n\)</span>个这种元件做寿命试验，测得它们的寿命分别为 <spanclass="math inline">\(t_1,t_2,\cdots,t_n\)</span>，若 <spanclass="math inline">\(m\)</span> 已知，求 <spanclass="math inline">\(\theta\)</span> 的极大似然估计值 <spanclass="math inline">\(\hat\theta.\)</span></p><h3 id="解答-2">解答</h3><p>由 <span class="math inline">\(f(t)=F&#39;(t)\)</span>可得概率密度函数 <span class="math display">\[f(t)=\begin{cases}        \dfrac{mt^{m-1}}{\theta^m}\mathrm{e}^{-\qty(\frac{t}{\theta})^m}&amp; ,t\geqslant 0 \\        0                                                                &amp;,t&lt;0    \end{cases}\]</span> 对数似然函数为 <spanclass="math display">\[\begin{align*}    \ln\qty[L(\theta)] &amp;=\ln\qty[\prod_{i=1}^{n}f(t_i;\theta)]=\ln\qty[\prod_{i=1}^{n}\dfrac{mt_i^{m-1}}{\theta^m}\mathrm{e}^{-\qty(\frac{t_i}{\theta})^m}]=\ln\qty[\dfrac{m^n(t_1t_2\cdotst_n)^{m-1}}{\theta^{mn}}\cdot\mathrm{e}^{-\frac{1}{\theta^m}\sum\limits_{i=1}^{n}t_i^m}]\\                       &amp; =n\lnm+(m-1)\ln\prod_{i=1}^{n}t_i-mn\ln\theta-\dfrac{1}{\theta^m}\sum_{i=1}^{n}t_i^m\end{align*}\]</span> 求导得 <spanclass="math inline">\(\displaystyle\dv{\ln\qty[L(\theta)]}{\theta}=-\dfrac{mn}{\theta}+m\dfrac{1}{\theta^{m+1}}\sum_{i=1}^{n}t_i^m=0\)</span>，解得<spanclass="math inline">\(\displaystyle\dfrac{1}{\theta^m}\sum_{i=1}^{n}t_i^m=n\)</span>，那么 <span class="math inline">\(\theta\)</span> 的极大似然估计值为<spanclass="math inline">\(\hat\theta=\sqrt[m]{\dfrac{1}{n}\displaystyle\sum_{i=1}^{n}t_i^m}.\)</span></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数学笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>概率论与数理统计</tag>
+      
+      <tag>参数的点估计</tag>
+      
+      <tag>极大似然估计</tag>
+      
+      <tag>似然函数</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hesse 矩阵与极值定理</title>
     <link href="/2024/05/03/hesseMatricesAndTheExtremeValueTheorem/"/>
     <url>/2024/05/03/hesseMatricesAndTheExtremeValueTheorem/</url>
@@ -185,13 +216,13 @@
       
       <tag>高等数学</tag>
       
+      <tag>概率论与数理统计</tag>
+      
       <tag>数学</tag>
       
       <tag>考研数学</tag>
       
       <tag>线性代数</tag>
-      
-      <tag>概率论与数理统计</tag>
       
       <tag>LaTeX</tag>
       
