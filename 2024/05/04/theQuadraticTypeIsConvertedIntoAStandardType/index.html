@@ -18,28 +18,29 @@
   <meta name="author" content="Guoming Huang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     极大似然估计 极大似然估计法是参数估计使用的最广泛的方法，最早由德国数学家 Gauss 在 1821 年提出， 但是此法一般归功于英国统计学">
+    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     二次型化为标准形 方法论 运用偏导函数的思想将二次型化为标准形有以下两种情况:  如果 \(f(x_1,x_2,\cdots,x_n)\">
 <meta property="og:type" content="article">
-<meta property="og:title" content="极大似然估计">
-<meta property="og:url" content="http://example.com/2024/05/03/greatLikelihoodEstimation/index.html">
+<meta property="og:title" content="二次型化为标准形">
+<meta property="og:url" content="http://example.com/2024/05/04/theQuadraticTypeIsConvertedIntoAStandardType/index.html">
 <meta property="og:site_name" content="ChungMG">
-<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     极大似然估计 极大似然估计法是参数估计使用的最广泛的方法，最早由德国数学家 Gauss 在 1821 年提出， 但是此法一般归功于英国统计学">
+<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     二次型化为标准形 方法论 运用偏导函数的思想将二次型化为标准形有以下两种情况:  如果 \(f(x_1,x_2,\cdots,x_n)\">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-03T02:10:07.819Z">
-<meta property="article:modified_time" content="2024-05-03T02:20:13.516Z">
+<meta property="article:published_time" content="2024-05-04T00:00:26.294Z">
+<meta property="article:modified_time" content="2024-05-04T00:11:30.836Z">
 <meta property="article:author" content="Guoming Huang">
+<meta property="article:tag" content="数学技巧">
 <meta property="article:tag" content="考研数学">
-<meta property="article:tag" content="概率论与数理统计">
-<meta property="article:tag" content="参数的点估计">
-<meta property="article:tag" content="极大似然估计">
-<meta property="article:tag" content="似然函数">
+<meta property="article:tag" content="线性代数">
+<meta property="article:tag" content="二次型">
+<meta property="article:tag" content="标准形">
+<meta property="article:tag" content="偏导函数">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>极大似然估计 - ChungMG</title>
+  <title>二次型化为标准形 - ChungMG</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -232,7 +233,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="极大似然估计"></span>
+            <span id="subtitle" data-typed-text="二次型化为标准形"></span>
           
         </div>
 
@@ -248,8 +249,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-03 10:10" pubdate>
-          May 3, 2024 am
+        <time datetime="2024-05-04 08:00" pubdate>
+          May 4, 2024 am
         </time>
       </span>
     
@@ -260,7 +261,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          834 words
+          897 words
         
       </span>
     
@@ -271,7 +272,7 @@
         
         
         
-          7 mins
+          8 mins
         
       </span>
     
@@ -316,7 +317,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">极大似然估计</h1>
+            <h1 id="seo-header">二次型化为标准形</h1>
             
             
               <div class="markdown-body">
@@ -336,99 +337,118 @@ MathJax = {
   src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js">
 </script>
 </html>
-<h1 id="极大似然估计">极大似然估计</h1>
-<p>极大似然估计法是参数估计使用的最广泛的方法，最早由德国数学家 Gauss 在
-1821 年提出， 但是此法一般归功于英国统计学家 Fisher，因为 Fisher 于 1922
-年再次提出了这个思想，并且证明了这种方法的一些性质，
-从而使得极大似然法得到更普遍的应用.</p>
+<h1 id="二次型化为标准形">二次型化为标准形</h1>
+<h2 id="方法论">方法论</h2>
+<p>运用偏导函数的思想将二次型化为标准形有以下两种情况:</p>
+<ol type="1">
+<li><p>如果 <span class="math inline">\(f(x_1,x_2,\cdots,x_n)\)</span>
+中含有某变量的平方项，即 <span class="math inline">\(a_{i i}~ (i=1,
+\cdots, n)\)</span> 中至少有一个不为零， 不妨设 <span
+class="math inline">\(a_{11} \neq 0\)</span>，记 $ f_{1}= <span
+class="math inline">\(，
+令\)</span><span
+class="math inline">\(f(x_1,x_2,\cdots,x_n)=\frac{1}{a_{11}}f_1^2+g\)</span>$
+求得 <span class="math inline">\(g\)</span>，此时 <span
+class="math inline">\(g\)</span> 中已不含 <span
+class="math inline">\(x_{1}\)</span>，再记 <span
+class="math inline">\(\displaystyle g_{1}=\frac{1}{2} \frac{\partial
+g}{\partial x_{2}}\)</span>，并令 <span
+class="math display">\[f(x_1,x_2,\cdots,x_n)=\frac{1}{a_{11}}f_1^2+\frac{1}{a_{22}}g_1^2+h\]</span>
+此时 <span class="math inline">\(h\)</span> 中已不含 <span
+class="math inline">\(x_1\)</span> 与 <span
+class="math inline">\(x_2\)</span>，按这种方法继续运算，可将二次型化为标准形;</p></li>
+<li><p>如果 <span class="math inline">\(f(x_1,x_2,\cdots,x_n)\)</span>
+中不含有任一变量的平方项，即 <span class="math inline">\(a_{ii}=0~
+(i=1,\cdots,n)\)</span>，但至少有一个 <span
+class="math inline">\(a_{1j}\neq 0~ (j&gt;1)\)</span> 不为零 (<span
+class="math inline">\(a_{ij}\)</span> 是 <span
+class="math inline">\(x_{ij}\)</span> 项的系数)， 不妨设 <span
+class="math inline">\(a_{12}\neq 0\)</span>，记 <span
+class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1},f_2=\dfrac{1}{2}\displaystyle\pdv{f}{x_2}\)</span>，令
+<span
+class="math display">\[f(x_1,x_2,\cdots,x_n)=\dfrac{1}{a_{12}}\qty[(f_1+f_2)^2-(f_1-f_2)^2]+\varphi\]</span>
+求得 <span class="math inline">\(\varphi\)</span>，此时 <span
+class="math inline">\(\varphi\)</span> 中已不含 <span
+class="math inline">\(x_1\)</span> 与 <span
+class="math inline">\(x_2\)</span>，观察 <span
+class="math inline">\(\varphi\)</span> 的结构，如果 <span
+class="math inline">\(\varphi\)</span>
+中含有变量的平方项，则按情况一中的方法进行，否则按情况二中的方法进行，直至二次型化为标准形.</p></li>
+</ol>
 <h2 id="例题-1">例题 1</h2>
-<p>设总体概率函数如下，<span
-class="math inline">\(x_1,x_2,\cdots,x_n\)</span>
-是样本，试求未知参数的极大似然估计: <span
-class="math display">\[\displaystyle
-p(x;\theta)=\sqrt{\theta}x^{\sqrt{\theta}-1},0&lt;x&lt;1,\theta&gt;0;\]</span></p>
+<p>将二次型 <span
+class="math inline">\(f(x_1,x_2,x_3)=x_1^2+2x_2^2-4x_3^2+2x_1x_2-2x_2x_3\)</span>
+化为标准形.</p>
 <h3 id="解答">解答</h3>
-<p>似然函数 <span class="math inline">\(\displaystyle L(\theta)=\left(
-\sqrt{\theta }\right) ^{n}\left( \prod ^{n}_{i=1}x_{i}\right)
-^{\sqrt{\theta }-1}\)</span>，取对数得 <span class="math display">\[\ln
-L\left( \theta \right) =\dfrac{n}{2}\ln \theta +\left( \sqrt{\theta
-}-1\right) \sum ^{n}_{i=1}\ln x_{i}\]</span> 将 <span
-class="math inline">\(\ln L(\theta)\)</span> 关于 <span
-class="math inline">\(\theta\)</span> 求导，并令其值为 <span
-class="math inline">\(0\)</span> 即得到似然函数 <span
-class="math display">\[\dfrac{\partial \ln L\left( \theta \right)
-}{\partial \theta }=\dfrac{n}{2\theta }+\dfrac{1}{2\sqrt{\theta }}\sum
-^{n}_{i=1}x_{i}=0\]</span> 解得 <span
-class="math inline">\(\displaystyle\widehat{\theta }=\left(
-\dfrac{1}{n}\sum ^{n}_{i=1}\ln x_{i}\right) ^{-2}\)</span>，并且 <span
-class="math display">\[ \dfrac{\partial ^{2}\ln L\left( \theta \right)
-}{\partial \theta ^{2}}\bigg | _{\theta=\widehat{\theta }}= \left(
--\dfrac{n}{2\theta ^{2}}-\dfrac{1}{4\theta ^{3/2}}\sum ^{n}_{i=1}\ln
-x_{i}\right) \bigg | _{\theta=\widehat{\theta
-}}=-\dfrac{3}{4n^{3}}\left( \sum ^{n}_{i=1}\ln x_{i}\right)
-^{4}&lt;0\]</span> 所以 <span
-class="math inline">\(\widehat{\theta}\)</span> 是 <span
-class="math inline">\(\theta\)</span> 的极大似然估计.</p>
+<p>记 <span
+class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1}=x_1+x_2\)</span>，令
+<span
+class="math display">\[f=\dfrac{1}{a_{11}}f_1^2+g=(x_1+x_2)^2+g\]</span>
+求得 <span class="math inline">\(g=x_2^2-4x_3^2-2x_2x_3\)</span>，记
+<span
+class="math inline">\(g_1=\dfrac{1}{2}\displaystyle\pdv{g}{x_2}=x_2-x_3\)</span>，令
+<span class="math display">\[g=\dfrac{1}{a_{22}}g_1^2+h\]</span> 求得
+<span class="math inline">\(h=-5x_3^2\)</span>，那么 <span
+class="math display">\[f(x_1,x_2,x_3)=(x_1+x_2)^2+(x_2-x_3)^2-5x_3^2\]</span>
+作可逆线性变换 <span class="math display">\[\left\{\begin{matrix}
+            y_1 &amp; = &amp; x_1 &amp; + &amp; x_2           \\
+            y_2 &amp; = &amp;     &amp;   &amp; x_2 &amp; - &amp; x_3 \\
+            y_3 &amp; = &amp;     &amp;   &amp;     &amp;   &amp; x_3
+        \end{matrix}\right.\]</span> 则有 <span
+class="math inline">\(f(y_1,y_2,y_3)=y_1^2+y_2^2-5y_3^2.\)</span></p>
 <h2 id="例题-2">例题 2</h2>
-<p>设总体概率函数如下，<span
-class="math inline">\(x_1,x_2,\cdots,x_n\)</span>
-是样本，试求未知参数的极大似然估计: <span
-class="math display">\[\displaystyle p(x;\theta)=\theta c^\theta
-x^{-(\theta+1)},x&gt;c&gt;0,\theta&gt;1.\]</span></p>
+<p>将二次型 <span
+class="math inline">\(f(x_1,x_2,x_3)=-4x_1x_2+2x_1x_3+2x_2x_3\)</span>
+化为标准形.</p>
 <h3 id="解答-1">解答</h3>
-<p>似然函数 <span class="math inline">\(\displaystyle L(\theta)=\theta
-^{n}c^{n\theta }\left( \prod ^{n}_{i=1}x_{i}\right) ^{-\left( \theta
-+1\right) }\)</span>，取对数得 <span class="math display">\[\ln L\left(
-\theta \right) =n\ln \theta +n\theta \ln c-\left( \theta +1\right) \sum
-^{n}_{i=1}\ln x_{i}\]</span> 将 <span class="math inline">\(\ln
-L(\theta)\)</span> 关于 <span class="math inline">\(\theta\)</span>
-求导，并令其值为 <span class="math inline">\(0\)</span> 即得到似然函数
-<span class="math display">\[\dfrac{\partial \ln L\left( \theta \right)
-}{\partial \theta }=\dfrac{n}{\theta }+n\ln c-\sum ^{n}_{i=1}\ln
-x_{i}=0\]</span> 解得 <span class="math inline">\(\displaystyle
-\widehat{\theta }=\left[ \dfrac{1}{n}\sum ^{n}_{i=1}\left( \ln x_{i}-\ln
-c\right) \right] ^{-1}\)</span>， 并且 <span
-class="math inline">\(\displaystyle \dfrac{\partial ^{2}\ln L\left(
-\theta \right) }{\partial \theta ^{2}}=\dfrac{-n}{\theta ^{2}}
-&lt;0\)</span>，所以 <span
-class="math inline">\(\widehat{\theta}\)</span> 是 <span
-class="math inline">\(\theta\)</span> 的极大似然估计.</p>
+<p>二次型中不含有任一变量的平方项，记 <span
+class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1},~f_2=\dfrac{1}{2}\displaystyle\pdv{f}{x_2}\)</span>，则有
+<span
+class="math display">\[f_1=\dfrac{1}{2}(-4x_2+2x_3)=-2x_2+x_3,~f_2=\dfrac{1}{2}(-4x_1+2x_3)=-2x_1+x_3\]</span>
+令 <span class="math display">\[\begin{align*}
+    f &amp;
+=\dfrac{1}{a_{12}}\qty[(f_1+f_2)^2-(f_1-f_2)^2]+\varphi=-\dfrac{1}{4}\qty[(-2x_1-2x_2+2x_3)^2-(2x_1-2x_2)^2]+\varphi
+\\
+      &amp;
+=(x_1-x_2)^2-(x_1+x_2-x_3)^2+\varphi=(2x_1-x_3)(-2x_2+x_3)+\varphi=-4x_1x_2+2x_1x_3+2x_2x_3-x_3^2+\varphi
+\end{align*}\]</span> 即 <span
+class="math inline">\(\varphi=x_3^2\)</span>，所以 <span
+class="math display">\[f(x_1,x_2,x_3)=-(x_1+x_2-x_3)^2+(x_1-x_2)^2+x_3^2\]</span>
+作可逆线性变换 <span class="math inline">\(\left\{\begin{matrix}
+        y_1 &amp; = &amp; x_1 &amp; + &amp; x_2 &amp; - &amp; x_3 \\
+        y_2 &amp; = &amp; x_1 &amp; - &amp; x_2 &amp;         \\
+        y_3 &amp; = &amp;     &amp;   &amp;     &amp;   &amp; x_3
+    \end{matrix}\right.\)</span>，则有 <span
+class="math inline">\(f(y_1,y_2,y_3)=-y_1^2+y_2^2+y_3^2.\)</span></p>
 <h2 id="例题-3">例题 3</h2>
-<p>设某种元件的使用寿命 <span class="math inline">\(T\)</span>
-的分布函数为 <span class="math display">\[F(t)=\begin{cases}
-            1-\mathrm{e}^{-\qty(\frac{t}{\theta})^m} &amp; ,t\geqslant 0
-\\
-            0                                        &amp; ,\text{其他}
-        \end{cases}\]</span> 其中 <span
-class="math inline">\(m,~\theta\)</span> 为参数且大于 0，任取 <span
-class="math inline">\(n\)</span>
-个这种元件做寿命试验，测得它们的寿命分别为 <span
-class="math inline">\(t_1,t_2,\cdots,t_n\)</span>，若 <span
-class="math inline">\(m\)</span> 已知，求 <span
-class="math inline">\(\theta\)</span> 的极大似然估计值 <span
-class="math inline">\(\hat\theta.\)</span></p>
+<p>二次型 <span
+class="math display">\[f(x_1,x_2,x_3)=(x_1+x_2)^2+(x_1+x_3)^2-4(x_2-x_3)^2\]</span>
+的标准形为</p>
+<p>A. <span class="math inline">\(y_1^2+y_2^2~~~~~~\)</span> B. <span
+class="math inline">\(y_1^2-y_2^2~~~~~~\)</span>$ C. <span
+class="math inline">\(y_1^2+y_2^2-4y_3^2~~~~~~\)</span>$ D. <span
+class="math inline">\(y_1^2+y_2^2-y_3^2\)</span></p>
 <h3 id="解答-2">解答</h3>
-<p>由 <span class="math inline">\(f(t)=F&#39;(t)\)</span>
-可得概率密度函数 <span class="math display">\[f(t)=\begin{cases}
-        \dfrac{mt^{m-1}}{\theta^m}\mathrm{e}^{-\qty(\frac{t}{\theta})^m}
-&amp; ,t\geqslant 0 \\
-        0                                                                &amp;
-,t&lt;0
-    \end{cases}\]</span> 对数似然函数为 <span
-class="math display">\[\begin{align*}
-    \ln\qty[L(\theta)] &amp;
-=\ln\qty[\prod_{i=1}^{n}f(t_i;\theta)]=\ln\qty[\prod_{i=1}^{n}\dfrac{mt_i^{m-1}}{\theta^m}\mathrm{e}^{-\qty(\frac{t_i}{\theta})^m}]=\ln\qty[\dfrac{m^n(t_1t_2\cdots
-t_n)^{m-1}}{\theta^{mn}}\cdot\mathrm{e}^{-\frac{1}{\theta^m}\sum\limits_{i=1}^{n}t_i^m}]
-\\
-                       &amp; =n\ln
-m+(m-1)\ln\prod_{i=1}^{n}t_i-mn\ln\theta-\dfrac{1}{\theta^m}\sum_{i=1}^{n}t_i^m
-\end{align*}\]</span> 求导得 <span
-class="math inline">\(\displaystyle\dv{\ln\qty[L(\theta)]}{\theta}=-\dfrac{mn}{\theta}+m\dfrac{1}{\theta^{m+1}}\sum_{i=1}^{n}t_i^m=0\)</span>，解得
-<span
-class="math inline">\(\displaystyle\dfrac{1}{\theta^m}\sum_{i=1}^{n}t_i^m=n\)</span>，
-那么 <span class="math inline">\(\theta\)</span> 的极大似然估计值为
-<span
-class="math inline">\(\hat\theta=\sqrt[m]{\dfrac{1}{n}\displaystyle\sum_{i=1}^{n}t_i^m}.\)</span></p>
+<p>将 <span class="math inline">\(f\)</span> 完全展开，得 <span
+class="math display">\[f=2x_1^2-3x_2^2-3x_3^2+2x_1x_2+2x_1x_3+8x_2x_3\]</span>
+那么 <span
+class="math display">\[f_1=\dfrac{1}{2}\pdv{f}{x_1}=\dfrac{1}{2}(4x_1+2x_2+2x_3)=2x_1+x_2+x_3\]</span>
+则 <span
+class="math display">\[f=\dfrac{1}{a_{11}}f_1^2+g=2x_1^2+\dfrac{1}{2}x_2^2+\dfrac{1}{2}x_3^2+2x_1x_2+2x_1x_3+x_2x_3+g\]</span>
+对比可得 <span
+class="math inline">\(g=-\dfrac{7}{2}x_2^2-\dfrac{7}{2}x_3^2+7x_2x_3\)</span>，
+再令 <span
+class="math display">\[g_1=\dfrac{1}{2}\pdv{g}{x_2}=\dfrac{1}{2}(-7x_2+7x_3)=-\dfrac{7}{2}x_2+\dfrac{7}{2}x_3\]</span>
+又 <span
+class="math inline">\(g=\dfrac{1}{a_{22}}g_1^2+h\)</span>，可解出 <span
+class="math inline">\(h=0\)</span>，因此可排除 C，D 选项， <span
+class="math display">\[f=\dfrac{1}{\sqrt{2}^2}(2x_1+x_2+x_3)^2-\sqrt{\dfrac{7}{2}}^2(x_2-x_3)^2\]</span>
+作可逆线性变换 <span class="math inline">\(\begin{cases}
+            y_1=\dfrac{1}{\sqrt{2}} (2x_1+x_2+x_3) \\[6pt]
+            y_2=\sqrt{\dfrac{7}{2} } (x_2-x_3)     \\[6pt]
+            y_3=x_3
+\end{cases}\)</span>，因此 <span
+class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
 
                 
               </div>
@@ -462,15 +482,17 @@ class="math inline">\(\hat\theta=\sqrt[m]{\dfrac{1}{n}\displaystyle\sum_{i=1}^{n
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E6%95%B0%E5%AD%A6%E6%8A%80%E5%B7%A7/" class="print-no-link">#数学技巧</a>
+      
         <a href="/tags/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/" class="print-no-link">#考研数学</a>
       
-        <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="print-no-link">#概率论与数理统计</a>
+        <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="print-no-link">#线性代数</a>
       
-        <a href="/tags/%E5%8F%82%E6%95%B0%E7%9A%84%E7%82%B9%E4%BC%B0%E8%AE%A1/" class="print-no-link">#参数的点估计</a>
+        <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%9E%8B/" class="print-no-link">#二次型</a>
       
-        <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" class="print-no-link">#极大似然估计</a>
+        <a href="/tags/%E6%A0%87%E5%87%86%E5%BD%A2/" class="print-no-link">#标准形</a>
       
-        <a href="/tags/%E4%BC%BC%E7%84%B6%E5%87%BD%E6%95%B0/" class="print-no-link">#似然函数</a>
+        <a href="/tags/%E5%81%8F%E5%AF%BC%E5%87%BD%E6%95%B0/" class="print-no-link">#偏导函数</a>
       
     </div>
   
@@ -482,8 +504,8 @@ class="math inline">\(\hat\theta=\sqrt[m]{\dfrac{1}{n}\displaystyle\sum_{i=1}^{n
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>极大似然估计</div>
-      <div>http://example.com/2024/05/03/greatLikelihoodEstimation/</div>
+      <div>二次型化为标准形</div>
+      <div>http://example.com/2024/05/04/theQuadraticTypeIsConvertedIntoAStandardType/</div>
     </div>
     <div class="license-meta">
       
@@ -495,13 +517,13 @@ class="math inline">\(\hat\theta=\sqrt[m]{\dfrac{1}{n}\displaystyle\sum_{i=1}^{n
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 3, 2024</div>
+          <div>May 4, 2024</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>May 3, 2024</div>
+          <div>May 4, 2024</div>
         </div>
       
       
@@ -532,18 +554,12 @@ class="math inline">\(\hat\theta=\sqrt[m]{\dfrac{1}{n}\displaystyle\sum_{i=1}^{n
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/05/04/theQuadraticTypeIsConvertedIntoAStandardType/" title="二次型化为标准形">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">二次型化为标准形</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/05/03/hesseMatricesAndTheExtremeValueTheorem/" title="Hesse 矩阵与极值定理">
-                        <span class="hidden-mobile">Hesse 矩阵与极值定理</span>
+                      <a href="/2024/05/03/greatLikelihoodEstimation/" title="极大似然估计">
+                        <span class="hidden-mobile">极大似然估计</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
