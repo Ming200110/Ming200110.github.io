@@ -18,12 +18,12 @@
   <meta name="author" content="Guoming Huang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     下降阶乘幂 相关定义与定理  \(x^{\underline{m} }&#x3D;x(x-1)\cdots(x-m+1)~~(m\in\mathb">
+    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };      下降阶乘幂相关定义与定理 $x^{\underline{m} }&#x3D;x(x-1)\cdots(x-m+1)~~(m\in\mathbb{N}_+).$ $x^{\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="下降阶乘幂">
 <meta property="og:url" content="http://example.com/2024/05/04/descendingStepExponentiation/index.html">
 <meta property="og:site_name" content="ChungMG">
-<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     下降阶乘幂 相关定义与定理  \(x^{\underline{m} }&#x3D;x(x-1)\cdots(x-m+1)~~(m\in\mathb">
+<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };      下降阶乘幂相关定义与定理 $x^{\underline{m} }&#x3D;x(x-1)\cdots(x-m+1)~~(m\in\mathbb{N}_+).$ $x^{\">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-04T00:28:28.378Z">
 <meta property="article:modified_time" content="2024-05-04T00:36:22.948Z">
@@ -262,7 +262,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          561 words
+          604 words
         
       </span>
     
@@ -273,7 +273,7 @@
         
         
         
-          5 mins
+          6 mins
         
       </span>
     
@@ -338,75 +338,26 @@ MathJax = {
   src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js">
 </script>
 </html>
-<h1 id="下降阶乘幂">下降阶乘幂</h1>
-<h2 id="相关定义与定理">相关定义与定理</h2>
-<ol type="1">
-<li><span class="math inline">\(x^{\underline{m}
-}=x(x-1)\cdots(x-m+1)~~(m\in\mathbb{N}_+).\)</span></li>
-<li><span
-class="math inline">\(x^{\overline{m}}=x(x+1)\cdots(x+m-1)~~(m\in\mathbb{N}_+).\)</span></li>
-<li><span
-class="math inline">\(x^{\underline{0}}=x^{\overline{0}}=1.\)</span></li>
-<li><span
-class="math inline">\(n!=n^{\underline{n}}=1^{\overline{n}}.\)</span></li>
-<li><span class="math inline">\(\varDelta
-\qty(x^{\underline{m}})=mx^{\underline{m-1}}.\)</span></li>
-<li><span class="math inline">\(\displaystyle g(x)=\varDelta f(x)\iff
-\sum g(x)\delta x=f(x)+C.\)</span></li>
-<li><span class="math inline">\(\displaystyle \sum\nolimits_{a}^{b}
-g(x)\delta x=\eval{f(x)}_{a}^{b}=f(b)-f(a).\)</span></li>
-<li><span class="math inline">\(\displaystyle
-\sum\nolimits_{a}^{b}g(x)\delta x=\sum_{k=a}^{b-1}g(k)=\sum_{a\leqslant
-k&lt;b}g(k)~~(b\geqslant a).\)</span></li>
-<li><span class="math inline">\(\displaystyle
-\sum\nolimits_{a}^{b}g(x)\delta x+\sum\nolimits_b^c g(x)\delta
-x=\sum\nolimits_a^cg(x)\delta x.\)</span></li>
-<li><span class="math inline">\(\displaystyle \sum_{0\leqslant
-k&lt;n}k^{\underline{m}}=\eval{\dfrac{k^{\underline{m+1}}}{m+1}}_{0}^{n}=\dfrac{n^{\underline{m+1}}}{m+1}~~(m,n\in\mathbb{N}_+).\)</span></li>
-<li><span
-class="math inline">\(x^{\underline{-m}}=\dfrac{1}{(x+1)(x+2)\cdots(x+m)}~~(m&gt;0).\)</span></li>
-<li><span
-class="math inline">\(x^{\underline{m+n}}=x^{\underline{m}}(x-m)^{\underline{n}}
-~~(m,n\in\mathbb{Z}).\)</span></li>
-<li><span class="math inline">\(\displaystyle\sum\nolimits_a^b
-x^{\underline{m}}\delta x=\begin{cases}
-\eval{\dfrac{x^{\underline{m+1}}}{m+1}}_{a}^{b}, &amp; m\neq -1 \\
-\eval{H_x}_{a}^{b},                              &amp; m=-1
-\end{cases}\)</span>， 其中 <span class="math inline">\(\displaystyle
-H_x=\sum_{k=1}^{x}\dfrac{1}{k}\)</span> 称为调和级数.</li>
-<li><span class="math inline">\(\mathrm{E}f(x)=f(x+1).\)</span></li>
-<li><span class="math inline">\(\displaystyle\sum u\varDelta
-v=uv-\sum\mathrm{E}v\varDelta u.\)</span></li>
+
+<h1 id="下降阶乘幂"><a href="#下降阶乘幂" class="headerlink" title="下降阶乘幂"></a>下降阶乘幂</h1><h2 id="相关定义与定理"><a href="#相关定义与定理" class="headerlink" title="相关定义与定理"></a>相关定义与定理</h2><ol>
+<li>$x^{\underline{m} }&#x3D;x(x-1)\cdots(x-m+1)~~(m\in\mathbb{N}_+).$</li>
+<li>$x^{\overline{m}}&#x3D;x(x+1)\cdots(x+m-1)~~(m\in\mathbb{N}_+).$</li>
+<li>$x^{\underline{0}}&#x3D;x^{\overline{0}}&#x3D;1.$</li>
+<li>$n!&#x3D;n^{\underline{n}}&#x3D;1^{\overline{n}}.$</li>
+<li>$\varDelta \qty(x^{\underline{m}})&#x3D;mx^{\underline{m-1}}.$</li>
+<li>$\displaystyle g(x)&#x3D;\varDelta f(x)\iff \sum g(x)\delta x&#x3D;f(x)+C.$</li>
+<li>$\displaystyle \sum\nolimits_{a}^{b} g(x)\delta x&#x3D;\eval{f(x)}_{a}^{b}&#x3D;f(b)-f(a).$</li>
+<li>$\displaystyle \sum\nolimits_{a}^{b}g(x)\delta x&#x3D;\sum_{k&#x3D;a}^{b-1}g(k)&#x3D;\sum_{a\leqslant k&lt;b}g(k)~~(b\geqslant a).$</li>
+<li>$\displaystyle \sum\nolimits_{a}^{b}g(x)\delta x+\sum\nolimits_b^c g(x)\delta x&#x3D;\sum\nolimits_a^cg(x)\delta x.$</li>
+<li>$\displaystyle \sum_{0\leqslant k&lt;n}k^{\underline{m}}&#x3D;\eval{\dfrac{k^{\underline{m+1}}}{m+1}}<em>{0}^{n}&#x3D;\dfrac{n^{\underline{m+1}}}{m+1}~~(m,n\in\mathbb{N}</em>+).$</li>
+<li>$x^{\underline{-m}}&#x3D;\dfrac{1}{(x+1)(x+2)\cdots(x+m)}~~(m&gt;0).$</li>
+<li>$x^{\underline{m+n}}&#x3D;x^{\underline{m}}(x-m)^{\underline{n}} ~~(m,n\in\mathbb{Z}).$</li>
+<li>$\displaystyle\sum\nolimits_a^b x^{\underline{m}}\delta x&#x3D;\begin{cases}<br>\eval{\dfrac{x^{\underline{m+1}}}{m+1}}<em>{a}^{b}, &amp; m\neq -1 \<br>\eval{H_x}</em>{a}^{b},                              &amp; m&#x3D;-1<br>\end{cases}$，<br>其中 $\displaystyle H_x&#x3D;\sum_{k&#x3D;1}^{x}\dfrac{1}{k}$ 称为调和级数.</li>
+<li>$\mathrm{E}f(x)&#x3D;f(x+1).$</li>
+<li>$\displaystyle\sum u\varDelta v&#x3D;uv-\sum\mathrm{E}v\varDelta u.$</li>
 </ol>
-<h2 id="例题">例题</h2>
-<p>判断级数 <span
-class="math inline">\(\displaystyle\sum_{n=1}^{\infty}\dfrac{1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}}{(n+1)(n+2)}\)</span>
-的敛散性，若收敛，则求其和.</p>
-<h3 id="解答">解答</h3>
-<p>令 <span class="math inline">\(\displaystyle
-H_n=\sum_{k=1}^{n}\dfrac{1}{k}~,S_n=\sum_{k=1}^{n}\dfrac{H_k}{(k+1)(k+2)}=\sum_{\substack{1\leqslant
-k&lt;n+1\\k\in
-\mathbb{N}_+}}\dfrac{H_k}{(k+1)(k+2)}=\sum\nolimits_1^{n+1}\dfrac{H_x}{(x+1)(x+2)}\delta
-x\)</span>， 那么记 <span class="math display">\[u(x)=H_x~,\varDelta
-v(x)=\dfrac{1}{(x+1)(x+2)}=-\dfrac{1}{x+2}-\qty(-\dfrac{1}{x+1})\]</span>
-因此 <span class="math display">\[\varDelta
-u(x)=x^{\underline{-1}},~v(x)=-\dfrac{1}{x+1}=-x^{\underline{-1}},~\mathrm{E}v(x)=-(x+1)^{\underline{-1}}\]</span>
-于是 <span class="math display">\[\begin{align*}
-    S_n &amp; =\sum\nolimits_1^{n+1}\dfrac{H_x}{(x+1)(x+2)}\delta
-x=\eval{-x^{\underline{-1}}H_x}_{1}^{n+1}+\sum\nolimits_{1}^{n+1}(x+1)^{\underline{-1}}x^{\underline{-1}}\delta
-x          \\
-        &amp;
-=-(n+1)^{\underline{-1}}H_{n+1}+1^{\underline{-1}}H_1+\sum\nolimits_{1}^{n+1}x^{\underline{-2}}\delta
-x=\dfrac{1}{2}-\dfrac{H_{n+1}}{n+2} -\eval{x^{\underline{-1}}}_{1}^{n+1}
-\\
-        &amp;
-=1-\dfrac{1}{n+2}-\dfrac{H_{n+1}}{n+2}=1-\dfrac{1}{n+1}-\dfrac{H_n}{n+2}
-\end{align*}\]</span> 又因为 <span
-class="math display">\[\lim_{n\to\infty}\dfrac{H_n}{n+2}=\lim_{n\to\infty}\dfrac{\ln
-n+\gamma+\alpha(n)}{n+2}=\lim_{n\to\infty}\dfrac{\ln
-n}{n+2}=0~~(\alpha(n)\to0)\]</span> 所以 <span
-class="math inline">\(\displaystyle\lim_{n\to\infty}S_n=1\)</span>，因此级数收敛，且其和为
-1.</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>判断级数 $\displaystyle\sum_{n&#x3D;1}^{\infty}\dfrac{1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}}{(n+1)(n+2)}$ 的敛散性，若收敛，则求其和.</p>
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><p>令 $\displaystyle H_n&#x3D;\sum_{k&#x3D;1}^{n}\dfrac{1}{k}<del>,S_n&#x3D;\sum_{k&#x3D;1}^{n}\dfrac{H_k}{(k+1)(k+2)}&#x3D;\sum_{\substack{1\leqslant k&lt;n+1\k\in \mathbb{N}_+}}\dfrac{H_k}{(k+1)(k+2)}&#x3D;\sum\nolimits_1^{n+1}\dfrac{H_x}{(x+1)(x+2)}\delta x$，<br>那么记<br>$$u(x)&#x3D;H_x</del>,\varDelta v(x)&#x3D;\dfrac{1}{(x+1)(x+2)}&#x3D;-\dfrac{1}{x+2}-\qty(-\dfrac{1}{x+1})$$<br>因此<br>$$\varDelta u(x)&#x3D;x^{\underline{-1}},<del>v(x)&#x3D;-\dfrac{1}{x+1}&#x3D;-x^{\underline{-1}},</del>\mathrm{E}v(x)&#x3D;-(x+1)^{\underline{-1}}$$<br>于是<br>$$\begin{align*}<br>    S_n &amp; &#x3D;\sum\nolimits_1^{n+1}\dfrac{H_x}{(x+1)(x+2)}\delta x&#x3D;\eval{-x^{\underline{-1}}H_x}<em>{1}^{n+1}+\sum\nolimits</em>{1}^{n+1}(x+1)^{\underline{-1}}x^{\underline{-1}}\delta x          \<br>        &amp; &#x3D;-(n+1)^{\underline{-1}}H_{n+1}+1^{\underline{-1}}H_1+\sum\nolimits_{1}^{n+1}x^{\underline{-2}}\delta x&#x3D;\dfrac{1}{2}-\dfrac{H_{n+1}}{n+2} -\eval{x^{\underline{-1}}}<em>{1}^{n+1} \<br>        &amp; &#x3D;1-\dfrac{1}{n+2}-\dfrac{H</em>{n+1}}{n+2}&#x3D;1-\dfrac{1}{n+1}-\dfrac{H_n}{n+2}<br>\end{align*}$$<br>又因为<br>$$\lim_{n\to\infty}\dfrac{H_n}{n+2}&#x3D;\lim_{n\to\infty}\dfrac{\ln n+\gamma+\alpha(n)}{n+2}&#x3D;\lim_{n\to\infty}\dfrac{\ln n}{n+2}&#x3D;0~~(\alpha(n)\to0)$$<br>所以 $\displaystyle\lim_{n\to\infty}S_n&#x3D;1$，因此级数收敛，且其和为 1.</p>
 
                 
               </div>

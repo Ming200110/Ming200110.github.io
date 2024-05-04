@@ -18,17 +18,17 @@
   <meta name="author" content="Guoming Huang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     用预训练的卷积神经网络完成色彩风格迁移 摄影爱好者也许接触过滤波器。它能改变照片的颜色风格， 从而使风景照更加锐利或者令人像更加美白。 但">
+    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };      用预训练的卷积神经网络完成色彩风格迁移摄影爱好者也许接触过滤波器。它能改变照片的颜色风格，从而使风景照更加锐利或者令人像更加美白。但一个滤波器通常只能改变照片的某个方面。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用预训练的卷积神经网络完成色彩风格迁移">
 <meta property="og:url" content="http://example.com/2024/05/04/styleTransfer/index.html">
 <meta property="og:site_name" content="ChungMG">
-<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     用预训练的卷积神经网络完成色彩风格迁移 摄影爱好者也许接触过滤波器。它能改变照片的颜色风格， 从而使风景照更加锐利或者令人像更加美白。 但">
+<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };      用预训练的卷积神经网络完成色彩风格迁移摄影爱好者也许接触过滤波器。它能改变照片的颜色风格，从而使风景照更加锐利或者令人像更加美白。但一个滤波器通常只能改变照片的某个方面。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2024/05/04/styleTransfer/style_transfer2.png">
-<meta property="og:image" content="http://example.com/2024/05/04/styleTransfer/style_transfer.png">
+<meta property="og:image" content="http://example.com/style_transfer2.png">
+<meta property="og:image" content="http://example.com/style_transfer.png">
 <meta property="article:published_time" content="2024-05-04T02:58:05.660Z">
-<meta property="article:modified_time" content="2024-05-04T03:21:34.735Z">
+<meta property="article:modified_time" content="2024-05-04T04:12:29.286Z">
 <meta property="article:author" content="Guoming Huang">
 <meta property="article:tag" content="卷积神经网络">
 <meta property="article:tag" content="CNN">
@@ -36,8 +36,9 @@
 <meta property="article:tag" content="预训练模型">
 <meta property="article:tag" content="VGG 19">
 <meta property="article:tag" content="python">
+<meta property="article:tag" content="pytorch">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2024/05/04/styleTransfer/style_transfer2.png">
+<meta name="twitter:image" content="http://example.com/style_transfer2.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -264,7 +265,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.7k words
+          3.6k words
         
       </span>
     
@@ -340,173 +341,79 @@ MathJax = {
   src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js">
 </script>
 </html>
-<h1
-id="用预训练的卷积神经网络完成色彩风格迁移">用预训练的卷积神经网络完成色彩风格迁移</h1>
-<p>摄影爱好者也许接触过滤波器。它能改变照片的颜色风格，
-从而使风景照更加锐利或者令人像更加美白。
-但一个滤波器通常只能改变照片的某个方面。如果要照片达到理想中的风格，
-可能需要尝试大量不同的组合。这个过程的复杂程度不亚于模型调参。</p>
-<figure>
-<img src="style_transfer2.png" srcset="/img/loading.gif" lazyload
-alt="输入内容图像和风格图像，输出风格迁移后的合成图像" />
-<figcaption
-aria-hidden="true">输入内容图像和风格图像，输出风格迁移后的合成图像</figcaption>
-</figure>
-<h2 id="卷积神经网络简介">卷积神经网络简介</h2>
-<p>卷积神经网络 (Convolutional Neural Network, CNN)
-是一种深度学习模型，特别适用于处理具有网格结构的数据，如图像和视频。 CNN
-主要由卷积层 (Convolutional Layer)、池化层 (Pooling Layer)、激活函数
-(Activation Function) 和全连接层 (Fully Connected Layer) 组成。</p>
-<p>在 CNN
-中，卷积层通过卷积操作提取输入数据的特征，池化层通过降采样操作减小特征图的大小，激活函数引入非线性因素，全连接层将提取的特征映射到输出类别。
-整个网络通过反向传播算法进行训练，优化网络参数以最小化损失函数。</p>
-<p>CNN
-的特点包括参数共享、局部感受野和空间层次结构，使其在图像处理任务中表现出色。
-通过多层卷积和池化操作，CNN
-能够逐渐学习到输入数据的高级特征表示，从而实现图像分类、目标检测、图像分割等任务。</p>
-<p>CNN 的数学原理涉及卷积操作、池化操作、激活函数等，其中卷积操作是 CNN
-的核心部分。卷积操作可以用数学公式表示为: <span class="math display">\[
-    \text{Conv}(I, K) = I * K
-\]</span> 其中，<span class="math inline">\(I\)</span>
-表示输入特征图，<span class="math inline">\(K\)</span> 表示卷积核
-(滤波器)，<span class="math inline">\(*\)</span>
-表示卷积操作。卷积操作通过滑动卷积核在输入特征图上提取特征，实现特征的局部连接和参数共享。</p>
-<p>总的来说，CNN
-是一种强大的深度学习模型，在图像处理领域有着广泛的应用，并且在许多其他领域也取得了成功。</p>
-<h2 id="vgg19-简介">VGG19 简介</h2>
-<p>VGG19 是一种深度卷积神经网络模型，属于 VGG (Visual Geometry Group)
-系列之一。 该模型由牛津大学的研究团队开发，用于图像分类和识别任务。VGG19
-的名称中的 “19” 表示该模型具有 19 层神经网络，包括 16 个卷积层和 3
-个全连接层。</p>
-<p>VGG19 的架构相对简单而经典，采用了连续多个 <span
-class="math inline">\(3 \times 3\)</span> 的卷积核和 <span
-class="math inline">\(2 \times 2\)</span> 的最大池化层，以及 Relu
-激活函数。 这种深层的架构使得 VGG19
-能够学习到更加复杂和抽象的特征，从而在图像分类等任务中表现出色。</p>
-<p>VGG19
-模型在图像识别领域取得了很好的表现，并被广泛用于迁移学习和特征提取。它的预训练模型通常基于大规模图像数据集
-(如 ImageNet) 进行训练， 可以在各种计算机视觉任务中发挥作用。</p>
-<h3
-id="代码实现选择训练设备并设置-vgg-中参数">代码实现：选择训练设备并设置
-VGG 中参数</h3>
-<p>使用 PyTorch 中的 models.vgg19 函数加载预训练的 VGG19
-模型，并将其特征提取部分 features 移动到指定的设备 device 上进行计算，
-并将 vgg 模型中的参数的梯度设置为不需要计算，即不进行梯度更新。</p>
+
+<h1 id="用预训练的卷积神经网络完成色彩风格迁移"><a href="#用预训练的卷积神经网络完成色彩风格迁移" class="headerlink" title="用预训练的卷积神经网络完成色彩风格迁移"></a>用预训练的卷积神经网络完成色彩风格迁移</h1><p>摄影爱好者也许接触过滤波器。它能改变照片的颜色风格，<br>从而使风景照更加锐利或者令人像更加美白。<br>但一个滤波器通常只能改变照片的某个方面。如果要照片达到理想中的风格，<br>可能需要尝试大量不同的组合。这个过程的复杂程度不亚于模型调参。</p>
+<p><img src="/style_transfer2.png" srcset="/img/loading.gif" lazyload alt="输入内容图像和风格图像，输出风格迁移后的合成图像"></p>
+<h2 id="卷积神经网络简介"><a href="#卷积神经网络简介" class="headerlink" title="卷积神经网络简介"></a>卷积神经网络简介</h2><p>卷积神经网络 (Convolutional Neural Network, CNN) 是一种深度学习模型，特别适用于处理具有网格结构的数据，如图像和视频。<br>CNN 主要由卷积层 (Convolutional Layer)、池化层 (Pooling Layer)、激活函数 (Activation Function) 和全连接层 (Fully Connected Layer) 组成。</p>
+<p>在 CNN 中，卷积层通过卷积操作提取输入数据的特征，池化层通过降采样操作减小特征图的大小，激活函数引入非线性因素，全连接层将提取的特征映射到输出类别。<br>整个网络通过反向传播算法进行训练，优化网络参数以最小化损失函数。</p>
+<p>CNN 的特点包括参数共享、局部感受野和空间层次结构，使其在图像处理任务中表现出色。<br>通过多层卷积和池化操作，CNN 能够逐渐学习到输入数据的高级特征表示，从而实现图像分类、目标检测、图像分割等任务。</p>
+<p>CNN 的数学原理涉及卷积操作、池化操作、激活函数等，其中卷积操作是 CNN 的核心部分。卷积操作可以用数学公式表示为:<br>$$<br>    \text{Conv}(I, K) &#x3D; I * K<br>$$<br>其中，$I$ 表示输入特征图，$K$ 表示卷积核 (滤波器)，$*$ 表示卷积操作。卷积操作通过滑动卷积核在输入特征图上提取特征，实现特征的局部连接和参数共享。</p>
+<p>总的来说，CNN 是一种强大的深度学习模型，在图像处理领域有着广泛的应用，并且在许多其他领域也取得了成功。</p>
+<h2 id="VGG19-简介"><a href="#VGG19-简介" class="headerlink" title="VGG19 简介"></a>VGG19 简介</h2><p>VGG19 是一种深度卷积神经网络模型，属于 VGG (Visual Geometry Group) 系列之一。<br>该模型由牛津大学的研究团队开发，用于图像分类和识别任务。VGG19 的名称中的 “19” 表示该模型具有 19 层神经网络，包括 16 个卷积层和 3 个全连接层。</p>
+<p>VGG19 的架构相对简单而经典，采用了连续多个 $3 \times 3$ 的卷积核和 $2 \times 2$ 的最大池化层，以及 Relu 激活函数。<br>这种深层的架构使得 VGG19 能够学习到更加复杂和抽象的特征，从而在图像分类等任务中表现出色。</p>
+<p>VGG19 模型在图像识别领域取得了很好的表现，并被广泛用于迁移学习和特征提取。它的预训练模型通常基于大规模图像数据集 (如 ImageNet) 进行训练，<br>可以在各种计算机视觉任务中发挥作用。</p>
+<h3 id="代码实现：选择训练设备并设置-VGG-中参数"><a href="#代码实现：选择训练设备并设置-VGG-中参数" class="headerlink" title="代码实现：选择训练设备并设置 VGG 中参数"></a>代码实现：选择训练设备并设置 VGG 中参数</h3><p>使用 PyTorch 中的 models.vgg19 函数加载预训练的 VGG19 模型，并将其特征提取部分 features 移动到指定的设备 device 上进行计算，<br>并将 vgg 模型中的参数的梯度设置为不需要计算，即不进行梯度更新。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><br><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.optim <span class="hljs-keyword">as</span> optim<br><span class="hljs-keyword">from</span> torchvision <span class="hljs-keyword">import</span> models, transforms<br><span class="hljs-keyword">from</span> torchvision.models <span class="hljs-keyword">import</span> VGG19_Weights<br><br><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm<br><br><span class="hljs-comment"># 选择设备</span><br>device = torch.device(<span class="hljs-string">&quot;cuda:0&quot;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;cpu&quot;</span>)<br><span class="hljs-comment"># 使用 PyTorch 中的 models.vgg19 函数加载预训练的 VGG19 模型，并将其特征提取部分 features 移动到指定的设备 device 上进行计算</span><br>vgg = models.vgg19(weights=VGG19_Weights.IMAGENET1K_V1).features.to(device)<br><br><span class="hljs-comment"># 将 vgg 模型中的参数的梯度设置为不需要计算，即不进行梯度更新</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> vgg.parameters():<br>    i.requires_grad_(<span class="hljs-literal">False</span>)<br></code></pre></td></tr></table></figure>
-<h2 id="载入内容图片与风格图片">载入内容图片与风格图片</h2>
-<p>在使用 torchvision.transforms
-进行数据处理时我们经常进行的操作是：</p>
+
+<h2 id="载入内容图片与风格图片"><a href="#载入内容图片与风格图片" class="headerlink" title="载入内容图片与风格图片"></a>载入内容图片与风格图片</h2><p>在使用 torchvision.transforms 进行数据处理时我们经常进行的操作是：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 定义读入与处理图片的函数</span><br><br>MIX_SIZE = <span class="hljs-number">500</span> <span class="hljs-comment"># 设定图像最大尺寸</span><br><br>rgb_mean = (<span class="hljs-number">0.485</span>, <span class="hljs-number">0.456</span>, <span class="hljs-number">0.406</span>)<br>rgb_std = (<span class="hljs-number">0.229</span>, <span class="hljs-number">0.224</span>, <span class="hljs-number">0.225</span>)<br></code></pre></td></tr></table></figure>
-<p>第 5 行代码 (0.485,0.456,0.406) 表示均值，分别对应的是 RGB
-三个通道；第 6 行代码 (0.229,0.224,0.225) 则表示的是标准差。
-均值和标准差的值由 ImageNet 数据集计算得出。</p>
+
+<p>第 5 行代码 (0.485,0.456,0.406) 表示均值，分别对应的是 RGB 三个通道；第 6 行代码 (0.229,0.224,0.225) 则表示的是标准差。<br>均值和标准差的值由 ImageNet 数据集计算得出。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">load_img</span>(<span class="hljs-params">path, max_size=MIX_SIZE, shape=<span class="hljs-literal">None</span></span>):<br>    img = Image.<span class="hljs-built_in">open</span>(path).convert(<span class="hljs-string">&quot;RGB&quot;</span>)<br><br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">max</span>(img.size) &gt; max_size:<br>        size = max_size<br>    <span class="hljs-keyword">else</span>:<br>        size = <span class="hljs-built_in">max</span>(img.size)<br><br>    <span class="hljs-keyword">if</span> shape <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:<br>        size = shape<br>    <br>    transform = transforms.Compose(<br>        [<br>            transforms.Resize(size),<br>            transforms.ToTensor(),<br>            transforms.Normalize(mean=rgb_mean, std=rgb_std)<br>        ]<br>    )<br>    <span class="hljs-comment"># 删除 alpha 通道 jpg，转为 png，并补足另一维度 batch</span><br>    img = transform(img)[:<span class="hljs-number">3</span>, :, :].unsqueeze(<span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">return</span> img.to(device)<br><span class="hljs-comment"># 载入图像</span><br>content = load_img(<span class="hljs-string">&quot;./style_transfer/IMG_20230414_183148.jpg&quot;</span>)<br>style = load_img(<br>    <span class="hljs-string">&quot;./style_transfer/style.jpg&quot;</span>, shape=content.shape[-<span class="hljs-number">2</span>:]<br>)  <span class="hljs-comment"># 让两张图尺寸一样</span><br></code></pre></td></tr></table></figure>
-<h3
-id="代码实现将-pytorch-张量转换为表示图像的-numpy-数组的函数">代码实现：将
-PyTorch 张量转换为表示图像的 NumPy 数组的函数</h3>
-<p>将 PyTorch 张量移动到 CPU 上，然后转换为 NumPy 数组，并通过 squeeze()
-方法去除维度为 1 的维度，以简化数组的形状；
-然后，转置数组的维度，将通道维度移动到最后一个维度，以匹配图像的通道顺序，并对图像进行归一化处理，通过乘以标准差并加上均值来反向转换图像数据；
-最后，将图像像素值截断到范围 [0, 1]，确保图像数据在有效范围内。</p>
+
+<h3 id="代码实现：将-PyTorch-张量转换为表示图像的-NumPy-数组的函数"><a href="#代码实现：将-PyTorch-张量转换为表示图像的-NumPy-数组的函数" class="headerlink" title="代码实现：将 PyTorch 张量转换为表示图像的 NumPy 数组的函数"></a>代码实现：将 PyTorch 张量转换为表示图像的 NumPy 数组的函数</h3><p>将 PyTorch 张量移动到 CPU 上，然后转换为 NumPy 数组，并通过 squeeze() 方法去除维度为 1 的维度，以简化数组的形状；<br>然后，转置数组的维度，将通道维度移动到最后一个维度，以匹配图像的通道顺序，并对图像进行归一化处理，通过乘以标准差并加上均值来反向转换图像数据；<br>最后，将图像像素值截断到范围 [0, 1]，确保图像数据在有效范围内。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 将 PyTorch 张量转换为表示图像的 NumPy 数组的函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">im_convert</span>(<span class="hljs-params">tensor</span>):<br>    <span class="hljs-comment"># 创建输入张量的副本，并且将其从计算图中分离，确保不会影响原始张量的梯度计算</span><br>    img = tensor.clone().detach()<br>    <span class="hljs-comment"># 将 PyTorch 张量移动到 CPU 上，然后转换为 NumPy 数组，并通过 squeeze() 方法去除维度为 1 的维度，以简化数组的形状</span><br>    img = img.cpu().numpy().squeeze()<br>    <span class="hljs-comment"># 转置数组的维度，将通道维度移动到最后一个维度，以匹配图像的通道顺序</span><br>    img = img.transpose(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>)<br>    <span class="hljs-comment"># 对图像进行归一化处理，通过乘以标准差并加上均值来反向转换图像数据</span><br>    img = img * np.array(rgb_std) + np.array(rgb_mean)<br>    <span class="hljs-comment"># 将图像像素值截断到范围 [0, 1]，确保图像数据在有效范围内</span><br>    img = img.clip(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">return</span> img<br></code></pre></td></tr></table></figure>
-<h3
-id="代码实现将网络层层的输出存入-feature-数组">代码实现：将网络层层的输出存入
-feature 数组</h3>
-<p>这段代码是一个函数，名为
-get_features，它用于将给定图像在神经网络模型中经过指定层的输出存储到一个名为
-features 的字典中，并返回该字典。</p>
+
+<h3 id="代码实现：将网络层层的输出存入-feature-数组"><a href="#代码实现：将网络层层的输出存入-feature-数组" class="headerlink" title="代码实现：将网络层层的输出存入 feature 数组"></a>代码实现：将网络层层的输出存入 feature 数组</h3><p>这段代码是一个函数，名为 get_features，它用于将给定图像在神经网络模型中经过指定层的输出存储到一个名为 features 的字典中，并返回该字典。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 将网络层层的输出存入 feature 数组中，并返回</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_features</span>(<span class="hljs-params">img, model, layers=<span class="hljs-literal">None</span></span>):<br>    <span class="hljs-keyword">if</span> layers <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:<br>        layers = &#123;<br>            <span class="hljs-string">&quot;0&quot;</span>: <span class="hljs-string">&quot;conv1_1&quot;</span>,<br>            <span class="hljs-string">&quot;5&quot;</span>: <span class="hljs-string">&quot;conv2_1&quot;</span>,<br>            <span class="hljs-string">&quot;10&quot;</span>: <span class="hljs-string">&quot;conv3_1&quot;</span>,<br>            <span class="hljs-string">&quot;19&quot;</span>: <span class="hljs-string">&quot;conv4_1&quot;</span>,<br>            <span class="hljs-string">&quot;21&quot;</span>: <span class="hljs-string">&quot;conv4_2&quot;</span>,  <span class="hljs-comment"># content 层所需</span><br>            <span class="hljs-string">&quot;28&quot;</span>: <span class="hljs-string">&quot;conv5_1&quot;</span>,<br>        &#125;<br><br>    features = &#123;&#125;<br>    x = img<br>    <span class="hljs-keyword">for</span> name, layer <span class="hljs-keyword">in</span> model._modules.items():<br>        x = layer(x)<br>        <span class="hljs-keyword">if</span> name <span class="hljs-keyword">in</span> layers:<br>            features[layers[name]] = x<br><br>    <span class="hljs-keyword">return</span> features<br></code></pre></td></tr></table></figure>
-<p>函数接受三个参数: img 代表输入的图像数据，model
-代表神经网络模型，layers 是一个字典，用于指定要提取特征的层。 如果未指定
-layers，则会使用默认的层次对应关系。</p>
-<p>函数首先创建一个空字典 features 用于存储特征。然后，对输入图像 img
-进行前向传播计算，通过遍历模型的各个层， 将每一层的输出存储到 features
-字典中，键为层的名称，值为该层的输出。</p>
+
+<p>函数接受三个参数: img 代表输入的图像数据，model 代表神经网络模型，layers 是一个字典，用于指定要提取特征的层。<br>如果未指定 layers，则会使用默认的层次对应关系。</p>
+<p>函数首先创建一个空字典 features 用于存储特征。然后，对输入图像 img 进行前向传播计算，通过遍历模型的各个层，<br>将每一层的输出存储到 features 字典中，键为层的名称，值为该层的输出。</p>
 <p>最后，函数返回存储有指定层输出的 features 字典。</p>
-<h2 id="gram-矩阵">Gram 矩阵</h2>
-<p>设提取内容的模型为 <span
-class="math inline">\(f_c\)</span>，输入图像的矩阵为 <span
-class="math inline">\(\vb*{X}\)</span>，内容图像的矩阵为 <span
-class="math inline">\(\vb*{C}\)</span>，我们直接用平方误差作为内容上的损失:
-<span class="math display">\[
-    L_c(\vb*{X})=\dfrac{1}{2}\norm{f_c(\vb*{X})-f_c(\vb*{C})}^2_F
-\]</span>
-相比于内容，图像的风格更难描述，也更不容易直接得到。直观上说，一幅图像的风格值的是图像的色彩、纹理等要素，这些要素在每个尺度上都有体现。
-因此，我们考虑同一个卷积层中由不同的卷积核提取的特征。由于这些特征属于同一层，因此基本属于原图中的相同尺度。
-那么它们之间的相关性可以一定程度上反映图像在该尺度上的风格特点。</p>
-<p>设某一层中卷积核是数量为 <span
-class="math inline">\(N\)</span>，每个卷积核与输入运算得到的输出大小为
-<span class="math inline">\(M\)</span>，其中 <span
-class="math inline">\(M\)</span> 表示输出矩阵中元素的总数量。
-那么，该卷积层中的总特征矩阵 <span
-class="math inline">\(\vb*{F}\in\mathbb{R}^{N\times
-M}\)</span>，每一行向量都表示一个卷积核输出的特征。</p>
-<p>为了表示不同特征之间的关系，我们使用与因子分解机类似的思想，将特征之间做内积，得到
-<span class="math display">\[
-    \vb*{G}=\vb*{FF}^\top
-\]</span> 该矩阵为格拉姆矩阵 (Gram matrix)，矩阵 <span
-class="math inline">\(\vb*{G}\in\mathbb{R}^{N\times N}\)</span>
-在计算乘积的过程中，把与特征在图像中的位置有关的维度消掉了，只保留了与卷积核有关的维度。
-直观上说，这体现了图像的风格特征与其相对位置无关，是图像的全局属性。</p>
-<p>设由第 <span class="math inline">\(i\)</span>
-个卷积层提取的输入图像的风格矩阵为 <span
-class="math inline">\(\vb*{G}_X^{(x)}\)</span>，风格图像的风格矩阵为
-<span
-class="math inline">\(\vb*{G}_S^{(i)}\)</span>，我们同样用平方误差作为损失函数:
-<span class="math display">\[
-    L_S^{(i)}(\vb*{X})=\dfrac{1}{4N_{(i)}^2M_{(i)}^2}\norm{\vb*{G}_{X}^{(i)}-\vb*{G}_{S}^{(i)}}^2_F
-\]</span> 这里，由于不同卷积层的参数可能不同，我们额外除以 <span
-class="math inline">\(4N_{(i)}^2M_{(i)}^2\)</span>
-来进行层间的归一化。</p>
-<p>最后，再用权重 <span class="math inline">\(w_i\)</span>
-对不同卷积层的损失做加权平均，得到总的风格损失为: <span
-class="math display">\[
-    L_S(\vb*{X})=\sum_{i}w_iL_S^{(i)}(\vb*{X})
-\]</span></p>
+<h2 id="Gram-矩阵"><a href="#Gram-矩阵" class="headerlink" title="Gram 矩阵"></a>Gram 矩阵</h2><p>设提取内容的模型为 $f_c$，输入图像的矩阵为 $\vb*{X}$，内容图像的矩阵为 $\vb*{C}$，我们直接用平方误差作为内容上的损失:<br>$$<br>    L_c(\vb*{X})&#x3D;\dfrac{1}{2}\norm{f_c(\vb*{X})-f_c(\vb*{C})}^2_F<br>$$<br>相比于内容，图像的风格更难描述，也更不容易直接得到。直观上说，一幅图像的风格值的是图像的色彩、纹理等要素，这些要素在每个尺度上都有体现。<br>因此，我们考虑同一个卷积层中由不同的卷积核提取的特征。由于这些特征属于同一层，因此基本属于原图中的相同尺度。<br>那么它们之间的相关性可以一定程度上反映图像在该尺度上的风格特点。</p>
+<p>设某一层中卷积核是数量为 $N$，每个卷积核与输入运算得到的输出大小为 $M$，其中 $M$ 表示输出矩阵中元素的总数量。<br>那么，该卷积层中的总特征矩阵 $\vb*{F}\in\mathbb{R}^{N\times M}$，每一行向量都表示一个卷积核输出的特征。</p>
+<p>为了表示不同特征之间的关系，我们使用与因子分解机类似的思想，将特征之间做内积，得到<br>$$<br>    \vb*{G}&#x3D;\vb*{FF}^\top<br>$$<br>该矩阵为格拉姆矩阵 (Gram matrix)，矩阵 $\vb*{G}\in\mathbb{R}^{N\times N}$ 在计算乘积的过程中，把与特征在图像中的位置有关的维度消掉了，只保留了与卷积核有关的维度。<br>直观上说，这体现了图像的风格特征与其相对位置无关，是图像的全局属性。</p>
+<p>设由第 $i$ 个卷积层提取的输入图像的风格矩阵为 $\vb*{G}<em>X^{(x)}$，风格图像的风格矩阵为 $\vb*{G}<em>S^{(i)}$，我们同样用平方误差作为损失函数:<br>$$<br>    L_S^{(i)}(\vb*{X})&#x3D;\dfrac{1}{4N</em>{(i)}^2M</em>{(i)}^2}\norm{\vb*{G}<em>{X}^{(i)}-\vb*{G}</em>{S}^{(i)}}^2_F<br>$$<br>这里，由于不同卷积层的参数可能不同，我们额外除以 $4N_{(i)}^2M_{(i)}^2$ 来进行层间的归一化。</p>
+<p>最后，再用权重 $w_i$ 对不同卷积层的损失做加权平均，得到总的风格损失为:<br>$$<br>    L_S(\vb*{X})&#x3D;\sum_{i}w_iL_S^{(i)}(\vb*{X})<br>$$</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 输出 Gram Matrix</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">gram_matrix</span>(<span class="hljs-params">tensor</span>):<br>    <span class="hljs-comment"># d 表示通道数，h 表示高度，w 表示宽度。</span><br>    _, d, h, w = tensor.size()  <span class="hljs-comment"># 第一个是 batch_size</span><br><br>    <span class="hljs-comment"># 将张量重新调整形状为 (d, h*w)，即将每个通道的特征图展平为一维向量</span><br>    tensor = tensor.view(d, h * w)<br>    gram = torch.mm(tensor, tensor.t())<br><br>    <span class="hljs-keyword">return</span> gram<br></code></pre></td></tr></table></figure>
-<h2 id="内容特征与风格特征提取">内容特征与风格特征提取</h2>
-<p>首先通过 get_features 函数分别获取内容图像 content 和风格图像 style
-在 VGG 模型中各层的特征表示， 分别存储在 content_features 和
-style_features 字典中。</p>
-<p>使用字典推导式遍历 style_features
-字典中的每一层，对每一层的特征张量计算 Gram 矩阵，并将结果存储在
-style_grams 字典中。</p>
-<p>在字典推导式中，对于每个 layer，调用 gram_matrix 函数计算其对应的
-Gram 矩阵，将结果存储在 style_grams 字典中，键为层名，值为对应层的 Gram
-矩阵。</p>
+
+<h2 id="内容特征与风格特征提取"><a href="#内容特征与风格特征提取" class="headerlink" title="内容特征与风格特征提取"></a>内容特征与风格特征提取</h2><p>首先通过 get_features 函数分别获取内容图像 content 和风格图像 style 在 VGG 模型中各层的特征表示，<br>分别存储在 content_features 和 style_features 字典中。</p>
+<p>使用字典推导式遍历 style_features 字典中的每一层，对每一层的特征张量计算 Gram 矩阵，并将结果存储在 style_grams 字典中。</p>
+<p>在字典推导式中，对于每个 layer，调用 gram_matrix 函数计算其对应的 Gram 矩阵，将结果存储在 style_grams 字典中，键为层名，值为对应层的 Gram 矩阵。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">content_features = get_features(img=content, model=vgg)<br>style_features = get_features(img=style, model=vgg)<br><span class="hljs-string">&#x27;&#x27;&#x27; 使用字典推导式，遍历 style_features 字典中的每一层，</span><br><span class="hljs-string">    对每一层的特征张量计算 Gram 矩阵，并将结果存储在 style_grams 字典中，</span><br><span class="hljs-string">    键为层名，值为对应层的 Gram 矩阵&#x27;&#x27;&#x27;</span><br>style_grams = &#123;<br>    layer: gram_matrix(tensor=style_features[layer]) <span class="hljs-keyword">for</span> layer <span class="hljs-keyword">in</span> style_features<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="代码实现定义优化目标与权重">代码实现：定义优化目标与权重</h3>
-<p>target = content.clone().requires_grad_(True): 创建了一个与内容图像
-content 相同的张量 target，并设置其可导，用于后续的优化过程。</p>
-<p>style_weights:
-定义了不同层的权重，指定了每个层对风格损失的贡献权重。</p>
-<p>content_weight = 1: 内容损失的权重，用于控制内容重建的贡献程度。</p>
-<p>style_weight = 1e4:
-风格损失的权重，用于控制风格重建的贡献程度。通常风格损失的权重会设置得比较大，以确保风格特征能够有效地传递到生成的图像中。</p>
+
+<h3 id="代码实现：定义优化目标与权重"><a href="#代码实现：定义优化目标与权重" class="headerlink" title="代码实现：定义优化目标与权重"></a>代码实现：定义优化目标与权重</h3><p>target &#x3D; content.clone().requires_grad_(True): 创建了一个与内容图像 content 相同的张量 target，并设置其可导，用于后续的优化过程。</p>
+<p>style_weights: 定义了不同层的权重，指定了每个层对风格损失的贡献权重。</p>
+<p>content_weight &#x3D; 1: 内容损失的权重，用于控制内容重建的贡献程度。</p>
+<p>style_weight &#x3D; 1e4: 风格损失的权重，用于控制风格重建的贡献程度。通常风格损失的权重会设置得比较大，以确保风格特征能够有效地传递到生成的图像中。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 定义优化目标</span><br>target = content.clone().requires_grad_(<span class="hljs-literal">True</span>)<br><br><span class="hljs-comment"># 定义不同层的权重</span><br>style_weights = &#123;<br>    <span class="hljs-string">&quot;conv1_1&quot;</span>: <span class="hljs-number">1</span>,<br>    <span class="hljs-string">&quot;conv2_1&quot;</span>: <span class="hljs-number">0.8</span>,<br>    <span class="hljs-string">&quot;conv3_1&quot;</span>: <span class="hljs-number">0.5</span>,<br>    <span class="hljs-string">&quot;conv4_1&quot;</span>: <span class="hljs-number">0.3</span>,<br>    <span class="hljs-string">&quot;conv5_1&quot;</span>: <span class="hljs-number">0.1</span>,<br>&#125;<br><br><span class="hljs-comment"># 定义两种损失对应的权重</span><br>content_weight = <span class="hljs-number">1</span><br>style_weight =<span class="hljs-number">1e4</span><br></code></pre></td></tr></table></figure>
-<h2 id="训练模型">训练模型</h2>
-<p>在训练模型进行风格迁移时，我们不断抽取合成图像的内容特征和风格特征，然后计算损失函数。</p>
+
+<h2 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h2><p>在训练模型进行风格迁移时，我们不断抽取合成图像的内容特征和风格特征，然后计算损失函数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 开始训练</span><br><span class="hljs-comment"># 每 20% 输出一次训练结果</span><br>show_every = <span class="hljs-number">2000</span><br>epoch = <span class="hljs-number">20000</span><br>optimizer = optim.Adam([target], lr=<span class="hljs-number">0.003</span>)<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> tqdm(<span class="hljs-built_in">range</span>(epoch)):<br>    target_features = get_features(img=target, model=vgg)<br>    <span class="hljs-comment"># 计算内容损失，即目标图像与内容图像在特定层的特征之间的均方误差</span><br>    content_loss = torch.mean(<br>        (target_features[<span class="hljs-string">&quot;conv4_2&quot;</span>] - content_features[<span class="hljs-string">&quot;conv4_2&quot;</span>]) ** <span class="hljs-number">2</span><br>    )<br><br>    style_loss = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> layer <span class="hljs-keyword">in</span> style_weights:<br>        target_feature = target_features[layer]<br>        target_gram = gram_matrix(tensor=target_feature)<br>        _, d, h, w = target_feature.shape<br>        style_gram = style_grams[layer]<br>        <span class="hljs-comment"># 计算风格损失，遍历每一层的权重 style_weights，计算目标图像在该层的 Gram 矩阵与风格图像在该层的 Gram 矩阵之间的均方误差，并加权求和</span><br>        layer_style_loss = style_weights[layer] * torch.mean(<br>            (target_gram - style_gram) ** <span class="hljs-number">2</span><br>        )<br>        style_loss += layer_style_loss / (d * h * w)<br><br>    <span class="hljs-comment"># 计算总损失，包括内容损失和风格损失，其中通过 content_weight 和 style_weight 分别控制两者的权重</span><br>    total_loss = content_weight * content_loss + style_weight * style_loss<br><br>    optimizer.zero_grad()  <span class="hljs-comment"># 使用优化器进行梯度清零</span><br>    total_loss.backward()  <span class="hljs-comment"># 反向传播总损失</span><br>    optimizer.step()  <span class="hljs-comment"># 更新参数</span><br><br>    <span class="hljs-comment"># 展示训练过程</span><br>    <span class="hljs-keyword">if</span> i % show_every == <span class="hljs-number">0</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Total Loss:&quot;</span>, total_loss.item())<br>        plt.imshow(im_convert(tensor=target))<br>        plt.show()<br></code></pre></td></tr></table></figure>
+
 <p>使用内容图像和风格图像来生成一个新的目标图像，使其同时保留内容和风格特征。具体步骤如下：</p>
-<ol type="1">
-<li><p>设置训练过程中的输出频率和总迭代次数。</p></li>
-<li><p>定义优化器为 Adam，并传入目标图像 target
-作为要优化的参数。</p></li>
-<li><p>在每次迭代中，计算目标图像在不同层的特征表示，然后分别计算内容损失和风格损失。</p></li>
-<li><p>内容损失计算目标图像与内容图像在特定层特征之间的均方误差。</p></li>
-<li><p>风格损失通过计算目标图像在每层的Gram矩阵与风格图像在对应层的 Gram
-矩阵的均方误差，并加权求和得到。</p></li>
-<li><p>总损失由内容损失和风格损失加权求和得到。</p></li>
-<li><p>使用优化器进行梯度清零，反向传播总损失，更新参数。</p></li>
-<li><p>每隔一定迭代次数展示训练过程中的目标图像及当前总损失。</p></li>
-<li><p>这个训练过程将逐步调整目标图像，使其在内容和风格上与内容图像和风格图像相似。通过迭代训练，最终可以得到一个同时保留了内容和风格特征的合成图像。</p></li>
+<ol>
+<li><p>设置训练过程中的输出频率和总迭代次数。</p>
+</li>
+<li><p>定义优化器为 Adam，并传入目标图像 target 作为要优化的参数。</p>
+</li>
+<li><p>在每次迭代中，计算目标图像在不同层的特征表示，然后分别计算内容损失和风格损失。</p>
+</li>
+<li><p>内容损失计算目标图像与内容图像在特定层特征之间的均方误差。</p>
+</li>
+<li><p>风格损失通过计算目标图像在每层的Gram矩阵与风格图像在对应层的 Gram 矩阵的均方误差，并加权求和得到。</p>
+</li>
+<li><p>总损失由内容损失和风格损失加权求和得到。</p>
+</li>
+<li><p>使用优化器进行梯度清零，反向传播总损失，更新参数。</p>
+</li>
+<li><p>每隔一定迭代次数展示训练过程中的目标图像及当前总损失。</p>
+</li>
+<li><p>这个训练过程将逐步调整目标图像，使其在内容和风格上与内容图像和风格图像相似。通过迭代训练，最终可以得到一个同时保留了内容和风格特征的合成图像。</p>
+</li>
 </ol>
-<p>如下图所示，我们可以看到，合成图像保留了内容图像的风景和物体，并同时迁移了风格图像的色彩。
-例如，合成图像具有与风格图像中一样的色彩块，其中一些甚至具有画笔笔触的细微纹理。</p>
-<figure>
-<img src="style_transfer.png" srcset="/img/loading.gif" lazyload alt="风格图像生成过程" />
-<figcaption aria-hidden="true">风格图像生成过程</figcaption>
-</figure>
+<p>如下图所示，我们可以看到，合成图像保留了内容图像的风景和物体，并同时迁移了风格图像的色彩。<br>例如，合成图像具有与风格图像中一样的色彩块，其中一些甚至具有画笔笔触的细微纹理。</p>
+<p><img src="/style_transfer.png" srcset="/img/loading.gif" lazyload alt="风格图像生成过程"></p>
 
                 
               </div>
@@ -551,6 +458,8 @@ content 相同的张量 target，并设置其可导，用于后续的优化过�
         <a href="/tags/VGG-19/" class="print-no-link">#VGG 19</a>
       
         <a href="/tags/python/" class="print-no-link">#python</a>
+      
+        <a href="/tags/pytorch/" class="print-no-link">#pytorch</a>
       
     </div>
   
