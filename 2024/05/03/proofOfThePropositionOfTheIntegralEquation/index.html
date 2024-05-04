@@ -18,12 +18,12 @@
   <meta name="author" content="Guoming Huang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };      积分等式命题的证明例题 1设 $f(x)\in D(0,1),f(0)&#x3D;f(1)&#x3D;-2,\displaystyle\int_{0}^{1}f(x)\d">
+    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     积分等式命题的证明 例题 1 设 \(f(x)\in D(0,1),~f(0)&#x3D;f(1)&#x3D;-2,~\displaystyle\int_{0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="积分等式命题的证明">
 <meta property="og:url" content="http://example.com/2024/05/03/proofOfThePropositionOfTheIntegralEquation/index.html">
 <meta property="og:site_name" content="ChungMG">
-<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };      积分等式命题的证明例题 1设 $f(x)\in D(0,1),f(0)&#x3D;f(1)&#x3D;-2,\displaystyle\int_{0}^{1}f(x)\d">
+<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     积分等式命题的证明 例题 1 设 \(f(x)\in D(0,1),~f(0)&#x3D;f(1)&#x3D;-2,~\displaystyle\int_{0">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-02T23:43:35.893Z">
 <meta property="article:modified_time" content="2024-05-03T02:20:43.952Z">
@@ -262,7 +262,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.6k words
+          4.7k words
         
       </span>
     
@@ -273,7 +273,7 @@
         
         
         
-          39 mins
+          40 mins
         
       </span>
     
@@ -338,35 +338,500 @@ MathJax = {
   src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js">
 </script>
 </html>
-
-<h1 id="积分等式命题的证明"><a href="#积分等式命题的证明" class="headerlink" title="积分等式命题的证明"></a>积分等式命题的证明</h1><h2 id="例题-1"><a href="#例题-1" class="headerlink" title="例题 1"></a>例题 1</h2><p>设 $f(x)\in D(0,1),<del>f(0)&#x3D;f(1)&#x3D;-2,</del>\displaystyle\int_{0}^{1}f(x)\dd x&#x3D;0$，证明: $\exists\xi\in(0,1)$，使得 $f’(\xi)-f(\xi)&#x3D;\xi.$</p>
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><p>令 $F(x)&#x3D;\mathrm{e}^{-x}(f(x)+x+1)$，有 $F(0)&#x3D;-1,~F(1)&#x3D;0$，因为 $\displaystyle\int_{0}^{1}f(x)\dd x&#x3D;0$，由积分中值定理知，$\exists\eta\in(0,1)$，使得<br>$$\displaystyle\int_{0}^{1}f(x)\dd x&#x3D;f(\eta)\int_{0}^{1}\dd x&#x3D;f(\eta)&#x3D;0$$<br>而 $F(\eta)&#x3D;\mathrm{e}^{-\eta}(f(\eta)+\eta+1)&gt;0$，因此 $\exists\xi\in(0,1)$，使得 $F(x)\leqslant F(\xi)$，即 $F(x)$ 的最大值一定在区间 $(0,1)$ 内取到，<br>由 Fermat 引理知，$F’(\xi)&#x3D;0$，即<br>$$\eval{-\mathrm{e}^{-x}(f(x)+x+1)+\mathrm{e}^{-x}(f’(x)+1)}_{x&#x3D;\xi}&#x3D;f’(\xi)-f(\xi)&#x3D;\xi.$$</p>
-<h2 id="例题-2"><a href="#例题-2" class="headerlink" title="例题 2"></a>例题 2</h2><p>设 $f(x)$ 在 $[2,4]$ 上二阶连续可导，$f(3)&#x3D;0$，证明: $\exists\xi\in(2,4)$，使得 $\displaystyle f’’(\xi)&#x3D;3\int_{2}^{4}f(x)\dd x.$</p>
-<h3 id="解答-1"><a href="#解答-1" class="headerlink" title="解答"></a>解答</h3><p>构造 $\displaystyle F(x)&#x3D;\int_{2}^{x}f(t)\dd t$，那么将 $F(2),F(4)$ 分别在  $x&#x3D;3$ 处 Taylor 展开，有<br>$$\begin{align*}<br>F(2)&#x3D;F(3)+F’(3)(2-3)+\dfrac{1}{2!}F’’(3)(2-3)^2+\dfrac{1}{3!}F’’’(\xi_1)    (2-3)^3 \<br>F(4)&#x3D;F(3)+F’(3)(4-3)+\dfrac{1}{2!}F’’(3)(4-3)^2+\dfrac{1}{3!}F’’’(\xi_2)    (4-3)^3<br>\end{align*}$$<br>注意到 $F(2)&#x3D;F’(3)&#x3D;0$，那么上式化为 $\begin{cases}<br>0&#x3D;F(3)+\dfrac{1}{2}F’’(3)-\dfrac{1}{6}F’’’(\xi_1) \[6pt]<br>F(4)&#x3D;F(3)+\dfrac{1}{2}F’’(3)+\dfrac{1}{6}F’’’(\xi_2)<br>\end{cases}$<br>即<br>$$F(4)&#x3D;\dfrac{1}{6}\qty(F’’’(\xi_1)+F’’’(\xi_2))$$<br>因为 $F’’’(x)&#x3D;f’’(x)$ 在 $[2,4]$ 上连续，故 $F’’’(x)$ 在 $[2,4]$ 上有最大值     $M$ 和最小值 $m$，使得<br>$$m\leqslant \dfrac{1}{2}\qty(F’’’(\xi_1)+F’’’(\xi_2))\leqslant M$$<br>又由连续函数的介值定理知 $\exists\xi\in(\xi_1,\xi_2)\subset(2,4)$，使得<br>$$F’’’(\xi)&#x3D;\dfrac{1}{2}\qty(F’’’(\xi_1)+F’’’(\xi_2))$$<br>故 $F(4)&#x3D;\dfrac{1}{3}\cdot\dfrac{1}{2}\qty(F’’’(\xi_1)+F’’’(\xi_2))&#x3D;\dfrac  {1}{3}F’’’(\xi)$，则<br>$$F’’’(\xi)&#x3D;3F(4)\Rightarrow f’’(\xi)&#x3D;3\int_{2}^{4}f(x)\dd x.$$</p>
-<h2 id="例题-3"><a href="#例题-3" class="headerlink" title="例题 3"></a>例题 3</h2><p>设 $f(x)$ 在 $[-1,1]$ 二阶导函数连续，证明: $\exists\xi\in[-1,1]$，使得<br>$$\displaystyle\int_{-1}^{1}xf(x)\dd x&#x3D;\dfrac{1}{3}[2f’(\xi)+\xi f’’(\xi)].$$</p>
-<h3 id="解答-2"><a href="#解答-2" class="headerlink" title="解答"></a>解答</h3><p>构造 $F(x)&#x3D;xf(x)$，那么 $F(x)$ 在 $[-1,1]$ 二阶导函数连续，并且<br>$$F’(x)&#x3D;f(x)+xf’(x),<del>F’’(x)&#x3D;2f’(x)+xf’’(x)$$<br>又由 Taylor 展开得，<br>$$F(x)&#x3D;F(0)+F’(0)x+\dfrac{1}{2!}F’’(\theta x)x^2</del> \theta\in(0,1)$$<br>且 $F(0)&#x3D;0,F’(0)&#x3D;f(0)x$，于是 $F(x)&#x3D;f(0)x+\dfrac{1}{2}F’’(\theta x)x^2$，两边对 $x$ 积分，则有，<br>$$\int_{-1}^{1}F(x)\dd x&#x3D;\int_{-1}^{1}f(0)x\dd x+\dfrac{F’’(\theta x)}{2}\int_{-1}^{1}x^2\dd x&#x3D;\dfrac{F’’(\theta x)}{2}\int_{-1}^{1}x^2\dd x$$<br>记 $m&#x3D;\min\limits_{0\leqslant x\leqslant 1}F’’(x),~M&#x3D;\max\limits_{0\leqslant x\leqslant 1}F’’(x)$，于是<br>$$m\int_{-1}^{1}x^2\dd x\leqslant \int_{-1}^{1}F’’(\theta x)x^2\dd x\leqslant M\int_{-1}^{1}x^2\dd x$$<br>即 $\dfrac{2}{3}m\leqslant\displaystyle\int_{-1}^{1}F’’(\theta x)x^2\dd x\leqslant \dfrac{2}{3}M$，<br>因此有 $\displaystyle m\leqslant \int_{-1}^{1}F(x)\dd x\leqslant M$，对 $F’’(x)$ 利用连续函数的介值定理，即 $\exists\xi\in[-1,1]$，使得 $3\displaystyle\int_{-1}^{1}F(x)\dd x&#x3D;F’’(\xi)$，即得证.</p>
-<h2 id="例题-4"><a href="#例题-4" class="headerlink" title="例题 4"></a>例题 4</h2><p>设 $f(x)$ 在 $[a, b]$ 上有二阶导数，且 $f^{\prime \prime}(x)$ 在 $[a, b]$ 上黎曼可积，证明:<br>$$f(x)&#x3D;f(a)+f^{\prime}(a)(x-a)+\int_{a}^{x}(x-t) f^{\prime \prime}(t) \dd  t, \forall x \in[a, b] .$$</p>
-<h3 id="解答-3"><a href="#解答-3" class="headerlink" title="解答"></a>解答</h3><p>由 N-L 公式，<br>$$\begin{align*}<br>    f(x) &amp; &#x3D;f(a)+\int_{a}^{x}f’(t)\dd t&#x3D;f(a)+\int_{a}^{x}f’(a)\dd t+\int_{a}^{x}\dd t\int_{a}^{t}f’’(u)\dd u \<br>         &amp; &#x3D;f(a)+f’(a)(x-a)+\int_{a}^{x}\dd t\int_{t}^{x}f’’(u)\dd u&#x3D;f(a)+f’(a)(x-a)+\int_{a}^{x}(x-t).<br>\end{align*}$$</p>
-<h2 id="例题-5"><a href="#例题-5" class="headerlink" title="例题 5"></a>例题 5</h2><p>已知 $f(x)$ 在 $[a,b]$ 上二阶可导，$f(a)&#x3D;f(b)&#x3D;0$，试证: $\exists \xi\in(a,b)$，使得<br>$$\int_{a}^{b}f(x)\dd x&#x3D;\frac{1}{12}f’’(\xi)(a-b)^3.$$</p>
-<h3 id="解答-4"><a href="#解答-4" class="headerlink" title="解答"></a>解答</h3><p>令 $\displaystyle F(x)&#x3D;\int_{a}^{x}f(t)\dd t-\frac{1}{2}(x-a)f(x)$，$\displaystyle G(x)&#x3D;-\frac{1}{12}(x-a)^3$，<br>在 $[a,b]$ 上连续两次应用 Cauchy 中值定理，<br>$$\begin{align*}<br>    \dfrac{\displaystyle\int_{a}^{b}f(x)\dd x-0}{-\dfrac{1}{12}(b-a)^3-0} &amp; &#x3D;\dfrac{F(b)-F(a)}{G(b)-G(a)}\xlongequal[a\leqslant \xi_1\leqslant b]{\text{Cauchy 中值定理}}\dfrac{F”(\xi_1)}{G’(\xi_1)}                                                                                                    \<br>                                                                          &amp; &#x3D;\dfrac{\dfrac{1}{2}f(\xi_1)-\dfrac{1}{2}(\xi_1-a)f’(\xi)-0}{-\dfrac{1}{4}(\xi_1-a)^2-0}\xlongequal[a\leqslant\xi\leqslant\xi_1]{\text{Cauchy 中值定理}}\dfrac{-\dfrac{1}{2}f’’(\xi)(\xi-a)}{-\dfrac{1}{2}(\xi-a)}&#x3D;f’’(\xi).<br>\end{align*}$$<br>此式同乘 $\displaystyle-\frac{1}{12}(b-a)^3&#x3D;\frac{1}{12}(b-a)^3$，即得所求.</p>
-<h2 id="例题-6"><a href="#例题-6" class="headerlink" title="例题 6"></a>例题 6</h2><p>设函数 $f(x)$ 在 $[a,b]$ 上二阶可导，证明至少存在一点 $\xi\in(a,b)$，使得<br>$$\int_{a}^{b}f(x)\dd x&#x3D;f(b)(b-a)-f’(b)\dfrac{(b-a)^2}{2}+\dfrac{1}{6}(b-a)^3f’’(\xi).$$</p>
-<h3 id="解答-5"><a href="#解答-5" class="headerlink" title="解答"></a>解答</h3><p>令 $k$ 为使 $\displaystyle \int_{a}^{b}f(x)\dd x&#x3D;f(b)(b-a)-f’(b)\dfrac{(b-a)^2}{2}+\dfrac{1}{6}(b-a)^3k$ 成立的实常数，构造辅助函数<br>$$F(x)&#x3D;\int_{a}^{x}f(t)\dd t-f(x)(x-a)+f’(x)\dfrac{(x-a)^2}{2}-\dfrac{1}{6}(x-a)^3k$$<br>则 $F(a)&#x3D;F(b)&#x3D;0$，故由 Rolle 定理知 $\exists\xi\in(a,b)$，使 $F’(\xi)&#x3D;0$，即<br>$$F’(\xi)&#x3D;f’’(\xi)\dfrac{(\xi-a)^2}{2}-\dfrac{1}{2}(\xi-a)^2k&#x3D;0$$<br>得证 $k&#x3D;f’’(\eta)$，故得证.</p>
-<h2 id="例题-7"><a href="#例题-7" class="headerlink" title="例题 7"></a>例题 7</h2><p>设函数 $f(x)$ 在 $[a,b]$ 上具有二阶连续的导数，证明存在 $\xi\in(a,b)$，使得<br>$$\int_{a}^{b}f(x)\dd x&#x3D;(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f’’(\xi).$$</p>
-<h3 id="解答：法一"><a href="#解答：法一" class="headerlink" title="解答：法一"></a>解答：法一</h3><p>将 $f(x)$ 在 $\dfrac{a+b}{2}$ 处进行 Taylor 展开，有<br>$$f(x)&#x3D;f\qty(\dfrac{a+b}{2})+f’\qty(\dfrac{a+b}{2})\qty(x-\dfrac{a+b}{2})+\dfrac{f’’(\xi_1)}{2!}\qty(x-\dfrac{a+b}{2})$$<br>因为 $f’’(x)$ 在 $[a,b]$ 上连续，所以存在最小值 $m$ 和最大值 $M$，使 $\forall x\in[a,b]$，$m\leqslant f’’(x) \leqslant M$，于是<br>$$m\int_{a}^{b}\qty(x-\dfrac{a+b}{2})^2\dd x\leqslant \int_{a}^{b}f’’(\xi_1)\qty(x-\dfrac{a+b}{2})^2\dd x\leqslant M\int_{a}^{b}\qty(x-\dfrac{a+b}{2})^2\dd x$$<br>从而 $\displaystyle m\leqslant \dfrac{\displaystyle \int_{a}^{b}f’’(\xi_1)\qty(x-\dfrac{a+b}{2})^2\dd x}{\displaystyle \int_{a}^{b}\qty(x-\dfrac{a+b}{2})^2\dd x}\leqslant M$，故由介值定理知，存在 $\xi\in(a,b)$，使得<br>$$f’’(\xi)&#x3D;\dfrac{\displaystyle\int_{a}^{b}f’’(\xi_1)\qty(x-\dfrac{a+b}{2})^2\dd x}{\displaystyle \int_{a}^{b}\qty(x-\dfrac{a+b}{2})^2\dd x}$$<br>即得证 $\displaystyle\int_{a}^{b}f(x)\dd x&#x3D;(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f’’(\xi).$</p>
-<h3 id="解答：法二"><a href="#解答：法二" class="headerlink" title="解答：法二"></a>解答：法二</h3><p>令 $\displaystyle F(x)&#x3D;\int_{a}^{x}f(t)\dd t$，将 $F(x)$ 在 $x_0&#x3D;\dfrac{a+b}{2}$ 处 Taylor 展开得<br>$$F(x)  &#x3D;F\left( x_{0}\right) +F’\left( x_{0}\right) \left( x-x_{0}\right) +\dfrac{F’’(x)  }{2!}\left( x-x_{0}\right) ^{2}+\dfrac{F’’’\left( \xi \right) }{3!}\left( x-x_{0}\right) ^{3}$$<br>其中 $\xi$ 介于 $x_0$ 与 $x$ 之间，将 $x&#x3D;a$ 和 $x&#x3D;b$ 代入上式，并相减得<br>$$F\left( b\right) -F\left( a\right) &#x3D;\left( b-a\right) f\left( \dfrac{a+b}{2}\right) +\dfrac{1}{24}\left( b-a\right) ^{3}\dfrac{f’’\left( \xi _{1}\right) +f’’\left( \xi _{2}\right) }{2}$$<br>其中 $a &lt;\xi _{2} &lt;\dfrac{a+b}{2} &lt;\xi <em>{1} &lt;b$，不妨设 $f’’(\xi_1)\leqslant f’’(\xi_2)$，则 $f’’(x_1)\leqslant \dfrac{f’’(\xi_1)+f’’(\xi_2)}{2}\leqslant f’’(\xi_2)$，由导函数 $f’’(x)$ 的 Darboux 定理或 $f’’(x)$ 的连续性及介值定理知，<br>$\exists\xi\in(\xi_1,\xi_2)$ 或 $(\xi_2,\xi_1)\subset (a,b)$，使 $f’’(\xi)&#x3D;\dfrac{f’’(\xi_1)+f’’(\xi_2)}{2}$，故 $\displaystyle\int</em>{a}^{b}f(x)\dd x&#x3D;(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f’’(\xi).$</p>
-<h3 id="解答：法三"><a href="#解答：法三" class="headerlink" title="解答：法三"></a>解答：法三</h3><p>设 $k$ 为使 $\displaystyle \int_{a}^{b} f(x) \dd  x&#x3D;(b-a) f\left(\frac{a+b}{2}\right)+\frac{1}{24}(b-a)^{3} k$ 成立的实数，要证结论成立，只需证 $k&#x3D;f’’(\xi)$，为此构造辅助函数<br>$$ \displaystyle F(x)&#x3D;\int_{a}^{x} f(t) \dd  t-(x-a) f\left(\frac{a+x}{2}\right)-\frac{1}{24}(x-a)^{3} k $$<br>则 $F(a)&#x3D;F(b)&#x3D;0$，故由 Rolle 定理，$\exists \eta \in(a, b)$，使 $F^{\prime}(\eta)&#x3D;0$，即<br>$$f(\eta)-f\left(\frac{a+\eta}{2}\right)-\frac{\eta-a}{2} f^{\prime}\left(\frac{a+\eta}{2}\right)-\frac{k}{8}(\eta-a)^{2}&#x3D;0 $$<br>又将 $f(\eta)$ 在 $x&#x3D;\dfrac{a+\eta}{2}$ 处进行 Taylor 展开，有<br>$$f(\eta)&#x3D;f\left(\dfrac{a+\eta}{2}\right)+f^{\prime}\left(\frac{a+\eta}{2}\right) \frac{\eta-a}{2}+\frac{f^{\prime \prime}(\xi)}{2 !}\left(\frac{\eta-a}{2}\right)^{2}$$<br>其中 $\xi \in\left(\dfrac{a+\eta}{2}, \eta\right) \subset(a, b)$，<br>比较上述两式，得 $k&#x3D;f^{\prime \prime}(\xi)$ 故得证.</p>
-<h3 id="解答：法四"><a href="#解答：法四" class="headerlink" title="解答：法四"></a>解答：法四</h3><p>取 $\rho\equiv1$，首先构造数值求积公式 $\displaystyle\int_{a}^{b}f(x)\dd x\approx A_0f\qty(\dfrac{a+b}{2})$，使其具有尽可能高的代数精度，<br>为此，取 $f(x)&#x3D;1$ 使求积公式精确成立，则有<br>$$A_0&#x3D;b-a$$<br>把 $A_0$ 代入求积公式，取 $f(x)&#x3D;x$，代入验算知求积公式精确成立; 再取 $f(x)&#x3D;x^2$，求积公式不精确成立，<br>故求积公式 $\displaystyle\int_{a}^{b}f(x)\dd x\approx (b-a)f\qty(\dfrac{a+b}{2})$ 的代数精度为 $1$;<br>其次，构造一次插值多项式<br>$$P_1\qty(\dfrac{a+b}{2})&#x3D;f\qty(\dfrac{a+b}{2}),~P’<em>1\qty(\dfrac{a+b}{2})&#x3D;f’\qty(\dfrac{a+b}{2})$$<br>那么 $W_2(x)&#x3D;\qty(x-\dfrac{a+b}{2})^2$ 且不恒为 $0$，又<br>$$K&#x3D;\int</em>{a}^{b}W_2(x)\dd x&#x3D;\dfrac{1}{12}(b-a)^3$$<br>那么至少存在一点 $\xi\in(a,b)$，使得<br>$$\int_{a}^{b}f(x)\dd x&#x3D;(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{f’’(\xi)}{2!}\cdot\dfrac{1}{12}(b-a)^3$$<br>即得待证等式.</p>
-<h2 id="例题-8"><a href="#例题-8" class="headerlink" title="例题 8"></a>例题 8</h2><p>设函数 $f(x)$ 在 $[a,b]$ 上具有二阶连续的导数，证明存在一点 $\xi\in(a,b)$，使得<br>$$\int_{a}^{b}f(x)\dd x&#x3D;\dfrac{b-a}{2}(f(a)+f(b))-\dfrac{1}{12}f’’(\xi)(b-a)^3.$$</p>
-<h3 id="解答：法一-1"><a href="#解答：法一-1" class="headerlink" title="解答：法一"></a>解答：法一</h3><p>设 $k$ 为使 $\displaystyle \int_{a}^{b}f(x)\dd x&#x3D;\dfrac{b-a}{2}(f(a)+f(b))-\dfrac{1}{12}k(b-a)^3$ 成立的实常数，则证 $k&#x3D;f’’(\xi)$，为此构造辅助函数<br>$$F(x)&#x3D;\int_{a}^{x}f(t)\dd t-\dfrac{x-a}{2}(f(a)+f(x))+\dfrac{1}{12}k(x-a)^3$$<br>那么 $F(a)&#x3D;F(b)&#x3D;0$，由 Rolle 定理知，$\exists\xi_1\in(a,b)$，使得 $F’(\xi_1)&#x3D;0$，又<br>$$F’(x)&#x3D;f(x)-\dfrac{1}{2}(f(x)+f(a))-\dfrac{x-a}{2}f’(x)+\dfrac{1}{4}k(x-a)^2$$<br>并且注意到 $F’(a)&#x3D;F’(\xi_1)&#x3D;0$，再由 Rolle 定理知，$\exists\xi\in(a,\xi_1)\subset(a,b)$，使得 $F’’(\xi)&#x3D;0$，并且<br>$$F’’(\xi)&#x3D;-\dfrac{\xi-a}{2}f’’(\xi)+\dfrac{1}{2}k(\xi-a)&#x3D;0$$<br>即得证 $k&#x3D;f’’(\xi).$</p>
-<h3 id="解答：法二-1"><a href="#解答：法二-1" class="headerlink" title="解答：法二"></a>解答：法二</h3><p>取 $\rho(x)\equiv1$，首先构造数值求积公式 $\displaystyle\int_{a}^{b}f(x)\dd x\approx A_0f(a)+A_1f(b)$，使其具有尽可能高的代数精度，为此，<br>分别取 $f(x)&#x3D;1,x$ 使求积公式精确成立，则有<br>$$\left{\begin{matrix}<br>        A_0  &amp; + &amp; A_1  &amp; &#x3D; &amp; b-a                \<br>        aA_0 &amp; + &amp; bA_1 &amp; &#x3D; &amp; \dfrac{b^2-a^2}{2}<br>    \end{matrix}\right.\Rightarrow A_0&#x3D;A_1&#x3D;\dfrac{b-a}{2} $$<br>把 $A_0,<del>A_1$ 代入求积公式，取 $f(x)&#x3D;x^2$，代入验算知求积公式精确成立; 再取 $f(x)&#x3D;x^3$，求积公式不精确成立，<br>故求积公式 $\displaystyle\int_{a}^{b}f(x)\dd x\approx\dfrac{b-a}{2}(f(a)+f(b))$ 的代数精度为 $2$;<br>其次，构造二次插值多项式 $P_1(x)$，使满足<br>$$P_1(a)&#x3D;f(a),</del>P’<em>1(b)&#x3D;f’(b)$$<br>那么 $W_2(x)&#x3D;(x-a)(x-b)\geqslant 0$ 且不恒为 $0$，又<br>$$K&#x3D;\int</em>{a}^{b}W_2(x)\dd x&#x3D;-\dfrac{1}{6}(b-a)^3$$<br>那么至少存在一点 $\xi\in(a,b)$，使得<br>$$\int_{a}^{b}f(x)\dd x&#x3D;\dfrac{b-a}{2}(f(a)+f(b))-\dfrac{f’’(\xi)}{2!}\cdot\dfrac{1}{6}(b-a)^3$$<br>即得待证等式.</p>
-<h2 id="例题-9"><a href="#例题-9" class="headerlink" title="例题 9"></a>例题 9</h2><p>设函数 $f(x)$ 在 $[a,b]$ 上有三阶连续的导数，证明至少存在一点 $\eta\in(a,b)$，使得<br>$$\int_{a}^{b}f(x)\dd x&#x3D;\dfrac{b-a}{4}\qty[f(a)+3f\qty(\dfrac{a+2b}{3})]+\dfrac{(b-a)^4}{216}f’’’(\eta).$$</p>
-<h3 id="解答-6"><a href="#解答-6" class="headerlink" title="解答"></a>解答</h3><p>令 $k$ 为使 $\displaystyle\int_{a}^{b}f(x)\dd x&#x3D;\dfrac{b-a}{4}\qty[f(a)+3f\qty(\dfrac{a+2b}{3})]+\dfrac{(b-a)^4}{216}k$ 成立的实常数，要证结论成立，只需证 $k&#x3D;f’’’(\eta)$，<br>为此，将上式右端移到左端，并将 $b$ 改写为 $x$，构造辅助函数<br>$$F(x)&#x3D;\int_{a}^{x}f(t)\dd t-\dfrac{x-a}{4}\qty[f(a)+3f\qty(\dfrac{a+2x}{3})]-\dfrac{(x-a)^4}{216}k,~x\in[a,b]$$<br>则 $F(a)&#x3D;F(b)&#x3D;0$，$F(x)$ 在 $[a,b]$ 上连续且可导，由 Rolle 定理，$\exists\xi_1\in(a,b)$，使得 $F’(\xi_1)&#x3D;0$，又<br>$$F’(x)&#x3D;f(x)-\dfrac{1}{4}\qty[f(a)+3f\qty(\dfrac{a+2x}{3})]-\dfrac{x-a}{2}f’\qty(\dfrac{a+2x}{3})-\dfrac{(x-a)^3}{54}k$$<br>得 $F’(a)&#x3D;F’(\xi_1)&#x3D;0$，故对 $F’(x)$ 在 $[a,\xi_1]$ 上用 Rolle 定理，得 $\exists\xi_2\in(a,\xi_1)\subset(a,b)$，使得 $F’’(\xi_2)&#x3D;0$，即<br>$$F’’(\xi_2)&#x3D;f’(\xi_2)-f’\qty(\dfrac{a+2\xi_2}{3})-\dfrac{\xi_2-a}{3}f’’\qty(\dfrac{a+2\xi_2}{3})-\dfrac{(\xi_2-a)^2}{18}k&#x3D;0$$<br>再将 $f’(\xi_2)$ 在 $x&#x3D;\dfrac{a+2\xi_2}{3}$ 处 Taylor 展开，有<br>$$f’(\xi_2)&#x3D;f’\qty(\dfrac{a+2\xi_2}{3})+f’’\qty(\dfrac{a+2\xi_2}{3})\qty(\xi_2-\dfrac{a+2\xi_2}{3})+\dfrac{1}{2!}f’’’(\eta)\qty(\xi_2-\dfrac{a+2\xi_3}{3})^2$$<br>其中 $\eta\in\qty(\dfrac{a+2\xi_2}{3})\subset(a,b)$，比较上述两式，即得 $k&#x3D;f’’’(\eta)$，故得证.</p>
-<h2 id="例题-10"><a href="#例题-10" class="headerlink" title="例题 10"></a>例题 10</h2><p>设函数 $f(x)$ 在 $[a,b]$ 上有三阶连续的导数，证明至少存在一点 $\xi\in(a,b)$，使得<br>$$\int_{a}^{b}f(x)\dd x&#x3D;\dfrac{b-a}{4}\qty[3f\qty(\dfrac{2a+b}{3})+f(b)]-\dfrac{(b-a)^4}{216}f’’’(\xi).$$</p>
-<h3 id="解答-7"><a href="#解答-7" class="headerlink" title="解答"></a>解答</h3><p>令 $k$ 为使 $\displaystyle \int_{a}^{b}f(x)\dd x&#x3D;\dfrac{b-a}{4}\qty[3f\qty(\dfrac{2a+b}{3})+f(b)]-\dfrac{(b-a)^4}{216}k$ 成立的实常数，要证结论成立，只需证 $k&#x3D;f’’’(\eta)$，<br>为此，构造辅助函数<br>$$F(x)&#x3D;\int_{x}^{b}f(t)\dd t-\dfrac{b-x}{4}\qty[3f\qty(\dfrac{2x+b}{3})+f(b)]+\dfrac{(b-x)^4}{216}k$$<br>则 $F(a)&#x3D;F(b)&#x3D;0$，$F(x)$ 在 $[a,b]$ 上连续且可导，由 Rolle 定理，$\exists\xi_1\in(a,b)$，使得 $F’(\xi_1)&#x3D;0$，又<br>$$F’(x)&#x3D;-f(x)+\dfrac{1}{4}\qty[3f\qty(\dfrac{2x+b}{3})+f(b)]-\dfrac{b-x}{2}f’\qty(\dfrac{2x+b}{3})-\dfrac{(b-x)^3}{54}k$$<br>得 $F’(\xi_1)&#x3D;F’(b)&#x3D;0$，故对 $F’(x)$ 在 $[\xi_1,b]$ 上用 Rolle 定理，得 $\exists\xi_2\in(\xi_1,b)\subset(a,b)$，使得 $F’’(\xi_2)&#x3D;0$，即<br>$$F’’(\xi_2)&#x3D;-f’(\xi_2)+f’\qty(\dfrac{2\xi_2+b}{3})-\dfrac{b-\xi_2}{3}f’’\qty(\dfrac{2\xi_2+b}{3})+\dfrac{(b-\xi_2)^2}{18}k$$<br>再将 $f’(\xi_2)$ 在 $x&#x3D;\dfrac{2\xi_2+b}{3}$ 处 Taylor 展开，有<br>$$f’(\xi_2)&#x3D;f’\qty(\dfrac{2\xi_2+b}{3})+f’’\qty(\dfrac{2\xi_2+b}{3})\qty(\xi_2-\dfrac{2\xi_2+b}{3})+\dfrac{1}{2!}f’’’(\eta)\qty(\xi_2-\dfrac{2\xi_2+b}{3})^2$$<br>其中 $\eta\in\qty(\dfrac{2\xi_2+b}{3})\subset(a,b)$，比较上述两式，即得 $k&#x3D;f’’’(\eta)$，故得证.</p>
-<h2 id="例题-11"><a href="#例题-11" class="headerlink" title="例题 11"></a>例题 11</h2><p>设函数 $f(x)$ 在 $[a,b]$ 上具有四阶连续导数，证明存在一点 $\xi\in(a,b)$，使得<br>$$\int_{a}^{b}f(x)\dd x&#x3D;\dfrac{b-a}{6}\qty[f(a)+4f\qty(\dfrac{a+b}{2})+f(b)]-\dfrac{(b-a)^5}{2880}f^{(4)}(\xi).$$</p>
-<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><p>令 $\begin{cases}<br>        a&#x3D;c-h \b&#x3D;c+h<br>    \end{cases}\Rightarrow \begin{cases}<br>        c&#x3D;\dfrac{a+b}{2} \[6pt]<br>        h&#x3D;\dfrac{b-a}{2}<br>    \end{cases}$ 那么原式等价于<br>$$\int_{c-h}^{c+h}f(x)\dd x&#x3D;\dfrac{h}{3}\qty[f(c-h)+4(c)+f(c+h)]-\dfrac{h^5}{90}f^{(4)}(\xi)$$<br>设 $k$ 为使上式成立的实常数，并构造 $$F(x)&#x3D;\int_{c-x}^{c+x}f(t)\dd t-\dfrac{x}{3}\qty[f(c-x)+4(c)+f(c+x)]+\dfrac{x^5}{90}k$$<br>下证 $k&#x3D;f^{(4)}(\xi)$，因为 $F(0)&#x3D;F(x)&#x3D;0$，由 Rolle 定理得，$\exists \xi_1\in(0,x)$，使得 $F’(\xi_1)&#x3D;0$ 又<br>$$\begin{align*}<br>    F’(x) &amp; &#x3D;f(c+x)+f(c-x)-\dfrac{1}{3}\qty[f(c-x)+4f(c)+f(c+x)]-\dfrac{x}{3}\qty[-f’(c-x)+f’(c+x)]+\dfrac{x^4}{18}k \<br>          &amp; &#x3D;\dfrac{2}{3}\qty[f(c+x)+f(c-x)]+\dfrac{x}{3}\qty[f’(c-x)-f’(c+x)]+\dfrac{x^4}{18}k-\dfrac{4}{3}f(c)<br>\end{align*}$$<br>因为 $F’(0)&#x3D;F’(\xi_1)$，由 Rolle 定理得，$\exists\xi_2\in(0,\xi_1)$，使得 $F’’(\xi_2)&#x3D;0$，且<br>$$\begin{align*}<br>    F’’(x) &amp; &#x3D;\dfrac{2}{3}\qty[f’(c+x)-f’(c-x)]+\dfrac{1}{3}\qty[f’(c-x)-f’(c+x)]+\dfrac{x}{3}\qty[-f’’(c-x)-f’’(c+x)]+\dfrac{2x^3}{9}k \<br>           &amp; &#x3D;\dfrac{1}{3}\qty[f’(c+x)-f’(c-x)]-\dfrac{x}{3}\qty[f’’(c-x)+f’’(c+x)]+\dfrac{2x^3}{9}k<br>\end{align*}$$<br>又因为 $F’’(0)&#x3D;F’’(\xi_2)$，由 Rolle 定理得，$\exists\xi_3\in(0,\xi_2)$，使得 $F’’’(\xi_3)&#x3D;0$，且<br>$$\begin{align*}<br>    F’’’(x) &amp; &#x3D;\dfrac{1}{3}\qty[f’’(c+x)+f’’(c-x)]-\dfrac{1}{3}\qty[f’’(c-x)+f’’(c+x)]-\dfrac{x}{3}\qty[-f’’’(c-x)+f’’’(c+x)]+\dfrac{2x^2}{3}k \<br>            &amp; &#x3D;\dfrac{x}{3}\qty[f’’’(c-x)-f’’’(c+x)]+\dfrac{2x^2}{3}k<br>\end{align*}$$<br>由 Lagrange 中值定理得，$\exists\xi\in(c-\xi_3,c+\xi_3)$，使得 $f’’’(c-\xi_3)-f’’’(c+\xi_3)&#x3D;-2\xi_3f^{(4)}(\xi)$，那么<br>$$-\dfrac{2}{3}\xi_3^2f^{(4)}(\xi)+\dfrac{2}{3}\xi_3^2k&#x3D;0\Rightarrow k&#x3D;f^{(4)}(\xi)$$<br>得证 $k&#x3D;f^{(4)}(x)$，即原命题成立.</p>
-<h2 id="例题-12"><a href="#例题-12" class="headerlink" title="例题 12"></a>例题 12</h2><p>设 $f(x)\in C^4[0,1]$，且满足 $\displaystyle \int_{0}^{1}f(x)\dd x+3f\qty(\dfrac{1}{2})&#x3D;8\int_{\frac{1}{4}}^{\frac{3}{4}}f(x)\dd x$，证明: $\exists c\in(0,1)$，使得 $f^{(4)}(c)&#x3D;0.$</p>
-<h3 id="解答-8"><a href="#解答-8" class="headerlink" title="解答"></a>解答</h3><p>因为 $\displaystyle\int_{0}^{1}f(x)\dd x\xlongequal{x&#x3D;t+\frac{1}{2}}\int_{-\frac{1}{2}}^{\frac{1}{2}}f\qty(t+\dfrac{1}{2})\dd t,~\int_{\frac{1}{4}}^{\frac{3}{4}}f(x)\dd x\xlongequal{x&#x3D;\frac{t}{2}+\frac{1}{2}}\dfrac{1}{2}\int_{-\frac{1}{2}}^{\frac{1}{2}}f\qty(\dfrac{t}{2}+\dfrac{1}{2})\dd t$，所以<br>$$\int_{-\frac{1}{2}}^{\frac{1}{2}}f(t+\dfrac{1}{2})\dd t-4\int_{\frac{1}{2}}^{\frac{1}{2}}f\qty(\dfrac{t}{2}+\dfrac{1}{2})\dd t +3f\qty(\dfrac{1}{2})&#x3D;0$$<br>令 $g(x)&#x3D;f\qty(x+\dfrac{1}{2})+f\qty(-x+\dfrac{1}{2})$，$h(x)&#x3D;g(x)-4g\qty(\dfrac{x}{2})$，那么<br>$$h(0)&#x3D;-3g(0)&#x3D;-6f\qty(\dfrac{1}{2})\Rightarrow f\qty(\dfrac{1}{2})&#x3D;-\dfrac{1}{2}h(0)$$<br>那么<br>$$\begin{align*}<br>    \int_{-\frac{1}{2}}^{\frac{1}{2}}f\qty(t+\dfrac{1}{2})\dd t-4\int_{\frac{1}{2}}^{\frac{1}{2}}f\qty(\dfrac{t}{2}+\dfrac{1}{2})\dd t -\dfrac{1}{2}h(0)&#x3D;0<br>    \Rightarrow \int_{0}^{\frac{1}{2}}h(t)\dd t-\dfrac{1}{2}h(0)&#x3D;0\Rightarrow \dfrac{1}{\dfrac{1}{2}-0}\int_{0}^{\frac{1}{2}}h(t)\dd t&#x3D;h(0)<br>\end{align*}$$<br>因为 $m&#x3D;\min\limits_{x\in[0,1]}h(x)\leqslant h(0)\leqslant \max\limits_{x\in[0,1]}h(x)&#x3D;M$，所以 $\exists\xi_1\in(0,\dfrac{1}{2})$，使得 $h’(\xi_1)&#x3D;0$，又<br>$$h’(x)&#x3D;g’(x)-2g’\qty(\dfrac{x}{2}),g’(x)&#x3D;f’\qty(x+\dfrac{1}{2})-f\qty(-x+\dfrac{1}{2})$$<br>所以 $h’(0)&#x3D;0&#x3D;h’(\xi_1)$，由 Rolle 定理知，$\exists\xi_2\in(0,\xi_1)\subset \qty(0,\dfrac{1}{2})$，使得 $h’’(\xi_2)&#x3D;0$，又<br>$$h’’(x)&#x3D;g’’(x)-g’’\qty(\dfrac{x}{2}),g’’(x)&#x3D;f’’\qty(x+\dfrac{1}{2})+f’’\qty(-x+\dfrac{1}{2})$$<br>所以 $h’’(\xi_2)&#x3D;g’’(\xi_2)&#x3D;g’’\qty(\dfrac{\xi_2}{2})$，由 Rolle 定理知，$\exists\xi_3\in\qty(\dfrac{\xi_2}{2},\xi_2)\subset\qty(0,\dfrac{1}{2})$，使得 $g’’’(\xi_3)&#x3D;0$，而<br>$$g’’’(x)&#x3D;f’’’\qty(x+\dfrac{1}{2})-f’’’\qty(-x+\dfrac{1}{2})$$<br>所以 $f’’’\qty(\xi_3+\dfrac{1}{2})&#x3D;f’’’\qty(-\xi_3+\dfrac{1}{2})$，再由 Rolle 定理知，$\exists c\in\qty(-\xi_3+\dfrac{1}{2},\xi_3+\dfrac{1}{2})\subset(0,1)$ 使得 $f^{(4)}(c)&#x3D;0.$</p>
+<h1 id="积分等式命题的证明">积分等式命题的证明</h1>
+<h2 id="例题-1">例题 1</h2>
+<p>设 <span class="math inline">\(f(x)\in
+D(0,1),~f(0)=f(1)=-2,~\displaystyle\int_{0}^{1}f(x)\dd
+x=0\)</span>，证明: <span
+class="math inline">\(\exists\xi\in(0,1)\)</span>，使得 <span
+class="math inline">\(f&#39;(\xi)-f(\xi)=\xi.\)</span></p>
+<h3 id="解答">解答</h3>
+<p>令 <span
+class="math inline">\(F(x)=\mathrm{e}^{-x}(f(x)+x+1)\)</span>，有 <span
+class="math inline">\(F(0)=-1,~F(1)=0\)</span>，因为 <span
+class="math inline">\(\displaystyle\int_{0}^{1}f(x)\dd
+x=0\)</span>，由积分中值定理知，<span
+class="math inline">\(\exists\eta\in(0,1)\)</span>，使得 <span
+class="math display">\[\displaystyle\int_{0}^{1}f(x)\dd
+x=f(\eta)\int_{0}^{1}\dd x=f(\eta)=0\]</span> 而 <span
+class="math inline">\(F(\eta)=\mathrm{e}^{-\eta}(f(\eta)+\eta+1)&gt;0\)</span>，因此
+<span class="math inline">\(\exists\xi\in(0,1)\)</span>，使得 <span
+class="math inline">\(F(x)\leqslant F(\xi)\)</span>，即 <span
+class="math inline">\(F(x)\)</span> 的最大值一定在区间 <span
+class="math inline">\((0,1)\)</span> 内取到， 由 Fermat 引理知，<span
+class="math inline">\(F&#39;(\xi)=0\)</span>，即 <span
+class="math display">\[\eval{-\mathrm{e}^{-x}(f(x)+x+1)+\mathrm{e}^{-x}(f&#39;(x)+1)}_{x=\xi}=f&#39;(\xi)-f(\xi)=\xi.\]</span></p>
+<h2 id="例题-2">例题 2</h2>
+<p>设 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([2,4]\)</span> 上二阶连续可导，<span
+class="math inline">\(f(3)=0\)</span>，证明: <span
+class="math inline">\(\exists\xi\in(2,4)\)</span>，使得 <span
+class="math inline">\(\displaystyle
+f&#39;&#39;(\xi)=3\int_{2}^{4}f(x)\dd x.\)</span></p>
+<h3 id="解答-1">解答</h3>
+<p>构造 <span class="math inline">\(\displaystyle
+F(x)=\int_{2}^{x}f(t)\dd t\)</span>，那么将 <span
+class="math inline">\(F(2),F(4)\)</span> 分别在 <span
+class="math inline">\(x=3\)</span> 处 Taylor 展开，有 <span
+class="math display">\[\begin{align*}
+F(2)=F(3)+F&#39;(3)(2-3)+\dfrac{1}{2!}F&#39;&#39;(3)(2-3)^2+\dfrac{1}{3!}F&#39;&#39;&#39;(\xi_1)    (2-3)^3
+\\
+F(4)=F(3)+F&#39;(3)(4-3)+\dfrac{1}{2!}F&#39;&#39;(3)(4-3)^2+\dfrac{1}{3!}F&#39;&#39;&#39;(\xi_2)    (4-3)^3
+\end{align*}\]</span> 注意到 <span
+class="math inline">\(F(2)=F&#39;(3)=0\)</span>，那么上式化为 <span
+class="math inline">\(\begin{cases}
+0=F(3)+\dfrac{1}{2}F&#39;&#39;(3)-\dfrac{1}{6}F&#39;&#39;&#39;(\xi_1)
+\\[6pt]
+F(4)=F(3)+\dfrac{1}{2}F&#39;&#39;(3)+\dfrac{1}{6}F&#39;&#39;&#39;(\xi_2)
+\end{cases}\)</span> 即 <span
+class="math display">\[F(4)=\dfrac{1}{6}\qty(F&#39;&#39;&#39;(\xi_1)+F&#39;&#39;&#39;(\xi_2))\]</span>
+因为 <span
+class="math inline">\(F&#39;&#39;&#39;(x)=f&#39;&#39;(x)\)</span> 在
+<span class="math inline">\([2,4]\)</span> 上连续，故 <span
+class="math inline">\(F&#39;&#39;&#39;(x)\)</span> 在 <span
+class="math inline">\([2,4]\)</span> 上有最大值 <span
+class="math inline">\(M\)</span> 和最小值 <span
+class="math inline">\(m\)</span>，使得 <span
+class="math display">\[m\leqslant
+\dfrac{1}{2}\qty(F&#39;&#39;&#39;(\xi_1)+F&#39;&#39;&#39;(\xi_2))\leqslant
+M\]</span> 又由连续函数的介值定理知 <span
+class="math inline">\(\exists\xi\in(\xi_1,\xi_2)\subset(2,4)\)</span>，使得<br />
+<span
+class="math display">\[F&#39;&#39;&#39;(\xi)=\dfrac{1}{2}\qty(F&#39;&#39;&#39;(\xi_1)+F&#39;&#39;&#39;(\xi_2))\]</span>
+故 <span
+class="math inline">\(F(4)=\dfrac{1}{3}\cdot\dfrac{1}{2}\qty(F&#39;&#39;&#39;(\xi_1)+F&#39;&#39;&#39;(\xi_2))=\dfrac  {1}{3}F&#39;&#39;&#39;(\xi)\)</span>，则
+<span class="math display">\[F&#39;&#39;&#39;(\xi)=3F(4)\Rightarrow
+f&#39;&#39;(\xi)=3\int_{2}^{4}f(x)\dd x.\]</span></p>
+<h2 id="例题-3">例题 3</h2>
+<p>设 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([-1,1]\)</span> 二阶导函数连续，证明: <span
+class="math inline">\(\exists\xi\in[-1,1]\)</span>，使得 <span
+class="math display">\[\displaystyle\int_{-1}^{1}xf(x)\dd
+x=\dfrac{1}{3}[2f&#39;(\xi)+\xi f&#39;&#39;(\xi)].\]</span></p>
+<h3 id="解答-2">解答</h3>
+<p>构造 <span class="math inline">\(F(x)=xf(x)\)</span>，那么 <span
+class="math inline">\(F(x)\)</span> 在 <span
+class="math inline">\([-1,1]\)</span> 二阶导函数连续，并且 <span
+class="math display">\[F&#39;(x)=f(x)+xf&#39;(x),~F&#39;&#39;(x)=2f&#39;(x)+xf&#39;&#39;(x)\]</span>
+又由 Taylor 展开得， <span
+class="math display">\[F(x)=F(0)+F&#39;(0)x+\dfrac{1}{2!}F&#39;&#39;(\theta
+x)x^2~ \theta\in(0,1)\]</span> 且 <span
+class="math inline">\(F(0)=0,F&#39;(0)=f(0)x\)</span>，于是 <span
+class="math inline">\(F(x)=f(0)x+\dfrac{1}{2}F&#39;&#39;(\theta
+x)x^2\)</span>，两边对 <span class="math inline">\(x\)</span>
+积分，则有， <span class="math display">\[\int_{-1}^{1}F(x)\dd
+x=\int_{-1}^{1}f(0)x\dd x+\dfrac{F&#39;&#39;(\theta
+x)}{2}\int_{-1}^{1}x^2\dd x=\dfrac{F&#39;&#39;(\theta
+x)}{2}\int_{-1}^{1}x^2\dd x\]</span> 记 <span
+class="math inline">\(m=\min\limits_{0\leqslant x\leqslant
+1}F&#39;&#39;(x),~M=\max\limits_{0\leqslant x\leqslant
+1}F&#39;&#39;(x)\)</span>，于是 <span
+class="math display">\[m\int_{-1}^{1}x^2\dd x\leqslant
+\int_{-1}^{1}F&#39;&#39;(\theta x)x^2\dd x\leqslant M\int_{-1}^{1}x^2\dd
+x\]</span> 即 <span
+class="math inline">\(\dfrac{2}{3}m\leqslant\displaystyle\int_{-1}^{1}F&#39;&#39;(\theta
+x)x^2\dd x\leqslant \dfrac{2}{3}M\)</span>， 因此有 <span
+class="math inline">\(\displaystyle m\leqslant \int_{-1}^{1}F(x)\dd
+x\leqslant M\)</span>，对 <span
+class="math inline">\(F&#39;&#39;(x)\)</span> 利用连续函数的介值定理，即
+<span class="math inline">\(\exists\xi\in[-1,1]\)</span>，使得 <span
+class="math inline">\(3\displaystyle\int_{-1}^{1}F(x)\dd
+x=F&#39;&#39;(\xi)\)</span>，即得证.</p>
+<h2 id="例题-4">例题 4</h2>
+<p>设 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上有二阶导数，且 <span
+class="math inline">\(f^{\prime \prime}(x)\)</span> 在 <span
+class="math inline">\([a, b]\)</span> 上黎曼可积，证明: <span
+class="math display">\[f(x)=f(a)+f^{\prime}(a)(x-a)+\int_{a}^{x}(x-t)
+f^{\prime \prime}(t) \dd  t, \forall x \in[a, b] .\]</span></p>
+<h3 id="解答-3">解答</h3>
+<p>由 N-L 公式， <span class="math display">\[\begin{align*}
+    f(x) &amp; =f(a)+\int_{a}^{x}f&#39;(t)\dd
+t=f(a)+\int_{a}^{x}f&#39;(a)\dd t+\int_{a}^{x}\dd
+t\int_{a}^{t}f&#39;&#39;(u)\dd u \\
+         &amp; =f(a)+f&#39;(a)(x-a)+\int_{a}^{x}\dd
+t\int_{t}^{x}f&#39;&#39;(u)\dd u=f(a)+f&#39;(a)(x-a)+\int_{a}^{x}(x-t).
+\end{align*}\]</span></p>
+<h2 id="例题-5">例题 5</h2>
+<p>已知 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上二阶可导，<span
+class="math inline">\(f(a)=f(b)=0\)</span>，试证: <span
+class="math inline">\(\exists \xi\in(a,b)\)</span>，使得 <span
+class="math display">\[\int_{a}^{b}f(x)\dd
+x=\frac{1}{12}f&#39;&#39;(\xi)(a-b)^3.\]</span></p>
+<h3 id="解答-4">解答</h3>
+<p>令 <span class="math inline">\(\displaystyle F(x)=\int_{a}^{x}f(t)\dd
+t-\frac{1}{2}(x-a)f(x)\)</span>，<span
+class="math inline">\(\displaystyle G(x)=-\frac{1}{12}(x-a)^3\)</span>，
+在 <span class="math inline">\([a,b]\)</span> 上连续两次应用 Cauchy
+中值定理， <span class="math display">\[\begin{align*}
+    \dfrac{\displaystyle\int_{a}^{b}f(x)\dd
+x-0}{-\dfrac{1}{12}(b-a)^3-0} &amp;
+=\dfrac{F(b)-F(a)}{G(b)-G(a)}\xlongequal[a\leqslant \xi_1\leqslant
+b]{\text{Cauchy
+中值定理}}\dfrac{F&quot;(\xi_1)}{G&#39;(\xi_1)}                                                                                                    \\
+                                                                          &amp;
+=\dfrac{\dfrac{1}{2}f(\xi_1)-\dfrac{1}{2}(\xi_1-a)f&#39;(\xi)-0}{-\dfrac{1}{4}(\xi_1-a)^2-0}\xlongequal[a\leqslant\xi\leqslant\xi_1]{\text{Cauchy
+中值定理}}\dfrac{-\dfrac{1}{2}f&#39;&#39;(\xi)(\xi-a)}{-\dfrac{1}{2}(\xi-a)}=f&#39;&#39;(\xi).
+\end{align*}\]</span> 此式同乘 <span
+class="math inline">\(\displaystyle-\frac{1}{12}(b-a)^3=\frac{1}{12}(b-a)^3\)</span>，即得所求.</p>
+<h2 id="例题-6">例题 6</h2>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上二阶可导，证明至少存在一点 <span
+class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
+class="math display">\[\int_{a}^{b}f(x)\dd
+x=f(b)(b-a)-f&#39;(b)\dfrac{(b-a)^2}{2}+\dfrac{1}{6}(b-a)^3f&#39;&#39;(\xi).\]</span></p>
+<h3 id="解答-5">解答</h3>
+<p>令 <span class="math inline">\(k\)</span> 为使 <span
+class="math inline">\(\displaystyle \int_{a}^{b}f(x)\dd
+x=f(b)(b-a)-f&#39;(b)\dfrac{(b-a)^2}{2}+\dfrac{1}{6}(b-a)^3k\)</span>
+成立的实常数，构造辅助函数 <span
+class="math display">\[F(x)=\int_{a}^{x}f(t)\dd
+t-f(x)(x-a)+f&#39;(x)\dfrac{(x-a)^2}{2}-\dfrac{1}{6}(x-a)^3k\]</span> 则
+<span class="math inline">\(F(a)=F(b)=0\)</span>，故由 Rolle 定理知
+<span class="math inline">\(\exists\xi\in(a,b)\)</span>，使 <span
+class="math inline">\(F&#39;(\xi)=0\)</span>，即 <span
+class="math display">\[F&#39;(\xi)=f&#39;&#39;(\xi)\dfrac{(\xi-a)^2}{2}-\dfrac{1}{2}(\xi-a)^2k=0\]</span>
+得证 <span
+class="math inline">\(k=f&#39;&#39;(\eta)\)</span>，故得证.</p>
+<h2 id="例题-7">例题 7</h2>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上具有二阶连续的导数，证明存在
+<span class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
+class="math display">\[\int_{a}^{b}f(x)\dd
+x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f&#39;&#39;(\xi).\]</span></p>
+<h3 id="解答法一">解答：法一</h3>
+<p>将 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(\dfrac{a+b}{2}\)</span> 处进行 Taylor 展开，有
+<span
+class="math display">\[f(x)=f\qty(\dfrac{a+b}{2})+f&#39;\qty(\dfrac{a+b}{2})\qty(x-\dfrac{a+b}{2})+\dfrac{f&#39;&#39;(\xi_1)}{2!}\qty(x-\dfrac{a+b}{2})\]</span>
+因为 <span class="math inline">\(f&#39;&#39;(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上连续，所以存在最小值 <span
+class="math inline">\(m\)</span> 和最大值 <span
+class="math inline">\(M\)</span>，使 <span class="math inline">\(\forall
+x\in[a,b]\)</span>，<span class="math inline">\(m\leqslant
+f&#39;&#39;(x) \leqslant M\)</span>，于是 <span
+class="math display">\[m\int_{a}^{b}\qty(x-\dfrac{a+b}{2})^2\dd
+x\leqslant \int_{a}^{b}f&#39;&#39;(\xi_1)\qty(x-\dfrac{a+b}{2})^2\dd
+x\leqslant M\int_{a}^{b}\qty(x-\dfrac{a+b}{2})^2\dd x\]</span> 从而
+<span class="math inline">\(\displaystyle m\leqslant
+\dfrac{\displaystyle
+\int_{a}^{b}f&#39;&#39;(\xi_1)\qty(x-\dfrac{a+b}{2})^2\dd
+x}{\displaystyle \int_{a}^{b}\qty(x-\dfrac{a+b}{2})^2\dd x}\leqslant
+M\)</span>，故由介值定理知，存在 <span
+class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
+class="math display">\[f&#39;&#39;(\xi)=\dfrac{\displaystyle\int_{a}^{b}f&#39;&#39;(\xi_1)\qty(x-\dfrac{a+b}{2})^2\dd
+x}{\displaystyle \int_{a}^{b}\qty(x-\dfrac{a+b}{2})^2\dd x}\]</span>
+即得证 <span class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd
+x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f&#39;&#39;(\xi).\)</span></p>
+<h3 id="解答法二">解答：法二</h3>
+<p>令 <span class="math inline">\(\displaystyle F(x)=\int_{a}^{x}f(t)\dd
+t\)</span>，将 <span class="math inline">\(F(x)\)</span> 在 <span
+class="math inline">\(x_0=\dfrac{a+b}{2}\)</span> 处 Taylor 展开得 <span
+class="math display">\[F(x)  =F\left( x_{0}\right) +F&#39;\left(
+x_{0}\right) \left( x-x_{0}\right) +\dfrac{F&#39;&#39;(x)  }{2!}\left(
+x-x_{0}\right) ^{2}+\dfrac{F&#39;&#39;&#39;\left( \xi \right)
+}{3!}\left( x-x_{0}\right) ^{3}\]</span> 其中 <span
+class="math inline">\(\xi\)</span> 介于 <span
+class="math inline">\(x_0\)</span> 与 <span
+class="math inline">\(x\)</span> 之间，将 <span
+class="math inline">\(x=a\)</span> 和 <span
+class="math inline">\(x=b\)</span> 代入上式，并相减得 <span
+class="math display">\[F\left( b\right) -F\left( a\right) =\left(
+b-a\right) f\left( \dfrac{a+b}{2}\right) +\dfrac{1}{24}\left( b-a\right)
+^{3}\dfrac{f&#39;&#39;\left( \xi _{1}\right) +f&#39;&#39;\left( \xi
+_{2}\right) }{2}\]</span> 其中 <span class="math inline">\(a &lt;\xi
+_{2} &lt;\dfrac{a+b}{2} &lt;\xi _{1} &lt;b\)</span>，不妨设 <span
+class="math inline">\(f&#39;&#39;(\xi_1)\leqslant
+f&#39;&#39;(\xi_2)\)</span>，则 <span
+class="math inline">\(f&#39;&#39;(x_1)\leqslant
+\dfrac{f&#39;&#39;(\xi_1)+f&#39;&#39;(\xi_2)}{2}\leqslant
+f&#39;&#39;(\xi_2)\)</span>，由导函数 <span
+class="math inline">\(f&#39;&#39;(x)\)</span> 的 Darboux 定理或 <span
+class="math inline">\(f&#39;&#39;(x)\)</span> 的连续性及介值定理知，
+<span class="math inline">\(\exists\xi\in(\xi_1,\xi_2)\)</span> 或 <span
+class="math inline">\((\xi_2,\xi_1)\subset (a,b)\)</span>，使 <span
+class="math inline">\(f&#39;&#39;(\xi)=\dfrac{f&#39;&#39;(\xi_1)+f&#39;&#39;(\xi_2)}{2}\)</span>，故
+<span class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd
+x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{1}{24}(b-a)^3f&#39;&#39;(\xi).\)</span></p>
+<h3 id="解答法三">解答：法三</h3>
+<p>设 <span class="math inline">\(k\)</span> 为使 <span
+class="math inline">\(\displaystyle \int_{a}^{b} f(x) \dd  x=(b-a)
+f\left(\frac{a+b}{2}\right)+\frac{1}{24}(b-a)^{3} k\)</span>
+成立的实数，要证结论成立，只需证 <span
+class="math inline">\(k=f&#39;&#39;(\xi)\)</span>，为此构造辅助函数
+<span class="math display">\[ \displaystyle F(x)=\int_{a}^{x} f(t)
+\dd  t-(x-a) f\left(\frac{a+x}{2}\right)-\frac{1}{24}(x-a)^{3} k
+\]</span> 则 <span class="math inline">\(F(a)=F(b)=0\)</span>，故由
+Rolle 定理，<span class="math inline">\(\exists \eta \in(a,
+b)\)</span>，使 <span
+class="math inline">\(F^{\prime}(\eta)=0\)</span>，即 <span
+class="math display">\[f(\eta)-f\left(\frac{a+\eta}{2}\right)-\frac{\eta-a}{2}
+f^{\prime}\left(\frac{a+\eta}{2}\right)-\frac{k}{8}(\eta-a)^{2}=0
+\]</span> 又将 <span class="math inline">\(f(\eta)\)</span> 在 <span
+class="math inline">\(x=\dfrac{a+\eta}{2}\)</span> 处进行 Taylor
+展开，有 <span
+class="math display">\[f(\eta)=f\left(\dfrac{a+\eta}{2}\right)+f^{\prime}\left(\frac{a+\eta}{2}\right)
+\frac{\eta-a}{2}+\frac{f^{\prime \prime}(\xi)}{2
+!}\left(\frac{\eta-a}{2}\right)^{2}\]</span> 其中 <span
+class="math inline">\(\xi \in\left(\dfrac{a+\eta}{2}, \eta\right)
+\subset(a, b)\)</span>， 比较上述两式，得 <span
+class="math inline">\(k=f^{\prime \prime}(\xi)\)</span> 故得证.</p>
+<h3 id="解答法四">解答：法四</h3>
+<p>取 <span
+class="math inline">\(\rho\equiv1\)</span>，首先构造数值求积公式 <span
+class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd x\approx
+A_0f\qty(\dfrac{a+b}{2})\)</span>，使其具有尽可能高的代数精度， 为此，取
+<span class="math inline">\(f(x)=1\)</span> 使求积公式精确成立，则有
+<span class="math display">\[A_0=b-a\]</span> 把 <span
+class="math inline">\(A_0\)</span> 代入求积公式，取 <span
+class="math inline">\(f(x)=x\)</span>，代入验算知求积公式精确成立; 再取
+<span class="math inline">\(f(x)=x^2\)</span>，求积公式不精确成立，
+故求积公式 <span class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd
+x\approx (b-a)f\qty(\dfrac{a+b}{2})\)</span> 的代数精度为 <span
+class="math inline">\(1\)</span>; 其次，构造一次插值多项式 <span
+class="math display">\[P_1\qty(\dfrac{a+b}{2})=f\qty(\dfrac{a+b}{2}),~P&#39;_1\qty(\dfrac{a+b}{2})=f&#39;\qty(\dfrac{a+b}{2})\]</span>
+那么 <span
+class="math inline">\(W_2(x)=\qty(x-\dfrac{a+b}{2})^2\)</span> 且不恒为
+<span class="math inline">\(0\)</span>，又 <span
+class="math display">\[K=\int_{a}^{b}W_2(x)\dd
+x=\dfrac{1}{12}(b-a)^3\]</span> 那么至少存在一点 <span
+class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
+class="math display">\[\int_{a}^{b}f(x)\dd
+x=(b-a)f\qty(\dfrac{a+b}{2})+\dfrac{f&#39;&#39;(\xi)}{2!}\cdot\dfrac{1}{12}(b-a)^3\]</span>
+即得待证等式.</p>
+<h2 id="例题-8">例题 8</h2>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上具有二阶连续的导数，证明存在一点
+<span class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
+class="math display">\[\int_{a}^{b}f(x)\dd
+x=\dfrac{b-a}{2}(f(a)+f(b))-\dfrac{1}{12}f&#39;&#39;(\xi)(b-a)^3.\]</span></p>
+<h3 id="解答法一-1">解答：法一</h3>
+<p>设 <span class="math inline">\(k\)</span> 为使 <span
+class="math inline">\(\displaystyle \int_{a}^{b}f(x)\dd
+x=\dfrac{b-a}{2}(f(a)+f(b))-\dfrac{1}{12}k(b-a)^3\)</span>
+成立的实常数，则证 <span
+class="math inline">\(k=f&#39;&#39;(\xi)\)</span>，为此构造辅助函数
+<span class="math display">\[F(x)=\int_{a}^{x}f(t)\dd
+t-\dfrac{x-a}{2}(f(a)+f(x))+\dfrac{1}{12}k(x-a)^3\]</span> 那么 <span
+class="math inline">\(F(a)=F(b)=0\)</span>，由 Rolle 定理知，<span
+class="math inline">\(\exists\xi_1\in(a,b)\)</span>，使得 <span
+class="math inline">\(F&#39;(\xi_1)=0\)</span>，又 <span
+class="math display">\[F&#39;(x)=f(x)-\dfrac{1}{2}(f(x)+f(a))-\dfrac{x-a}{2}f&#39;(x)+\dfrac{1}{4}k(x-a)^2\]</span>
+并且注意到 <span
+class="math inline">\(F&#39;(a)=F&#39;(\xi_1)=0\)</span>，再由 Rolle
+定理知，<span
+class="math inline">\(\exists\xi\in(a,\xi_1)\subset(a,b)\)</span>，使得
+<span class="math inline">\(F&#39;&#39;(\xi)=0\)</span>，并且 <span
+class="math display">\[F&#39;&#39;(\xi)=-\dfrac{\xi-a}{2}f&#39;&#39;(\xi)+\dfrac{1}{2}k(\xi-a)=0\]</span>
+即得证 <span class="math inline">\(k=f&#39;&#39;(\xi).\)</span></p>
+<h3 id="解答法二-1">解答：法二</h3>
+<p>取 <span
+class="math inline">\(\rho(x)\equiv1\)</span>，首先构造数值求积公式
+<span class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd x\approx
+A_0f(a)+A_1f(b)\)</span>，使其具有尽可能高的代数精度，为此， 分别取
+<span class="math inline">\(f(x)=1,x\)</span> 使求积公式精确成立，则有
+<span class="math display">\[\left\{\begin{matrix}
+        A_0  &amp; + &amp; A_1  &amp; = &amp; b-a                \\
+        aA_0 &amp; + &amp; bA_1 &amp; = &amp; \dfrac{b^2-a^2}{2}
+    \end{matrix}\right.\Rightarrow A_0=A_1=\dfrac{b-a}{2} \]</span> 把
+<span class="math inline">\(A_0,~A_1\)</span> 代入求积公式，取 <span
+class="math inline">\(f(x)=x^2\)</span>，代入验算知求积公式精确成立;
+再取 <span class="math inline">\(f(x)=x^3\)</span>，求积公式不精确成立，
+故求积公式 <span class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd
+x\approx\dfrac{b-a}{2}(f(a)+f(b))\)</span> 的代数精度为 <span
+class="math inline">\(2\)</span>; 其次，构造二次插值多项式 <span
+class="math inline">\(P_1(x)\)</span>，使满足 <span
+class="math display">\[P_1(a)=f(a),~P&#39;_1(b)=f&#39;(b)\]</span> 那么
+<span class="math inline">\(W_2(x)=(x-a)(x-b)\geqslant 0\)</span>
+且不恒为 <span class="math inline">\(0\)</span>，又 <span
+class="math display">\[K=\int_{a}^{b}W_2(x)\dd
+x=-\dfrac{1}{6}(b-a)^3\]</span> 那么至少存在一点 <span
+class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
+class="math display">\[\int_{a}^{b}f(x)\dd
+x=\dfrac{b-a}{2}(f(a)+f(b))-\dfrac{f&#39;&#39;(\xi)}{2!}\cdot\dfrac{1}{6}(b-a)^3\]</span>
+即得待证等式.</p>
+<h2 id="例题-9">例题 9</h2>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span>
+上有三阶连续的导数，证明至少存在一点 <span
+class="math inline">\(\eta\in(a,b)\)</span>，使得 <span
+class="math display">\[\int_{a}^{b}f(x)\dd
+x=\dfrac{b-a}{4}\qty[f(a)+3f\qty(\dfrac{a+2b}{3})]+\dfrac{(b-a)^4}{216}f&#39;&#39;&#39;(\eta).\]</span></p>
+<h3 id="解答-6">解答</h3>
+<p>令 <span class="math inline">\(k\)</span> 为使 <span
+class="math inline">\(\displaystyle\int_{a}^{b}f(x)\dd
+x=\dfrac{b-a}{4}\qty[f(a)+3f\qty(\dfrac{a+2b}{3})]+\dfrac{(b-a)^4}{216}k\)</span>
+成立的实常数，要证结论成立，只需证 <span
+class="math inline">\(k=f&#39;&#39;&#39;(\eta)\)</span>，
+为此，将上式右端移到左端，并将 <span class="math inline">\(b\)</span>
+改写为 <span class="math inline">\(x\)</span>，构造辅助函数 <span
+class="math display">\[F(x)=\int_{a}^{x}f(t)\dd
+t-\dfrac{x-a}{4}\qty[f(a)+3f\qty(\dfrac{a+2x}{3})]-\dfrac{(x-a)^4}{216}k,~x\in[a,b]\]</span>
+则 <span class="math inline">\(F(a)=F(b)=0\)</span>，<span
+class="math inline">\(F(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上连续且可导，由 Rolle 定理，<span
+class="math inline">\(\exists\xi_1\in(a,b)\)</span>，使得 <span
+class="math inline">\(F&#39;(\xi_1)=0\)</span>，又 <span
+class="math display">\[F&#39;(x)=f(x)-\dfrac{1}{4}\qty[f(a)+3f\qty(\dfrac{a+2x}{3})]-\dfrac{x-a}{2}f&#39;\qty(\dfrac{a+2x}{3})-\dfrac{(x-a)^3}{54}k\]</span>
+得 <span class="math inline">\(F&#39;(a)=F&#39;(\xi_1)=0\)</span>，故对
+<span class="math inline">\(F&#39;(x)\)</span> 在 <span
+class="math inline">\([a,\xi_1]\)</span> 上用 Rolle 定理，得 <span
+class="math inline">\(\exists\xi_2\in(a,\xi_1)\subset(a,b)\)</span>，使得
+<span class="math inline">\(F&#39;&#39;(\xi_2)=0\)</span>，即 <span
+class="math display">\[F&#39;&#39;(\xi_2)=f&#39;(\xi_2)-f&#39;\qty(\dfrac{a+2\xi_2}{3})-\dfrac{\xi_2-a}{3}f&#39;&#39;\qty(\dfrac{a+2\xi_2}{3})-\dfrac{(\xi_2-a)^2}{18}k=0\]</span>
+再将 <span class="math inline">\(f&#39;(\xi_2)\)</span> 在 <span
+class="math inline">\(x=\dfrac{a+2\xi_2}{3}\)</span> 处 Taylor 展开，有
+<span
+class="math display">\[f&#39;(\xi_2)=f&#39;\qty(\dfrac{a+2\xi_2}{3})+f&#39;&#39;\qty(\dfrac{a+2\xi_2}{3})\qty(\xi_2-\dfrac{a+2\xi_2}{3})+\dfrac{1}{2!}f&#39;&#39;&#39;(\eta)\qty(\xi_2-\dfrac{a+2\xi_3}{3})^2\]</span>
+其中 <span
+class="math inline">\(\eta\in\qty(\dfrac{a+2\xi_2}{3})\subset(a,b)\)</span>，比较上述两式，即得
+<span
+class="math inline">\(k=f&#39;&#39;&#39;(\eta)\)</span>，故得证.</p>
+<h2 id="例题-10">例题 10</h2>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span>
+上有三阶连续的导数，证明至少存在一点 <span
+class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
+class="math display">\[\int_{a}^{b}f(x)\dd
+x=\dfrac{b-a}{4}\qty[3f\qty(\dfrac{2a+b}{3})+f(b)]-\dfrac{(b-a)^4}{216}f&#39;&#39;&#39;(\xi).\]</span></p>
+<h3 id="解答-7">解答</h3>
+<p>令 <span class="math inline">\(k\)</span> 为使 <span
+class="math inline">\(\displaystyle \int_{a}^{b}f(x)\dd
+x=\dfrac{b-a}{4}\qty[3f\qty(\dfrac{2a+b}{3})+f(b)]-\dfrac{(b-a)^4}{216}k\)</span>
+成立的实常数，要证结论成立，只需证 <span
+class="math inline">\(k=f&#39;&#39;&#39;(\eta)\)</span>，
+为此，构造辅助函数 <span class="math display">\[F(x)=\int_{x}^{b}f(t)\dd
+t-\dfrac{b-x}{4}\qty[3f\qty(\dfrac{2x+b}{3})+f(b)]+\dfrac{(b-x)^4}{216}k\]</span>
+则 <span class="math inline">\(F(a)=F(b)=0\)</span>，<span
+class="math inline">\(F(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上连续且可导，由 Rolle 定理，<span
+class="math inline">\(\exists\xi_1\in(a,b)\)</span>，使得 <span
+class="math inline">\(F&#39;(\xi_1)=0\)</span>，又 <span
+class="math display">\[F&#39;(x)=-f(x)+\dfrac{1}{4}\qty[3f\qty(\dfrac{2x+b}{3})+f(b)]-\dfrac{b-x}{2}f&#39;\qty(\dfrac{2x+b}{3})-\dfrac{(b-x)^3}{54}k\]</span>
+得 <span class="math inline">\(F&#39;(\xi_1)=F&#39;(b)=0\)</span>，故对
+<span class="math inline">\(F&#39;(x)\)</span> 在 <span
+class="math inline">\([\xi_1,b]\)</span> 上用 Rolle 定理，得 <span
+class="math inline">\(\exists\xi_2\in(\xi_1,b)\subset(a,b)\)</span>，使得
+<span class="math inline">\(F&#39;&#39;(\xi_2)=0\)</span>，即 <span
+class="math display">\[F&#39;&#39;(\xi_2)=-f&#39;(\xi_2)+f&#39;\qty(\dfrac{2\xi_2+b}{3})-\dfrac{b-\xi_2}{3}f&#39;&#39;\qty(\dfrac{2\xi_2+b}{3})+\dfrac{(b-\xi_2)^2}{18}k\]</span>
+再将 <span class="math inline">\(f&#39;(\xi_2)\)</span> 在 <span
+class="math inline">\(x=\dfrac{2\xi_2+b}{3}\)</span> 处 Taylor 展开，有
+<span
+class="math display">\[f&#39;(\xi_2)=f&#39;\qty(\dfrac{2\xi_2+b}{3})+f&#39;&#39;\qty(\dfrac{2\xi_2+b}{3})\qty(\xi_2-\dfrac{2\xi_2+b}{3})+\dfrac{1}{2!}f&#39;&#39;&#39;(\eta)\qty(\xi_2-\dfrac{2\xi_2+b}{3})^2\]</span>
+其中 <span
+class="math inline">\(\eta\in\qty(\dfrac{2\xi_2+b}{3})\subset(a,b)\)</span>，比较上述两式，即得
+<span
+class="math inline">\(k=f&#39;&#39;&#39;(\eta)\)</span>，故得证.</p>
+<h2 id="例题-11">例题 11</h2>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上具有四阶连续导数，证明存在一点
+<span class="math inline">\(\xi\in(a,b)\)</span>，使得 <span
+class="math display">\[\int_{a}^{b}f(x)\dd
+x=\dfrac{b-a}{6}\qty[f(a)+4f\qty(\dfrac{a+b}{2})+f(b)]-\dfrac{(b-a)^5}{2880}f^{(4)}(\xi).\]</span></p>
+<h3 id="解答-8">解答：</h3>
+<p>令 <span class="math inline">\(\begin{cases}
+        a=c-h \\b=c+h
+    \end{cases}\Rightarrow \begin{cases}
+        c=\dfrac{a+b}{2} \\[6pt]
+        h=\dfrac{b-a}{2}
+    \end{cases}\)</span> 那么原式等价于 <span
+class="math display">\[\int_{c-h}^{c+h}f(x)\dd
+x=\dfrac{h}{3}\qty[f(c-h)+4(c)+f(c+h)]-\dfrac{h^5}{90}f^{(4)}(\xi)\]</span>
+设 <span class="math inline">\(k\)</span> 为使上式成立的实常数，并构造
+<span class="math display">\[F(x)=\int_{c-x}^{c+x}f(t)\dd
+t-\dfrac{x}{3}\qty[f(c-x)+4(c)+f(c+x)]+\dfrac{x^5}{90}k\]</span> 下证
+<span class="math inline">\(k=f^{(4)}(\xi)\)</span>，因为 <span
+class="math inline">\(F(0)=F(x)=0\)</span>，由 Rolle 定理得，<span
+class="math inline">\(\exists \xi_1\in(0,x)\)</span>，使得 <span
+class="math inline">\(F&#39;(\xi_1)=0\)</span> 又 <span
+class="math display">\[\begin{align*}
+    F&#39;(x) &amp;
+=f(c+x)+f(c-x)-\dfrac{1}{3}\qty[f(c-x)+4f(c)+f(c+x)]-\dfrac{x}{3}\qty[-f&#39;(c-x)+f&#39;(c+x)]+\dfrac{x^4}{18}k
+\\
+          &amp;
+=\dfrac{2}{3}\qty[f(c+x)+f(c-x)]+\dfrac{x}{3}\qty[f&#39;(c-x)-f&#39;(c+x)]+\dfrac{x^4}{18}k-\dfrac{4}{3}f(c)
+\end{align*}\]</span> 因为 <span
+class="math inline">\(F&#39;(0)=F&#39;(\xi_1)\)</span>，由 Rolle
+定理得，<span
+class="math inline">\(\exists\xi_2\in(0,\xi_1)\)</span>，使得 <span
+class="math inline">\(F&#39;&#39;(\xi_2)=0\)</span>，且 <span
+class="math display">\[\begin{align*}
+    F&#39;&#39;(x) &amp;
+=\dfrac{2}{3}\qty[f&#39;(c+x)-f&#39;(c-x)]+\dfrac{1}{3}\qty[f&#39;(c-x)-f&#39;(c+x)]+\dfrac{x}{3}\qty[-f&#39;&#39;(c-x)-f&#39;&#39;(c+x)]+\dfrac{2x^3}{9}k
+\\
+           &amp;
+=\dfrac{1}{3}\qty[f&#39;(c+x)-f&#39;(c-x)]-\dfrac{x}{3}\qty[f&#39;&#39;(c-x)+f&#39;&#39;(c+x)]+\dfrac{2x^3}{9}k
+\end{align*}\]</span> 又因为 <span
+class="math inline">\(F&#39;&#39;(0)=F&#39;&#39;(\xi_2)\)</span>，由
+Rolle 定理得，<span
+class="math inline">\(\exists\xi_3\in(0,\xi_2)\)</span>，使得 <span
+class="math inline">\(F&#39;&#39;&#39;(\xi_3)=0\)</span>，且 <span
+class="math display">\[\begin{align*}
+    F&#39;&#39;&#39;(x) &amp;
+=\dfrac{1}{3}\qty[f&#39;&#39;(c+x)+f&#39;&#39;(c-x)]-\dfrac{1}{3}\qty[f&#39;&#39;(c-x)+f&#39;&#39;(c+x)]-\dfrac{x}{3}\qty[-f&#39;&#39;&#39;(c-x)+f&#39;&#39;&#39;(c+x)]+\dfrac{2x^2}{3}k
+\\
+            &amp;
+=\dfrac{x}{3}\qty[f&#39;&#39;&#39;(c-x)-f&#39;&#39;&#39;(c+x)]+\dfrac{2x^2}{3}k
+\end{align*}\]</span> 由 Lagrange 中值定理得，<span
+class="math inline">\(\exists\xi\in(c-\xi_3,c+\xi_3)\)</span>，使得
+<span
+class="math inline">\(f&#39;&#39;&#39;(c-\xi_3)-f&#39;&#39;&#39;(c+\xi_3)=-2\xi_3f^{(4)}(\xi)\)</span>，那么
+<span
+class="math display">\[-\dfrac{2}{3}\xi_3^2f^{(4)}(\xi)+\dfrac{2}{3}\xi_3^2k=0\Rightarrow
+k=f^{(4)}(\xi)\]</span> 得证 <span
+class="math inline">\(k=f^{(4)}(x)\)</span>，即原命题成立.</p>
+<h2 id="例题-12">例题 12</h2>
+<p>设 <span class="math inline">\(f(x)\in C^4[0,1]\)</span>，且满足
+<span class="math inline">\(\displaystyle \int_{0}^{1}f(x)\dd
+x+3f\qty(\dfrac{1}{2})=8\int_{\frac{1}{4}}^{\frac{3}{4}}f(x)\dd
+x\)</span>，证明: <span class="math inline">\(\exists
+c\in(0,1)\)</span>，使得 <span
+class="math inline">\(f^{(4)}(c)=0.\)</span></p>
+<h3 id="解答-9">解答</h3>
+<p>因为 <span class="math inline">\(\displaystyle\int_{0}^{1}f(x)\dd
+x\xlongequal{x=t+\frac{1}{2}}\int_{-\frac{1}{2}}^{\frac{1}{2}}f\qty(t+\dfrac{1}{2})\dd
+t,~\int_{\frac{1}{4}}^{\frac{3}{4}}f(x)\dd
+x\xlongequal{x=\frac{t}{2}+\frac{1}{2}}\dfrac{1}{2}\int_{-\frac{1}{2}}^{\frac{1}{2}}f\qty(\dfrac{t}{2}+\dfrac{1}{2})\dd
+t\)</span>，所以 <span
+class="math display">\[\int_{-\frac{1}{2}}^{\frac{1}{2}}f(t+\dfrac{1}{2})\dd
+t-4\int_{\frac{1}{2}}^{\frac{1}{2}}f\qty(\dfrac{t}{2}+\dfrac{1}{2})\dd t
++3f\qty(\dfrac{1}{2})=0\]</span> 令 <span
+class="math inline">\(g(x)=f\qty(x+\dfrac{1}{2})+f\qty(-x+\dfrac{1}{2})\)</span>，<span
+class="math inline">\(h(x)=g(x)-4g\qty(\dfrac{x}{2})\)</span>，那么
+<span
+class="math display">\[h(0)=-3g(0)=-6f\qty(\dfrac{1}{2})\Rightarrow
+f\qty(\dfrac{1}{2})=-\dfrac{1}{2}h(0)\]</span> 那么 <span
+class="math display">\[\begin{align*}
+    \int_{-\frac{1}{2}}^{\frac{1}{2}}f\qty(t+\dfrac{1}{2})\dd
+t-4\int_{\frac{1}{2}}^{\frac{1}{2}}f\qty(\dfrac{t}{2}+\dfrac{1}{2})\dd t
+-\dfrac{1}{2}h(0)=0
+    \Rightarrow \int_{0}^{\frac{1}{2}}h(t)\dd
+t-\dfrac{1}{2}h(0)=0\Rightarrow
+\dfrac{1}{\dfrac{1}{2}-0}\int_{0}^{\frac{1}{2}}h(t)\dd t=h(0)
+\end{align*}\]</span> 因为 <span
+class="math inline">\(m=\min\limits_{x\in[0,1]}h(x)\leqslant
+h(0)\leqslant \max\limits_{x\in[0,1]}h(x)=M\)</span>，所以 <span
+class="math inline">\(\exists\xi_1\in(0,\dfrac{1}{2})\)</span>，使得
+<span class="math inline">\(h&#39;(\xi_1)=0\)</span>，又 <span
+class="math display">\[h&#39;(x)=g&#39;(x)-2g&#39;\qty(\dfrac{x}{2}),g&#39;(x)=f&#39;\qty(x+\dfrac{1}{2})-f\qty(-x+\dfrac{1}{2})\]</span>
+所以 <span class="math inline">\(h&#39;(0)=0=h&#39;(\xi_1)\)</span>，由
+Rolle 定理知，<span
+class="math inline">\(\exists\xi_2\in(0,\xi_1)\subset
+\qty(0,\dfrac{1}{2})\)</span>，使得 <span
+class="math inline">\(h&#39;&#39;(\xi_2)=0\)</span>，又 <span
+class="math display">\[h&#39;&#39;(x)=g&#39;&#39;(x)-g&#39;&#39;\qty(\dfrac{x}{2}),g&#39;&#39;(x)=f&#39;&#39;\qty(x+\dfrac{1}{2})+f&#39;&#39;\qty(-x+\dfrac{1}{2})\]</span>
+所以 <span
+class="math inline">\(h&#39;&#39;(\xi_2)=g&#39;&#39;(\xi_2)=g&#39;&#39;\qty(\dfrac{\xi_2}{2})\)</span>，由
+Rolle 定理知，<span
+class="math inline">\(\exists\xi_3\in\qty(\dfrac{\xi_2}{2},\xi_2)\subset\qty(0,\dfrac{1}{2})\)</span>，使得
+<span class="math inline">\(g&#39;&#39;&#39;(\xi_3)=0\)</span>，而 <span
+class="math display">\[g&#39;&#39;&#39;(x)=f&#39;&#39;&#39;\qty(x+\dfrac{1}{2})-f&#39;&#39;&#39;\qty(-x+\dfrac{1}{2})\]</span>
+所以 <span
+class="math inline">\(f&#39;&#39;&#39;\qty(\xi_3+\dfrac{1}{2})=f&#39;&#39;&#39;\qty(-\xi_3+\dfrac{1}{2})\)</span>，再由
+Rolle 定理知，<span class="math inline">\(\exists
+c\in\qty(-\xi_3+\dfrac{1}{2},\xi_3+\dfrac{1}{2})\subset(0,1)\)</span>
+使得 <span class="math inline">\(f^{(4)}(c)=0.\)</span></p>
 
                 
               </div>
