@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://example.com/2024/05/04/styleTransfer/style_transfer2.png">
 <meta property="og:image" content="http://example.com/2024/05/04/styleTransfer/style_transfer.png">
 <meta property="article:published_time" content="2024-05-04T02:58:05.660Z">
-<meta property="article:modified_time" content="2024-05-04T03:05:58.470Z">
+<meta property="article:modified_time" content="2024-05-04T03:11:02.412Z">
 <meta property="article:author" content="Guoming Huang">
 <meta property="article:tag" content="卷积神经网络">
 <meta property="article:tag" content="CNN">
@@ -486,17 +486,20 @@ content 相同的张量 target，并设置其可导，用于后续的优化过�
 <h2 id="训练模型">训练模型</h2>
 <p>在训练模型进行风格迁移时，我们不断抽取合成图像的内容特征和风格特征，然后计算损失函数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 开始训练</span><br><span class="hljs-comment"># 每 20% 输出一次训练结果</span><br>show_every = <span class="hljs-number">2000</span><br>epoch = <span class="hljs-number">20000</span><br>optimizer = optim.Adam([target], lr=<span class="hljs-number">0.003</span>)<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> tqdm(<span class="hljs-built_in">range</span>(epoch)):<br>    target_features = get_features(img=target, model=vgg)<br>    <span class="hljs-comment"># 计算内容损失，即目标图像与内容图像在特定层的特征之间的均方误差</span><br>    content_loss = torch.mean(<br>        (target_features[<span class="hljs-string">&quot;conv4_2&quot;</span>] - content_features[<span class="hljs-string">&quot;conv4_2&quot;</span>]) ** <span class="hljs-number">2</span><br>    )<br><br>    style_loss = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> layer <span class="hljs-keyword">in</span> style_weights:<br>        target_feature = target_features[layer]<br>        target_gram = gram_matrix(tensor=target_feature)<br>        _, d, h, w = target_feature.shape<br>        style_gram = style_grams[layer]<br>        <span class="hljs-comment"># 计算风格损失，遍历每一层的权重 style_weights，计算目标图像在该层的 Gram 矩阵与风格图像在该层的 Gram 矩阵之间的均方误差，并加权求和</span><br>        layer_style_loss = style_weights[layer] * torch.mean(<br>            (target_gram - style_gram) ** <span class="hljs-number">2</span><br>        )<br>        style_loss += layer_style_loss / (d * h * w)<br><br>    <span class="hljs-comment"># 计算总损失，包括内容损失和风格损失，其中通过 content_weight 和 style_weight 分别控制两者的权重</span><br>    total_loss = content_weight * content_loss + style_weight * style_loss<br><br>    optimizer.zero_grad()  <span class="hljs-comment"># 使用优化器进行梯度清零</span><br>    total_loss.backward()  <span class="hljs-comment"># 反向传播总损失</span><br>    optimizer.step()  <span class="hljs-comment"># 更新参数</span><br><br>    <span class="hljs-comment"># 展示训练过程</span><br>    <span class="hljs-keyword">if</span> i % show_every == <span class="hljs-number">0</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Total Loss:&quot;</span>, total_loss.item())<br>        plt.imshow(im_convert(tensor=target))<br>        plt.show()<br></code></pre></td></tr></table></figure>
-<p>使用内容图像和风格图像来生成一个新的目标图像，使其同时保留内容和风格特征。
-具体步骤如下： 1. 设置训练过程中的输出频率和总迭代次数。 2. 定义优化器为
-Adam，并传入目标图像 target 作为要优化的参数。 3.
-在每次迭代中，计算目标图像在不同层的特征表示，然后分别计算内容损失和风格损失。
-4. 内容损失计算目标图像与内容图像在特定层特征之间的均方误差。 5.
-风格损失通过计算目标图像在每层的Gram矩阵与风格图像在对应层的 Gram
-矩阵的均方误差，并加权求和得到。 6.
-总损失由内容损失和风格损失加权求和得到。 7.
-使用优化器进行梯度清零，反向传播总损失，更新参数。 8.
-每隔一定迭代次数展示训练过程中的目标图像及当前总损失。 9.
-这个训练过程将逐步调整目标图像，使其在内容和风格上与内容图像和风格图像相似。通过迭代训练，最终可以得到一个同时保留了内容和风格特征的合成图像。</p>
+<p>使用内容图像和风格图像来生成一个新的目标图像，使其同时保留内容和风格特征。具体步骤如下：</p>
+<ol type="1">
+<li><p>设置训练过程中的输出频率和总迭代次数。</p></li>
+<li><p>定义优化器为 Adam，并传入目标图像 target
+作为要优化的参数。</p></li>
+<li><p>在每次迭代中，计算目标图像在不同层的特征表示，然后分别计算内容损失和风格损失。</p></li>
+<li><p>内容损失计算目标图像与内容图像在特定层特征之间的均方误差。</p></li>
+<li><p>风格损失通过计算目标图像在每层的Gram矩阵与风格图像在对应层的 Gram
+矩阵的均方误差，并加权求和得到。</p></li>
+<li><p>总损失由内容损失和风格损失加权求和得到。</p></li>
+<li><p>使用优化器进行梯度清零，反向传播总损失，更新参数。</p></li>
+<li><p>每隔一定迭代次数展示训练过程中的目标图像及当前总损失。</p></li>
+<li><p>这个训练过程将逐步调整目标图像，使其在内容和风格上与内容图像和风格图像相似。通过迭代训练，最终可以得到一个同时保留了内容和风格特征的合成图像。</p></li>
+</ol>
 <p>如下图所示，我们可以看到，合成图像保留了内容图像的风景和物体，并同时迁移了风格图像的色彩。
 例如，合成图像具有与风格图像中一样的色彩块，其中一些甚至具有画笔笔触的细微纹理。</p>
 <figure>
