@@ -18,12 +18,12 @@
   <meta name="author" content="Guoming Huang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };      二次型化为标准形方法论运用偏导函数的思想将二次型化为标准形有以下两种情况:  如果 $f(x_1,x_2,\cdots,x_n)$ 中含有某变量的平方项，即 $a_{i">
+    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     二次型化为标准形 方法论 运用偏导函数的思想将二次型化为标准形有以下两种情况:  如果 \(f(x_1,x_2,\cdots,x_n)\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二次型化为标准形">
 <meta property="og:url" content="http://example.com/2024/05/04/theQuadraticTypeIsConvertedIntoAStandardType/index.html">
 <meta property="og:site_name" content="ChungMG">
-<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };      二次型化为标准形方法论运用偏导函数的思想将二次型化为标准形有以下两种情况:  如果 $f(x_1,x_2,\cdots,x_n)$ 中含有某变量的平方项，即 $a_{i">
+<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     二次型化为标准形 方法论 运用偏导函数的思想将二次型化为标准形有以下两种情况:  如果 \(f(x_1,x_2,\cdots,x_n)\">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-04T00:00:26.294Z">
 <meta property="article:modified_time" content="2024-05-04T00:15:21.576Z">
@@ -261,7 +261,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          965 words
+          904 words
         
       </span>
     
@@ -272,7 +272,7 @@
         
         
         
-          9 mins
+          8 mins
         
       </span>
     
@@ -337,21 +337,118 @@ MathJax = {
   src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js">
 </script>
 </html>
-
-<h1 id="二次型化为标准形"><a href="#二次型化为标准形" class="headerlink" title="二次型化为标准形"></a>二次型化为标准形</h1><h2 id="方法论"><a href="#方法论" class="headerlink" title="方法论"></a>方法论</h2><p>运用偏导函数的思想将二次型化为标准形有以下两种情况:</p>
-<ol>
-<li><p>如果 $f(x_1,x_2,\cdots,x_n)$ 中含有某变量的平方项，即 $a_{i i}~ (i&#x3D;1, \cdots, n)$ 中至少有一个不为零，<br>不妨设 $a_{11} \neq 0$，记 $\displaystyle f_{1}&#x3D;\frac{1}{2} \frac{\partial f}{\partial x_{1}}$，<br>令<br>$$f(x_1,x_2,\cdots,x_n)&#x3D;\frac{1}{a_{11}}f_1^2+g$$<br>求得 $g$，此时 $g$ 中已不含 $x_{1}$，再记 $\displaystyle g_{1}&#x3D;\frac{1}{2} \frac{\partial g}{\partial x_{2}}$，并令<br>$$f(x_1,x_2,\cdots,x_n)&#x3D;\frac{1}{a_{11}}f_1^2+\frac{1}{a_{22}}g_1^2+h$$<br>此时 $h$ 中已不含 $x_1$ 与 $x_2$，按这种方法继续运算，可将二次型化为标准形;</p>
-</li>
-<li><p>如果 $f(x_1,x_2,\cdots,x_n)$ 中不含有任一变量的平方项，即 $a_{ii}&#x3D;0~ (i&#x3D;1,\cdots,n)$，但至少有一个 $a_{1j}\neq 0~ (j&gt;1)$ 不为零 ($a_{ij}$ 是 $x_{ij}$ 项的系数)，<br>不妨设 $a_{12}\neq 0$，记 $f_1&#x3D;\dfrac{1}{2}\displaystyle\pdv{f}{x_1},f_2&#x3D;\dfrac{1}{2}\displaystyle\pdv{f}{x_2}$，令<br>$$f(x_1,x_2,\cdots,x_n)&#x3D;\dfrac{1}{a_{12}}\qty[(f_1+f_2)^2-(f_1-f_2)^2]+\varphi$$<br>求得 $\varphi$，此时 $\varphi$ 中已不含 $x_1$ 与 $x_2$，观察 $\varphi$ 的结构，如果 $\varphi$ 中含有变量的平方项，则按情况一中的方法进行，否则按情况二中的方法进行，直至二次型化为标准形.</p>
-</li>
+<h1 id="二次型化为标准形">二次型化为标准形</h1>
+<h2 id="方法论">方法论</h2>
+<p>运用偏导函数的思想将二次型化为标准形有以下两种情况:</p>
+<ol type="1">
+<li><p>如果 <span class="math inline">\(f(x_1,x_2,\cdots,x_n)\)</span>
+中含有某变量的平方项，即 <span class="math inline">\(a_{i i}~ (i=1,
+\cdots, n)\)</span> 中至少有一个不为零， 不妨设 <span
+class="math inline">\(a_{11} \neq 0\)</span>，记 <span
+class="math inline">\(\displaystyle f_{1}=\frac{1}{2} \frac{\partial
+f}{\partial x_{1}}\)</span>， 令 <span
+class="math display">\[f(x_1,x_2,\cdots,x_n)=\frac{1}{a_{11}}f_1^2+g\]</span>
+求得 <span class="math inline">\(g\)</span>，此时 <span
+class="math inline">\(g\)</span> 中已不含 <span
+class="math inline">\(x_{1}\)</span>，再记 <span
+class="math inline">\(\displaystyle g_{1}=\frac{1}{2} \frac{\partial
+g}{\partial x_{2}}\)</span>，并令 <span
+class="math display">\[f(x_1,x_2,\cdots,x_n)=\frac{1}{a_{11}}f_1^2+\frac{1}{a_{22}}g_1^2+h\]</span>
+此时 <span class="math inline">\(h\)</span> 中已不含 <span
+class="math inline">\(x_1\)</span> 与 <span
+class="math inline">\(x_2\)</span>，按这种方法继续运算，可将二次型化为标准形;</p></li>
+<li><p>如果 <span class="math inline">\(f(x_1,x_2,\cdots,x_n)\)</span>
+中不含有任一变量的平方项，即 <span class="math inline">\(a_{ii}=0~
+(i=1,\cdots,n)\)</span>，但至少有一个 <span
+class="math inline">\(a_{1j}\neq 0~ (j&gt;1)\)</span> 不为零 (<span
+class="math inline">\(a_{ij}\)</span> 是 <span
+class="math inline">\(x_{ij}\)</span> 项的系数)， 不妨设 <span
+class="math inline">\(a_{12}\neq 0\)</span>，记 <span
+class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1},f_2=\dfrac{1}{2}\displaystyle\pdv{f}{x_2}\)</span>，令
+<span
+class="math display">\[f(x_1,x_2,\cdots,x_n)=\dfrac{1}{a_{12}}\qty[(f_1+f_2)^2-(f_1-f_2)^2]+\varphi\]</span>
+求得 <span class="math inline">\(\varphi\)</span>，此时 <span
+class="math inline">\(\varphi\)</span> 中已不含 <span
+class="math inline">\(x_1\)</span> 与 <span
+class="math inline">\(x_2\)</span>，观察 <span
+class="math inline">\(\varphi\)</span> 的结构，如果 <span
+class="math inline">\(\varphi\)</span>
+中含有变量的平方项，则按情况一中的方法进行，否则按情况二中的方法进行，直至二次型化为标准形.</p></li>
 </ol>
-<h2 id="例题-1"><a href="#例题-1" class="headerlink" title="例题 1"></a>例题 1</h2><p>将二次型 $f(x_1,x_2,x_3)&#x3D;x_1^2+2x_2^2-4x_3^2+2x_1x_2-2x_2x_3$ 化为标准形.</p>
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><p>记 $f_1&#x3D;\dfrac{1}{2}\displaystyle\pdv{f}{x_1}&#x3D;x_1+x_2$，令<br>$$f&#x3D;\dfrac{1}{a_{11}}f_1^2+g&#x3D;(x_1+x_2)^2+g$$<br>求得 $g&#x3D;x_2^2-4x_3^2-2x_2x_3$，记 $g_1&#x3D;\dfrac{1}{2}\displaystyle\pdv{g}{x_2}&#x3D;x_2-x_3$，令<br>$$g&#x3D;\dfrac{1}{a_{22}}g_1^2+h$$<br>求得 $h&#x3D;-5x_3^2$，那么<br>$$f(x_1,x_2,x_3)&#x3D;(x_1+x_2)^2+(x_2-x_3)^2-5x_3^2$$<br>作可逆线性变换<br>$$\left{\begin{matrix}<br>            y_1 &amp; &#x3D; &amp; x_1 &amp; + &amp; x_2           \<br>            y_2 &amp; &#x3D; &amp;     &amp;   &amp; x_2 &amp; - &amp; x_3 \<br>            y_3 &amp; &#x3D; &amp;     &amp;   &amp;     &amp;   &amp; x_3<br>        \end{matrix}\right.$$<br>则有 $f(y_1,y_2,y_3)&#x3D;y_1^2+y_2^2-5y_3^2.$</p>
-<h2 id="例题-2"><a href="#例题-2" class="headerlink" title="例题 2"></a>例题 2</h2><p>将二次型 $f(x_1,x_2,x_3)&#x3D;-4x_1x_2+2x_1x_3+2x_2x_3$ 化为标准形.</p>
-<h3 id="解答-1"><a href="#解答-1" class="headerlink" title="解答"></a>解答</h3><p>二次型中不含有任一变量的平方项，记 $f_1&#x3D;\dfrac{1}{2}\displaystyle\pdv{f}{x_1},<del>f_2&#x3D;\dfrac{1}{2}\displaystyle\pdv{f}{x_2}$，则有<br>$$f_1&#x3D;\dfrac{1}{2}(-4x_2+2x_3)&#x3D;-2x_2+x_3,</del>f_2&#x3D;\dfrac{1}{2}(-4x_1+2x_3)&#x3D;-2x_1+x_3$$<br>令<br>$$\begin{align*}<br>    f &amp; &#x3D;\dfrac{1}{a_{12}}\qty[(f_1+f_2)^2-(f_1-f_2)^2]+\varphi&#x3D;-\dfrac{1}{4}\qty[(-2x_1-2x_2+2x_3)^2-(2x_1-2x_2)^2]+\varphi \<br>      &amp; &#x3D;(x_1-x_2)^2-(x_1+x_2-x_3)^2+\varphi&#x3D;(2x_1-x_3)(-2x_2+x_3)+\varphi&#x3D;-4x_1x_2+2x_1x_3+2x_2x_3-x_3^2+\varphi<br>\end{align*}$$<br>即 $\varphi&#x3D;x_3^2$，所以<br>$$f(x_1,x_2,x_3)&#x3D;-(x_1+x_2-x_3)^2+(x_1-x_2)^2+x_3^2$$<br>作可逆线性变换 $\left{\begin{matrix}<br>        y_1 &amp; &#x3D; &amp; x_1 &amp; + &amp; x_2 &amp; - &amp; x_3 \<br>        y_2 &amp; &#x3D; &amp; x_1 &amp; - &amp; x_2 &amp;         \<br>        y_3 &amp; &#x3D; &amp;     &amp;   &amp;     &amp;   &amp; x_3<br>    \end{matrix}\right.$，则有 $f(y_1,y_2,y_3)&#x3D;-y_1^2+y_2^2+y_3^2.$</p>
-<h2 id="例题-3"><a href="#例题-3" class="headerlink" title="例题 3"></a>例题 3</h2><p>二次型<br>$$f(x_1,x_2,x_3)&#x3D;(x_1+x_2)^2+(x_1+x_3)^2-4(x_2-x_3)^2$$<br>的标准形为</p>
-<p>A. $y_1^2+y_2^2~~~~~~$<br>B. $y_1^2-y_2^2~~~~~~$<br>C. $y_1^2+y_2^2-4y_3^2~~~~~~$<br>D. $y_1^2+y_2^2-y_3^2$</p>
-<h3 id="解答-2"><a href="#解答-2" class="headerlink" title="解答"></a>解答</h3><p>将 $f$ 完全展开，得<br>$$f&#x3D;2x_1^2-3x_2^2-3x_3^2+2x_1x_2+2x_1x_3+8x_2x_3$$<br>那么<br>$$f_1&#x3D;\dfrac{1}{2}\pdv{f}{x_1}&#x3D;\dfrac{1}{2}(4x_1+2x_2+2x_3)&#x3D;2x_1+x_2+x_3$$<br>则<br>$$f&#x3D;\dfrac{1}{a_{11}}f_1^2+g&#x3D;2x_1^2+\dfrac{1}{2}x_2^2+\dfrac{1}{2}x_3^2+2x_1x_2+2x_1x_3+x_2x_3+g$$<br>对比可得 $g&#x3D;-\dfrac{7}{2}x_2^2-\dfrac{7}{2}x_3^2+7x_2x_3$，<br>再令<br>$$g_1&#x3D;\dfrac{1}{2}\pdv{g}{x_2}&#x3D;\dfrac{1}{2}(-7x_2+7x_3)&#x3D;-\dfrac{7}{2}x_2+\dfrac{7}{2}x_3$$<br>又 $g&#x3D;\dfrac{1}{a_{22}}g_1^2+h$，可解出 $h&#x3D;0$，因此可排除 C，D 选项，<br>$$f&#x3D;\dfrac{1}{\sqrt{2}^2}(2x_1+x_2+x_3)^2-\sqrt{\dfrac{7}{2}}^2(x_2-x_3)^2$$<br>作可逆线性变换 $\begin{cases}<br>            y_1&#x3D;\dfrac{1}{\sqrt{2}} (2x_1+x_2+x_3) \[6pt]<br>            y_2&#x3D;\sqrt{\dfrac{7}{2} } (x_2-x_3)     \[6pt]<br>            y_3&#x3D;x_3<br>\end{cases}$，因此 $f(y_1,y_2,y_3)&#x3D;y_1^2-y_2^2$ 选 B.</p>
+<h2 id="例题-1">例题 1</h2>
+<p>将二次型 <span
+class="math inline">\(f(x_1,x_2,x_3)=x_1^2+2x_2^2-4x_3^2+2x_1x_2-2x_2x_3\)</span>
+化为标准形.</p>
+<h3 id="解答">解答</h3>
+<p>记 <span
+class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1}=x_1+x_2\)</span>，令
+<span
+class="math display">\[f=\dfrac{1}{a_{11}}f_1^2+g=(x_1+x_2)^2+g\]</span>
+求得 <span class="math inline">\(g=x_2^2-4x_3^2-2x_2x_3\)</span>，记
+<span
+class="math inline">\(g_1=\dfrac{1}{2}\displaystyle\pdv{g}{x_2}=x_2-x_3\)</span>，令
+<span class="math display">\[g=\dfrac{1}{a_{22}}g_1^2+h\]</span> 求得
+<span class="math inline">\(h=-5x_3^2\)</span>，那么 <span
+class="math display">\[f(x_1,x_2,x_3)=(x_1+x_2)^2+(x_2-x_3)^2-5x_3^2\]</span>
+作可逆线性变换 <span class="math display">\[\left\{\begin{matrix}
+            y_1 &amp; = &amp; x_1 &amp; + &amp; x_2           \\
+            y_2 &amp; = &amp;     &amp;   &amp; x_2 &amp; - &amp; x_3 \\
+            y_3 &amp; = &amp;     &amp;   &amp;     &amp;   &amp; x_3
+        \end{matrix}\right.\]</span> 则有 <span
+class="math inline">\(f(y_1,y_2,y_3)=y_1^2+y_2^2-5y_3^2.\)</span></p>
+<h2 id="例题-2">例题 2</h2>
+<p>将二次型 <span
+class="math inline">\(f(x_1,x_2,x_3)=-4x_1x_2+2x_1x_3+2x_2x_3\)</span>
+化为标准形.</p>
+<h3 id="解答-1">解答</h3>
+<p>二次型中不含有任一变量的平方项，记 <span
+class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1},~f_2=\dfrac{1}{2}\displaystyle\pdv{f}{x_2}\)</span>，则有
+<span
+class="math display">\[f_1=\dfrac{1}{2}(-4x_2+2x_3)=-2x_2+x_3,~f_2=\dfrac{1}{2}(-4x_1+2x_3)=-2x_1+x_3\]</span>
+令 <span class="math display">\[\begin{align*}
+    f &amp;
+=\dfrac{1}{a_{12}}\qty[(f_1+f_2)^2-(f_1-f_2)^2]+\varphi=-\dfrac{1}{4}\qty[(-2x_1-2x_2+2x_3)^2-(2x_1-2x_2)^2]+\varphi
+\\
+      &amp;
+=(x_1-x_2)^2-(x_1+x_2-x_3)^2+\varphi=(2x_1-x_3)(-2x_2+x_3)+\varphi=-4x_1x_2+2x_1x_3+2x_2x_3-x_3^2+\varphi
+\end{align*}\]</span> 即 <span
+class="math inline">\(\varphi=x_3^2\)</span>，所以 <span
+class="math display">\[f(x_1,x_2,x_3)=-(x_1+x_2-x_3)^2+(x_1-x_2)^2+x_3^2\]</span>
+作可逆线性变换 <span class="math inline">\(\left\{\begin{matrix}
+        y_1 &amp; = &amp; x_1 &amp; + &amp; x_2 &amp; - &amp; x_3 \\
+        y_2 &amp; = &amp; x_1 &amp; - &amp; x_2 &amp;         \\
+        y_3 &amp; = &amp;     &amp;   &amp;     &amp;   &amp; x_3
+    \end{matrix}\right.\)</span>，则有 <span
+class="math inline">\(f(y_1,y_2,y_3)=-y_1^2+y_2^2+y_3^2.\)</span></p>
+<h2 id="例题-3">例题 3</h2>
+<p>二次型 <span
+class="math display">\[f(x_1,x_2,x_3)=(x_1+x_2)^2+(x_1+x_3)^2-4(x_2-x_3)^2\]</span>
+的标准形为</p>
+<p>A. <span class="math inline">\(y_1^2+y_2^2~~~~~~\)</span> B. <span
+class="math inline">\(y_1^2-y_2^2~~~~~~\)</span> C. <span
+class="math inline">\(y_1^2+y_2^2-4y_3^2~~~~~~\)</span> D. <span
+class="math inline">\(y_1^2+y_2^2-y_3^2\)</span></p>
+<h3 id="解答-2">解答</h3>
+<p>将 <span class="math inline">\(f\)</span> 完全展开，得 <span
+class="math display">\[f=2x_1^2-3x_2^2-3x_3^2+2x_1x_2+2x_1x_3+8x_2x_3\]</span>
+那么 <span
+class="math display">\[f_1=\dfrac{1}{2}\pdv{f}{x_1}=\dfrac{1}{2}(4x_1+2x_2+2x_3)=2x_1+x_2+x_3\]</span>
+则 <span
+class="math display">\[f=\dfrac{1}{a_{11}}f_1^2+g=2x_1^2+\dfrac{1}{2}x_2^2+\dfrac{1}{2}x_3^2+2x_1x_2+2x_1x_3+x_2x_3+g\]</span>
+对比可得 <span
+class="math inline">\(g=-\dfrac{7}{2}x_2^2-\dfrac{7}{2}x_3^2+7x_2x_3\)</span>，
+再令 <span
+class="math display">\[g_1=\dfrac{1}{2}\pdv{g}{x_2}=\dfrac{1}{2}(-7x_2+7x_3)=-\dfrac{7}{2}x_2+\dfrac{7}{2}x_3\]</span>
+又 <span
+class="math inline">\(g=\dfrac{1}{a_{22}}g_1^2+h\)</span>，可解出 <span
+class="math inline">\(h=0\)</span>，因此可排除 C，D 选项， <span
+class="math display">\[f=\dfrac{1}{\sqrt{2}^2}(2x_1+x_2+x_3)^2-\sqrt{\dfrac{7}{2}}^2(x_2-x_3)^2\]</span>
+作可逆线性变换 <span class="math inline">\(\begin{cases}
+            y_1=\dfrac{1}{\sqrt{2}} (2x_1+x_2+x_3) \\[6pt]
+            y_2=\sqrt{\dfrac{7}{2} } (x_2-x_3)     \\[6pt]
+            y_3=x_3
+\end{cases}\)</span>，因此 <span
+class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
 
                 
               </div>
