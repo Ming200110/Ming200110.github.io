@@ -18,29 +18,28 @@
   <meta name="author" content="Guoming Huang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     二次型化为标准形 方法论 运用偏导函数的思想将二次型化为标准形有以下两种情况:  如果 \(f(x_1,x_2,\cdots,x_n)\">
+    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     微分算子法 微分算子法是在求解非齐次线性微分方程 \[y^{(n)}+a_1y^{(n-1)}+\cdots+a_{n-1}y&#39;+a_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二次型化为标准形">
-<meta property="og:url" content="http://example.com/2024/05/04/theQuadraticTypeIsConvertedIntoAStandardType/index.html">
+<meta property="og:title" content="微分算子法">
+<meta property="og:url" content="http://example.com/2024/05/04/differentialArithmeticMethod/index.html">
 <meta property="og:site_name" content="ChungMG">
-<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     二次型化为标准形 方法论 运用偏导函数的思想将二次型化为标准形有以下两种情况:  如果 \(f(x_1,x_2,\cdots,x_n)\">
+<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     微分算子法 微分算子法是在求解非齐次线性微分方程 \[y^{(n)}+a_1y^{(n-1)}+\cdots+a_{n-1}y&#39;+a_">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-04T00:00:26.294Z">
-<meta property="article:modified_time" content="2024-05-04T00:15:21.576Z">
+<meta property="article:published_time" content="2024-05-04T00:15:47.203Z">
+<meta property="article:modified_time" content="2024-05-04T00:27:17.271Z">
 <meta property="article:author" content="Guoming Huang">
+<meta property="article:tag" content="高等数学">
 <meta property="article:tag" content="数学技巧">
 <meta property="article:tag" content="考研数学">
-<meta property="article:tag" content="线性代数">
-<meta property="article:tag" content="二次型">
-<meta property="article:tag" content="标准形">
-<meta property="article:tag" content="偏导函数">
+<meta property="article:tag" content="微分方程">
+<meta property="article:tag" content="微分算子">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>二次型化为标准形 - ChungMG</title>
+  <title>微分算子法 - ChungMG</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -233,7 +232,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="二次型化为标准形"></span>
+            <span id="subtitle" data-typed-text="微分算子法"></span>
           
         </div>
 
@@ -249,7 +248,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-04 08:00" pubdate>
+        <time datetime="2024-05-04 08:15" pubdate>
           May 4, 2024 am
         </time>
       </span>
@@ -261,7 +260,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          904 words
+          1.3k words
         
       </span>
     
@@ -272,7 +271,7 @@
         
         
         
-          8 mins
+          11 mins
         
       </span>
     
@@ -317,7 +316,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">二次型化为标准形</h1>
+            <h1 id="seo-header">微分算子法</h1>
             
             
               <div class="markdown-body">
@@ -337,118 +336,135 @@ MathJax = {
   src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js">
 </script>
 </html>
-<h1 id="二次型化为标准形">二次型化为标准形</h1>
+<h1 id="微分算子法">微分算子法</h1>
+<p>微分算子法是在求解非齐次线性微分方程 <span
+class="math display">\[y^{(n)}+a_1y^{(n-1)}+\cdots+a_{n-1}y&#39;+a_ny=f(x)\]</span>
+的一个特解时常采用的一种方法.
+具体地说，在求解常系数微分方程上述方程时，可以先求解其特征方程，
+得到相应齐次方程的通解，再求出非齐次方程的一个特解即可.</p>
 <h2 id="方法论">方法论</h2>
-<p>运用偏导函数的思想将二次型化为标准形有以下两种情况:</p>
+<p>为了求非齐次方程的一个特解，引入微分算子: <span
+class="math display">\[\mathrm{D}=\frac{\mathrm{d}}{\mathrm{d}x},~\mathrm{D}^2=\frac{\mathrm{d^2}}{\mathrm{d}x^2},~\cdots,~\mathrm{D}^n=\frac{\mathrm{d}^n}{\mathrm{d}x^n}\]</span>
+以及算子多项式 <span
+class="math display">\[L(\mathrm{D})=\mathrm{D}^n+a_1\mathrm{D}^{n-1}+\cdots+a_{n-1}\mathrm{D}+a_n\]</span>
+这样一来，微分方程可以写成 <span
+class="math display">\[L(\mathrm{D})y=f(x)\]</span> 显然，如果记 <span
+class="math inline">\(\displaystyle\frac{1}{\mathrm{D}}f(x)\)</span>
+为此方程的任一解，则 <span
+class="math display">\[L(\mathrm{D})\left(\frac{1}{L(\mathrm{D})}f(x)\right)=f(x)\]</span>
+因此，在形式上可以把 <span
+class="math inline">\(\displaystyle\frac{1}{\mathrm{D}}f(x)\)</span>
+看成是 <span class="math inline">\(L(\mathrm{D})\)</span> 的逆算子.</p>
+<h2 id="定理">定理</h2>
 <ol type="1">
-<li><p>如果 <span class="math inline">\(f(x_1,x_2,\cdots,x_n)\)</span>
-中含有某变量的平方项，即 <span class="math inline">\(a_{i i}~ (i=1,
-\cdots, n)\)</span> 中至少有一个不为零， 不妨设 <span
-class="math inline">\(a_{11} \neq 0\)</span>，记 <span
-class="math inline">\(\displaystyle f_{1}=\frac{1}{2} \frac{\partial
-f}{\partial x_{1}}\)</span>， 令 <span
-class="math display">\[f(x_1,x_2,\cdots,x_n)=\frac{1}{a_{11}}f_1^2+g\]</span>
-求得 <span class="math inline">\(g\)</span>，此时 <span
-class="math inline">\(g\)</span> 中已不含 <span
-class="math inline">\(x_{1}\)</span>，再记 <span
-class="math inline">\(\displaystyle g_{1}=\frac{1}{2} \frac{\partial
-g}{\partial x_{2}}\)</span>，并令 <span
-class="math display">\[f(x_1,x_2,\cdots,x_n)=\frac{1}{a_{11}}f_1^2+\frac{1}{a_{22}}g_1^2+h\]</span>
-此时 <span class="math inline">\(h\)</span> 中已不含 <span
-class="math inline">\(x_1\)</span> 与 <span
-class="math inline">\(x_2\)</span>，按这种方法继续运算，可将二次型化为标准形;</p></li>
-<li><p>如果 <span class="math inline">\(f(x_1,x_2,\cdots,x_n)\)</span>
-中不含有任一变量的平方项，即 <span class="math inline">\(a_{ii}=0~
-(i=1,\cdots,n)\)</span>，但至少有一个 <span
-class="math inline">\(a_{1j}\neq 0~ (j&gt;1)\)</span> 不为零 (<span
-class="math inline">\(a_{ij}\)</span> 是 <span
-class="math inline">\(x_{ij}\)</span> 项的系数)， 不妨设 <span
-class="math inline">\(a_{12}\neq 0\)</span>，记 <span
-class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1},f_2=\dfrac{1}{2}\displaystyle\pdv{f}{x_2}\)</span>，令
-<span
-class="math display">\[f(x_1,x_2,\cdots,x_n)=\dfrac{1}{a_{12}}\qty[(f_1+f_2)^2-(f_1-f_2)^2]+\varphi\]</span>
-求得 <span class="math inline">\(\varphi\)</span>，此时 <span
-class="math inline">\(\varphi\)</span> 中已不含 <span
-class="math inline">\(x_1\)</span> 与 <span
-class="math inline">\(x_2\)</span>，观察 <span
-class="math inline">\(\varphi\)</span> 的结构，如果 <span
-class="math inline">\(\varphi\)</span>
-中含有变量的平方项，则按情况一中的方法进行，否则按情况二中的方法进行，直至二次型化为标准形.</p></li>
+<li><span
+class="math inline">\(\displaystyle\frac{1}{\mathrm{D}}f(x)=\int
+f(x)\mathrm{d}x.\)</span></li>
+<li>对于任意常数 <span class="math inline">\(a\)</span>，<span
+class="math inline">\(\displaystyle\frac{1}{\mathrm{D}-a}f(x)=\mathrm{e}^{ax}\int\mathrm{e}^{-ax}f(x)\mathrm{d}x.\)</span></li>
+<li>对于任意常数 <span class="math inline">\(\alpha\)</span> 和 <span
+class="math inline">\(\beta\)</span>，<span
+class="math inline">\(\displaystyle\frac{1}{L(\mathrm{D})}(\alpha
+u(x)+\beta
+v(x))=\alpha\frac{1}{L(\mathrm{D})}u(x)+\beta\frac{1}{L(\mathrm{D})}v(x).\)</span></li>
+<li><span
+class="math inline">\(\displaystyle\frac{1}{L_1(\mathrm{D})L_2(\mathrm{D})}f(x)=\frac{1}{L_1(\mathrm{D})}\left(\frac{1}{L_2(\mathrm{D})}f(x)\right)=\frac{1}{L_2(\mathrm{D})}\left(\frac{1}{L_1(\mathrm{D})}f(x)\right).\)</span></li>
+</ol>
+<h2 id="特性">特性</h2>
+<ol type="1">
+<li><span
+class="math inline">\(F(\mathrm{D})=\mathrm{D}^m,~\dfrac{1}{F(\mathrm{D})}f^{(m)}(x)=f(x)\)</span>;</li>
+<li><span class="math inline">\(F(\mathrm{D})=\mathrm{D}-k\)</span>
+时，<span
+class="math inline">\(\dfrac{1}{F(\mathrm{D})}\mathrm{e}^{bx}=\dfrac{e^{bx}}{b-k},~b\neq
+k\)</span>;</li>
+<li><span
+class="math inline">\(F(\mathrm{D})=(\mathrm{D}-b)(\mathrm{D}-a)\)</span>
+时，<span
+class="math inline">\(\dfrac{1}{F(\mathrm{D})}f(x)=\dfrac{1}{\mathrm{D}-b}\dfrac{1}{\mathrm{D}-a}f(x)\)</span>，当
+<span class="math inline">\(ab\neq0\)</span> 时，<span
+class="math inline">\(\dfrac{1}{\mathrm{D}-b}\dfrac{1}{\mathrm{D}-a}=\dfrac{1}{ab}\)</span>;</li>
+<li><span
+class="math inline">\(\dfrac{1}{F(\mathrm{D})}\mathrm{e}^{kx}=\dfrac{1}{F(k)}\mathrm{e}^{kx},~F(k)\neq0\)</span>;</li>
+<li><span
+class="math inline">\(\dfrac{1}{F(\mathrm{D})}u(x)\mathrm{e}^{kx}=\mathrm{e}^{kx}\dfrac{1}{F(\mathrm{D}+k)}u(x)\)</span>;</li>
+<li><span
+class="math inline">\(\dfrac{1}{F(\mathrm{D})}\qty[f_1(x)+f_2(x)]=\dfrac{1}{F(\mathrm{D})}f_1(x)+\dfrac{1}{F(\mathrm{D})}f_2(x)\)</span>;</li>
+<li><span
+class="math inline">\(F(\mathrm{D})=\mathrm{D}-k,~\dfrac{1}{F(\mathrm{D})}x^{\alpha}=\qty(-\displaystyle\sum_{n=0}^{\alpha}\dfrac{\mathrm{D}^n}{k^{n+1}})x^{\alpha}\)</span>.</li>
 </ol>
 <h2 id="例题-1">例题 1</h2>
-<p>将二次型 <span
-class="math inline">\(f(x_1,x_2,x_3)=x_1^2+2x_2^2-4x_3^2+2x_1x_2-2x_2x_3\)</span>
-化为标准形.</p>
+<p>求微分方程 <span
+class="math inline">\(y&#39;&#39;-3y&#39;+2y=2x\mathrm{e}^x\)</span>
+的通解.</p>
 <h3 id="解答">解答</h3>
-<p>记 <span
-class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1}=x_1+x_2\)</span>，令
+<p>记 <span class="math inline">\(\displaystyle
+\mathrm{D}=\frac{\mathrm{d}}{\mathrm{d}x},~\mathrm{I}y=y\)</span>，则原方程可改写为
 <span
-class="math display">\[f=\dfrac{1}{a_{11}}f_1^2+g=(x_1+x_2)^2+g\]</span>
-求得 <span class="math inline">\(g=x_2^2-4x_3^2-2x_2x_3\)</span>，记
+class="math inline">\(\left(\mathrm{D}^2-3\mathrm{D}+2\mathrm{I}\right)y=2x\mathrm{e}^x\)</span>，即
 <span
-class="math inline">\(g_1=\dfrac{1}{2}\displaystyle\pdv{g}{x_2}=x_2-x_3\)</span>，令
-<span class="math display">\[g=\dfrac{1}{a_{22}}g_1^2+h\]</span> 求得
-<span class="math inline">\(h=-5x_3^2\)</span>，那么 <span
-class="math display">\[f(x_1,x_2,x_3)=(x_1+x_2)^2+(x_2-x_3)^2-5x_3^2\]</span>
-作可逆线性变换 <span class="math display">\[\left\{\begin{matrix}
-            y_1 &amp; = &amp; x_1 &amp; + &amp; x_2           \\
-            y_2 &amp; = &amp;     &amp;   &amp; x_2 &amp; - &amp; x_3 \\
-            y_3 &amp; = &amp;     &amp;   &amp;     &amp;   &amp; x_3
-        \end{matrix}\right.\]</span> 则有 <span
-class="math inline">\(f(y_1,y_2,y_3)=y_1^2+y_2^2-5y_3^2.\)</span></p>
-<h2 id="例题-2">例题 2</h2>
-<p>将二次型 <span
-class="math inline">\(f(x_1,x_2,x_3)=-4x_1x_2+2x_1x_3+2x_2x_3\)</span>
-化为标准形.</p>
-<h3 id="解答-1">解答</h3>
-<p>二次型中不含有任一变量的平方项，记 <span
-class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1},~f_2=\dfrac{1}{2}\displaystyle\pdv{f}{x_2}\)</span>，则有
+class="math inline">\((\mathrm{D}-\mathrm{I})(\mathrm{D}-2\mathrm{I})y=2x\mathrm{e}^x\)</span>，
+令 <span
+class="math inline">\((\mathrm{D}-2\mathrm{I})y=z(x)\)</span>，则有
 <span
-class="math display">\[f_1=\dfrac{1}{2}(-4x_2+2x_3)=-2x_2+x_3,~f_2=\dfrac{1}{2}(-4x_1+2x_3)=-2x_1+x_3\]</span>
-令 <span class="math display">\[\begin{align*}
-    f &amp;
-=\dfrac{1}{a_{12}}\qty[(f_1+f_2)^2-(f_1-f_2)^2]+\varphi=-\dfrac{1}{4}\qty[(-2x_1-2x_2+2x_3)^2-(2x_1-2x_2)^2]+\varphi
-\\
+class="math inline">\((\mathrm{D}-\mathrm{I})z(x)=2x\mathrm{e}^x\)</span>，即
+<span class="math inline">\(\displaystyle
+\frac{\mathrm{d}z(x)}{\mathrm{d}x}-z(x)=2x\mathrm{e}^x\)</span>，解得
+<span class="math display">\[z(x)=\mathrm{e}^{\int\mathrm{d}x}\left[\int
+2x\mathrm{e}^x\cdot \mathrm{e}^{-\int
+\mathrm{d}x}+C_1\right]=\mathrm{e}^x\left(x^2+C_1\right)\]</span> 再由
+<span class="math inline">\((\mathrm{D}-2\mathrm{I})y=z(x)\)</span> 化为
+<span class="math inline">\(\displaystyle
+\frac{\mathrm{d}y}{\mathrm{d}x}-2y=\mathrm{e}^x\left(x^2+C_1\right)\)</span>，故原方程的通解为
+<span class="math display">\[\begin{align*}
+    y &amp; =\mathrm{e}^{\int \mathrm{d}x}\left[\int
+\mathrm{e}^x\left(x^2+C_1\right)\cdot\mathrm{e}^{-\int
+2\mathrm{d}x}+C_2\right]=\mathrm{e}^{2x}\left[\int
+\mathrm{e}^{-x}\left(x^2+C_1\right)\mathrm{d}x+C_2\right] \\
       &amp;
-=(x_1-x_2)^2-(x_1+x_2-x_3)^2+\varphi=(2x_1-x_3)(-2x_2+x_3)+\varphi=-4x_1x_2+2x_1x_3+2x_2x_3-x_3^2+\varphi
-\end{align*}\]</span> 即 <span
-class="math inline">\(\varphi=x_3^2\)</span>，所以 <span
-class="math display">\[f(x_1,x_2,x_3)=-(x_1+x_2-x_3)^2+(x_1-x_2)^2+x_3^2\]</span>
-作可逆线性变换 <span class="math inline">\(\left\{\begin{matrix}
-        y_1 &amp; = &amp; x_1 &amp; + &amp; x_2 &amp; - &amp; x_3 \\
-        y_2 &amp; = &amp; x_1 &amp; - &amp; x_2 &amp;         \\
-        y_3 &amp; = &amp;     &amp;   &amp;     &amp;   &amp; x_3
-    \end{matrix}\right.\)</span>，则有 <span
-class="math inline">\(f(y_1,y_2,y_3)=-y_1^2+y_2^2+y_3^2.\)</span></p>
-<h2 id="例题-3">例题 3</h2>
-<p>二次型 <span
-class="math display">\[f(x_1,x_2,x_3)=(x_1+x_2)^2+(x_1+x_3)^2-4(x_2-x_3)^2\]</span>
-的标准形为</p>
-<p>A. <span class="math inline">\(y_1^2+y_2^2~~~~~~\)</span> B. <span
-class="math inline">\(y_1^2-y_2^2~~~~~~\)</span> C. <span
-class="math inline">\(y_1^2+y_2^2-4y_3^2~~~~~~\)</span> D. <span
-class="math inline">\(y_1^2+y_2^2-y_3^2\)</span></p>
-<h3 id="解答-2">解答</h3>
-<p>将 <span class="math inline">\(f\)</span> 完全展开，得 <span
-class="math display">\[f=2x_1^2-3x_2^2-3x_3^2+2x_1x_2+2x_1x_3+8x_2x_3\]</span>
-那么 <span
-class="math display">\[f_1=\dfrac{1}{2}\pdv{f}{x_1}=\dfrac{1}{2}(4x_1+2x_2+2x_3)=2x_1+x_2+x_3\]</span>
-则 <span
-class="math display">\[f=\dfrac{1}{a_{11}}f_1^2+g=2x_1^2+\dfrac{1}{2}x_2^2+\dfrac{1}{2}x_3^2+2x_1x_2+2x_1x_3+x_2x_3+g\]</span>
-对比可得 <span
-class="math inline">\(g=-\dfrac{7}{2}x_2^2-\dfrac{7}{2}x_3^2+7x_2x_3\)</span>，
-再令 <span
-class="math display">\[g_1=\dfrac{1}{2}\pdv{g}{x_2}=\dfrac{1}{2}(-7x_2+7x_3)=-\dfrac{7}{2}x_2+\dfrac{7}{2}x_3\]</span>
-又 <span
-class="math inline">\(g=\dfrac{1}{a_{22}}g_1^2+h\)</span>，可解出 <span
-class="math inline">\(h=0\)</span>，因此可排除 C，D 选项， <span
-class="math display">\[f=\dfrac{1}{\sqrt{2}^2}(2x_1+x_2+x_3)^2-\sqrt{\dfrac{7}{2}}^2(x_2-x_3)^2\]</span>
-作可逆线性变换 <span class="math inline">\(\begin{cases}
-            y_1=\dfrac{1}{\sqrt{2}} (2x_1+x_2+x_3) \\[6pt]
-            y_2=\sqrt{\dfrac{7}{2} } (x_2-x_3)     \\[6pt]
-            y_3=x_3
-\end{cases}\)</span>，因此 <span
-class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
+=\mathrm{e}^{2x}\left[(-x^2\mathrm{e}^{-x}-2x\mathrm{e}^{-x}-2\mathrm{e}^{-x})-C_1\mathrm{e}^{-x}+C_2\right]=\left(-x^2-2x-2-C_1\right)\mathrm{e}^x+C_2\mathrm{e}^{2x}
+\end{align*}\]</span> 其中 <span class="math inline">\(C_1,~C_2\)</span>
+为任意常数.</p>
+<h2 id="例题-2">例题 2</h2>
+<p>求微分方程 <span
+class="math inline">\(y&#39;&#39;+y&#39;-2y=\dfrac{\mathrm{e}^x}{1+\mathrm{e}^x}.\)</span></p>
+<h3 id="解答-1">解答</h3>
+<p>记 <span class="math inline">\(\displaystyle
+\mathrm{D}=\dv{x}\)</span>，则原方程可改写为 <span
+class="math inline">\(\qty(\mathrm{D}^2+\mathrm{D}-2)y=\dfrac{\mathrm{e}^x}{1+\mathrm{e}^x}\)</span>，即
+<span
+class="math inline">\((\mathrm{D}+2)(\mathrm{D}-1)y=\dfrac{\mathrm{e}^x}{1+\mathrm{e}^x}\)</span>，
+令 <span class="math inline">\(z(x)=(\mathrm{D}-1)y\)</span>，则有 <span
+class="math inline">\((\mathrm{D}+2)z(x)=\dfrac{\mathrm{e}^x}{1+\mathrm{e}^x}\)</span>，即
+<span
+class="math inline">\(\displaystyle\dv{z(x)}{x}+2z=\dfrac{\mathrm{e}^x}{1+\mathrm{e}^x}\)</span>，解得
+<span class="math display">\[z(x)=\mathrm{e}^{-2\int\dd
+x}\qty[\int\dfrac{\mathrm{e}^x}{1+\mathrm{e}^x}\cdot
+\mathrm{e}^{2\int\dd x}\dd
+x+C_1]=\dfrac{1}{2}-\dfrac{1}{\mathrm{e}^x}+\dfrac{\ln\qty(\mathrm{e}^x+1)}{\mathrm{e}^{2x}}\]</span>
+再由 <span class="math inline">\((\mathrm{D}-1)y=z(x)\)</span> 化为
+<span class="math inline">\(\displaystyle
+\dv{y}{x}-y=\dfrac{1}{2}-\dfrac{1}{\mathrm{e}^x}+\dfrac{\ln\qty(\mathrm{e}^x+1)}{\mathrm{e}^{2x}}\)</span>，故原方程的通解为
+<span class="math display">\[\begin{align*}
+    y &amp; =\mathrm{e}^{\int\dd
+x}\qty{\int\qty[\dfrac{1}{2}-\dfrac{1}{\mathrm{e}^x}+\dfrac{\ln\qty(\mathrm{e}^x+1)}{\mathrm{e}^{2x}}]\cdot\mathrm{e}^{-\int\dd
+x}\dd x+C_2}=\mathrm{e}^x \qty{\int
+\qty[\dfrac{1}{2\mathrm{e}^x}-\dfrac{1}{\mathrm{e}^{2x}}+\dfrac{\ln\qty(\mathrm{e}^x+1)}{\mathrm{e}^{3x}}]\dd
+x+C_2} \\
+      &amp;
+=-\dfrac{\qty(\mathrm{e}^{3x}+1)\ln\qty(\mathrm{e}^x+1)}{3\mathrm{e}^{2x}}+\dfrac{x\mathrm{e}^x}{3}+C_2\mathrm{e}^x+\dfrac{1}{3\mathrm{e}^x}+\dfrac{C_1}{\mathrm{e}^{2x}}-\dfrac{1}{6}
+\end{align*}\]</span> 其中 <span class="math inline">\(\displaystyle\int
+\dfrac{\ln\qty(\mathrm{e}^x+1)}{\mathrm{e}^{3x}}\dd
+x\xlongequal[]{\mathrm{e}^x=t}\int\dfrac{\ln(t+1)}{t^4}\dd
+t=-\dfrac{1}{3}\int \ln(t+1)\dd
+\dfrac{1}{t^3}=-\dfrac{1}{3}\qty[\dfrac{\ln(t+1)}{t^3}-\int\dfrac{\dd
+t}{t^3(t+1)}]\)</span>，且 <span class="math display">\[\begin{align*}
+    \int\dfrac{\dd
+t}{t^3(t+1)}\xlongequal[]{u=\frac{t}{t+1}}\int\qty(\dfrac{1}{u}-\dfrac{2}{u^2}+\dfrac{1}{u^3})\dd
+u=\ln|u|+\dfrac{4u-1}{2u^2}+C
+\end{align*}\]</span> 即得 <span
+class="math inline">\(\displaystyle\int\dfrac{\ln\qty(\mathrm{e}^x+1)}{\mathrm{e}^{3x}}\dd
+x=-\dfrac{\ln\qty(\mathrm{e}^x+1)}{3}+\dfrac{-2\ln\qty(\mathrm{e}^x+1)+2\mathrm{e}^{2x}-\mathrm{e}^x}{6\mathrm{e}^{3x}}+\dfrac{x}{3}+C.\)</span></p>
 
                 
               </div>
@@ -482,17 +498,15 @@ class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" class="print-no-link">#高等数学</a>
+      
         <a href="/tags/%E6%95%B0%E5%AD%A6%E6%8A%80%E5%B7%A7/" class="print-no-link">#数学技巧</a>
       
         <a href="/tags/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/" class="print-no-link">#考研数学</a>
       
-        <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="print-no-link">#线性代数</a>
+        <a href="/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="print-no-link">#微分方程</a>
       
-        <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%9E%8B/" class="print-no-link">#二次型</a>
-      
-        <a href="/tags/%E6%A0%87%E5%87%86%E5%BD%A2/" class="print-no-link">#标准形</a>
-      
-        <a href="/tags/%E5%81%8F%E5%AF%BC%E5%87%BD%E6%95%B0/" class="print-no-link">#偏导函数</a>
+        <a href="/tags/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90/" class="print-no-link">#微分算子</a>
       
     </div>
   
@@ -504,8 +518,8 @@ class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>二次型化为标准形</div>
-      <div>http://example.com/2024/05/04/theQuadraticTypeIsConvertedIntoAStandardType/</div>
+      <div>微分算子法</div>
+      <div>http://example.com/2024/05/04/differentialArithmeticMethod/</div>
     </div>
     <div class="license-meta">
       
@@ -554,9 +568,9 @@ class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/05/04/differentialArithmeticMethod/" title="微分算子法">
+                      <a href="/2024/05/04/descendingStepExponentiation/" title="下降阶乘幂">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">微分算子法</span>
+                        <span class="hidden-mobile">下降阶乘幂</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -564,8 +578,8 @@ class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/05/03/greatLikelihoodEstimation/" title="极大似然估计">
-                        <span class="hidden-mobile">极大似然估计</span>
+                      <a href="/2024/05/04/theQuadraticTypeIsConvertedIntoAStandardType/" title="二次型化为标准形">
+                        <span class="hidden-mobile">二次型化为标准形</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

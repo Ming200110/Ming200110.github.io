@@ -18,29 +18,30 @@
   <meta name="author" content="Guoming Huang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     二次型化为标准形 方法论 运用偏导函数的思想将二次型化为标准形有以下两种情况:  如果 \(f(x_1,x_2,\cdots,x_n)\">
+    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     下降阶乘幂 相关定义与定理  \(x^{\underline{m} }&#x3D;x(x-1)\cdots(x-m+1)~~(m\in\mathb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二次型化为标准形">
-<meta property="og:url" content="http://example.com/2024/05/04/theQuadraticTypeIsConvertedIntoAStandardType/index.html">
+<meta property="og:title" content="下降阶乘幂">
+<meta property="og:url" content="http://example.com/2024/05/04/descendingStepExponentiation/index.html">
 <meta property="og:site_name" content="ChungMG">
-<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     二次型化为标准形 方法论 运用偏导函数的思想将二次型化为标准形有以下两种情况:  如果 \(f(x_1,x_2,\cdots,x_n)\">
+<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     下降阶乘幂 相关定义与定理  \(x^{\underline{m} }&#x3D;x(x-1)\cdots(x-m+1)~~(m\in\mathb">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-04T00:00:26.294Z">
-<meta property="article:modified_time" content="2024-05-04T00:15:21.576Z">
+<meta property="article:published_time" content="2024-05-04T00:28:28.378Z">
+<meta property="article:modified_time" content="2024-05-04T00:36:22.948Z">
 <meta property="article:author" content="Guoming Huang">
+<meta property="article:tag" content="高等数学">
 <meta property="article:tag" content="数学技巧">
 <meta property="article:tag" content="考研数学">
-<meta property="article:tag" content="线性代数">
-<meta property="article:tag" content="二次型">
-<meta property="article:tag" content="标准形">
-<meta property="article:tag" content="偏导函数">
+<meta property="article:tag" content="无穷级数">
+<meta property="article:tag" content="幂级数">
+<meta property="article:tag" content="有限微积分">
+<meta property="article:tag" content="下降阶乘幂">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>二次型化为标准形 - ChungMG</title>
+  <title>下降阶乘幂 - ChungMG</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -233,7 +234,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="二次型化为标准形"></span>
+            <span id="subtitle" data-typed-text="下降阶乘幂"></span>
           
         </div>
 
@@ -249,7 +250,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-04 08:00" pubdate>
+        <time datetime="2024-05-04 08:28" pubdate>
           May 4, 2024 am
         </time>
       </span>
@@ -261,7 +262,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          904 words
+          561 words
         
       </span>
     
@@ -272,7 +273,7 @@
         
         
         
-          8 mins
+          5 mins
         
       </span>
     
@@ -317,7 +318,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">二次型化为标准形</h1>
+            <h1 id="seo-header">下降阶乘幂</h1>
             
             
               <div class="markdown-body">
@@ -337,118 +338,75 @@ MathJax = {
   src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js">
 </script>
 </html>
-<h1 id="二次型化为标准形">二次型化为标准形</h1>
-<h2 id="方法论">方法论</h2>
-<p>运用偏导函数的思想将二次型化为标准形有以下两种情况:</p>
+<h1 id="下降阶乘幂">下降阶乘幂</h1>
+<h2 id="相关定义与定理">相关定义与定理</h2>
 <ol type="1">
-<li><p>如果 <span class="math inline">\(f(x_1,x_2,\cdots,x_n)\)</span>
-中含有某变量的平方项，即 <span class="math inline">\(a_{i i}~ (i=1,
-\cdots, n)\)</span> 中至少有一个不为零， 不妨设 <span
-class="math inline">\(a_{11} \neq 0\)</span>，记 <span
-class="math inline">\(\displaystyle f_{1}=\frac{1}{2} \frac{\partial
-f}{\partial x_{1}}\)</span>， 令 <span
-class="math display">\[f(x_1,x_2,\cdots,x_n)=\frac{1}{a_{11}}f_1^2+g\]</span>
-求得 <span class="math inline">\(g\)</span>，此时 <span
-class="math inline">\(g\)</span> 中已不含 <span
-class="math inline">\(x_{1}\)</span>，再记 <span
-class="math inline">\(\displaystyle g_{1}=\frac{1}{2} \frac{\partial
-g}{\partial x_{2}}\)</span>，并令 <span
-class="math display">\[f(x_1,x_2,\cdots,x_n)=\frac{1}{a_{11}}f_1^2+\frac{1}{a_{22}}g_1^2+h\]</span>
-此时 <span class="math inline">\(h\)</span> 中已不含 <span
-class="math inline">\(x_1\)</span> 与 <span
-class="math inline">\(x_2\)</span>，按这种方法继续运算，可将二次型化为标准形;</p></li>
-<li><p>如果 <span class="math inline">\(f(x_1,x_2,\cdots,x_n)\)</span>
-中不含有任一变量的平方项，即 <span class="math inline">\(a_{ii}=0~
-(i=1,\cdots,n)\)</span>，但至少有一个 <span
-class="math inline">\(a_{1j}\neq 0~ (j&gt;1)\)</span> 不为零 (<span
-class="math inline">\(a_{ij}\)</span> 是 <span
-class="math inline">\(x_{ij}\)</span> 项的系数)， 不妨设 <span
-class="math inline">\(a_{12}\neq 0\)</span>，记 <span
-class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1},f_2=\dfrac{1}{2}\displaystyle\pdv{f}{x_2}\)</span>，令
-<span
-class="math display">\[f(x_1,x_2,\cdots,x_n)=\dfrac{1}{a_{12}}\qty[(f_1+f_2)^2-(f_1-f_2)^2]+\varphi\]</span>
-求得 <span class="math inline">\(\varphi\)</span>，此时 <span
-class="math inline">\(\varphi\)</span> 中已不含 <span
-class="math inline">\(x_1\)</span> 与 <span
-class="math inline">\(x_2\)</span>，观察 <span
-class="math inline">\(\varphi\)</span> 的结构，如果 <span
-class="math inline">\(\varphi\)</span>
-中含有变量的平方项，则按情况一中的方法进行，否则按情况二中的方法进行，直至二次型化为标准形.</p></li>
+<li><span class="math inline">\(x^{\underline{m}
+}=x(x-1)\cdots(x-m+1)~~(m\in\mathbb{N}_+).\)</span></li>
+<li><span
+class="math inline">\(x^{\overline{m}}=x(x+1)\cdots(x+m-1)~~(m\in\mathbb{N}_+).\)</span></li>
+<li><span
+class="math inline">\(x^{\underline{0}}=x^{\overline{0}}=1.\)</span></li>
+<li><span
+class="math inline">\(n!=n^{\underline{n}}=1^{\overline{n}}.\)</span></li>
+<li><span class="math inline">\(\varDelta
+\qty(x^{\underline{m}})=mx^{\underline{m-1}}.\)</span></li>
+<li><span class="math inline">\(\displaystyle g(x)=\varDelta f(x)\iff
+\sum g(x)\delta x=f(x)+C.\)</span></li>
+<li><span class="math inline">\(\displaystyle \sum\nolimits_{a}^{b}
+g(x)\delta x=\eval{f(x)}_{a}^{b}=f(b)-f(a).\)</span></li>
+<li><span class="math inline">\(\displaystyle
+\sum\nolimits_{a}^{b}g(x)\delta x=\sum_{k=a}^{b-1}g(k)=\sum_{a\leqslant
+k&lt;b}g(k)~~(b\geqslant a).\)</span></li>
+<li><span class="math inline">\(\displaystyle
+\sum\nolimits_{a}^{b}g(x)\delta x+\sum\nolimits_b^c g(x)\delta
+x=\sum\nolimits_a^cg(x)\delta x.\)</span></li>
+<li><span class="math inline">\(\displaystyle \sum_{0\leqslant
+k&lt;n}k^{\underline{m}}=\eval{\dfrac{k^{\underline{m+1}}}{m+1}}_{0}^{n}=\dfrac{n^{\underline{m+1}}}{m+1}~~(m,n\in\mathbb{N}_+).\)</span></li>
+<li><span
+class="math inline">\(x^{\underline{-m}}=\dfrac{1}{(x+1)(x+2)\cdots(x+m)}~~(m&gt;0).\)</span></li>
+<li><span
+class="math inline">\(x^{\underline{m+n}}=x^{\underline{m}}(x-m)^{\underline{n}}
+~~(m,n\in\mathbb{Z}).\)</span></li>
+<li><span class="math inline">\(\displaystyle\sum\nolimits_a^b
+x^{\underline{m}}\delta x=\begin{cases}
+\eval{\dfrac{x^{\underline{m+1}}}{m+1}}_{a}^{b}, &amp; m\neq -1 \\
+\eval{H_x}_{a}^{b},                              &amp; m=-1
+\end{cases}\)</span>， 其中 <span class="math inline">\(\displaystyle
+H_x=\sum_{k=1}^{x}\dfrac{1}{k}\)</span> 称为调和级数.</li>
+<li><span class="math inline">\(\mathrm{E}f(x)=f(x+1).\)</span></li>
+<li><span class="math inline">\(\displaystyle\sum u\varDelta
+v=uv-\sum\mathrm{E}v\varDelta u.\)</span></li>
 </ol>
-<h2 id="例题-1">例题 1</h2>
-<p>将二次型 <span
-class="math inline">\(f(x_1,x_2,x_3)=x_1^2+2x_2^2-4x_3^2+2x_1x_2-2x_2x_3\)</span>
-化为标准形.</p>
+<h2 id="例题">例题</h2>
+<p>判断级数 <span
+class="math inline">\(\displaystyle\sum_{n=1}^{\infty}\dfrac{1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}}{(n+1)(n+2)}\)</span>
+的敛散性，若收敛，则求其和.</p>
 <h3 id="解答">解答</h3>
-<p>记 <span
-class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1}=x_1+x_2\)</span>，令
-<span
-class="math display">\[f=\dfrac{1}{a_{11}}f_1^2+g=(x_1+x_2)^2+g\]</span>
-求得 <span class="math inline">\(g=x_2^2-4x_3^2-2x_2x_3\)</span>，记
-<span
-class="math inline">\(g_1=\dfrac{1}{2}\displaystyle\pdv{g}{x_2}=x_2-x_3\)</span>，令
-<span class="math display">\[g=\dfrac{1}{a_{22}}g_1^2+h\]</span> 求得
-<span class="math inline">\(h=-5x_3^2\)</span>，那么 <span
-class="math display">\[f(x_1,x_2,x_3)=(x_1+x_2)^2+(x_2-x_3)^2-5x_3^2\]</span>
-作可逆线性变换 <span class="math display">\[\left\{\begin{matrix}
-            y_1 &amp; = &amp; x_1 &amp; + &amp; x_2           \\
-            y_2 &amp; = &amp;     &amp;   &amp; x_2 &amp; - &amp; x_3 \\
-            y_3 &amp; = &amp;     &amp;   &amp;     &amp;   &amp; x_3
-        \end{matrix}\right.\]</span> 则有 <span
-class="math inline">\(f(y_1,y_2,y_3)=y_1^2+y_2^2-5y_3^2.\)</span></p>
-<h2 id="例题-2">例题 2</h2>
-<p>将二次型 <span
-class="math inline">\(f(x_1,x_2,x_3)=-4x_1x_2+2x_1x_3+2x_2x_3\)</span>
-化为标准形.</p>
-<h3 id="解答-1">解答</h3>
-<p>二次型中不含有任一变量的平方项，记 <span
-class="math inline">\(f_1=\dfrac{1}{2}\displaystyle\pdv{f}{x_1},~f_2=\dfrac{1}{2}\displaystyle\pdv{f}{x_2}\)</span>，则有
-<span
-class="math display">\[f_1=\dfrac{1}{2}(-4x_2+2x_3)=-2x_2+x_3,~f_2=\dfrac{1}{2}(-4x_1+2x_3)=-2x_1+x_3\]</span>
-令 <span class="math display">\[\begin{align*}
-    f &amp;
-=\dfrac{1}{a_{12}}\qty[(f_1+f_2)^2-(f_1-f_2)^2]+\varphi=-\dfrac{1}{4}\qty[(-2x_1-2x_2+2x_3)^2-(2x_1-2x_2)^2]+\varphi
+<p>令 <span class="math inline">\(\displaystyle
+H_n=\sum_{k=1}^{n}\dfrac{1}{k}~,S_n=\sum_{k=1}^{n}\dfrac{H_k}{(k+1)(k+2)}=\sum_{\substack{1\leqslant
+k&lt;n+1\\k\in
+\mathbb{N}_+}}\dfrac{H_k}{(k+1)(k+2)}=\sum\nolimits_1^{n+1}\dfrac{H_x}{(x+1)(x+2)}\delta
+x\)</span>， 那么记 <span class="math display">\[u(x)=H_x~,\varDelta
+v(x)=\dfrac{1}{(x+1)(x+2)}=-\dfrac{1}{x+2}-\qty(-\dfrac{1}{x+1})\]</span>
+因此 <span class="math display">\[\varDelta
+u(x)=x^{\underline{-1}},~v(x)=-\dfrac{1}{x+1}=-x^{\underline{-1}},~\mathrm{E}v(x)=-(x+1)^{\underline{-1}}\]</span>
+于是 <span class="math display">\[\begin{align*}
+    S_n &amp; =\sum\nolimits_1^{n+1}\dfrac{H_x}{(x+1)(x+2)}\delta
+x=\eval{-x^{\underline{-1}}H_x}_{1}^{n+1}+\sum\nolimits_{1}^{n+1}(x+1)^{\underline{-1}}x^{\underline{-1}}\delta
+x          \\
+        &amp;
+=-(n+1)^{\underline{-1}}H_{n+1}+1^{\underline{-1}}H_1+\sum\nolimits_{1}^{n+1}x^{\underline{-2}}\delta
+x=\dfrac{1}{2}-\dfrac{H_{n+1}}{n+2} -\eval{x^{\underline{-1}}}_{1}^{n+1}
 \\
-      &amp;
-=(x_1-x_2)^2-(x_1+x_2-x_3)^2+\varphi=(2x_1-x_3)(-2x_2+x_3)+\varphi=-4x_1x_2+2x_1x_3+2x_2x_3-x_3^2+\varphi
-\end{align*}\]</span> 即 <span
-class="math inline">\(\varphi=x_3^2\)</span>，所以 <span
-class="math display">\[f(x_1,x_2,x_3)=-(x_1+x_2-x_3)^2+(x_1-x_2)^2+x_3^2\]</span>
-作可逆线性变换 <span class="math inline">\(\left\{\begin{matrix}
-        y_1 &amp; = &amp; x_1 &amp; + &amp; x_2 &amp; - &amp; x_3 \\
-        y_2 &amp; = &amp; x_1 &amp; - &amp; x_2 &amp;         \\
-        y_3 &amp; = &amp;     &amp;   &amp;     &amp;   &amp; x_3
-    \end{matrix}\right.\)</span>，则有 <span
-class="math inline">\(f(y_1,y_2,y_3)=-y_1^2+y_2^2+y_3^2.\)</span></p>
-<h2 id="例题-3">例题 3</h2>
-<p>二次型 <span
-class="math display">\[f(x_1,x_2,x_3)=(x_1+x_2)^2+(x_1+x_3)^2-4(x_2-x_3)^2\]</span>
-的标准形为</p>
-<p>A. <span class="math inline">\(y_1^2+y_2^2~~~~~~\)</span> B. <span
-class="math inline">\(y_1^2-y_2^2~~~~~~\)</span> C. <span
-class="math inline">\(y_1^2+y_2^2-4y_3^2~~~~~~\)</span> D. <span
-class="math inline">\(y_1^2+y_2^2-y_3^2\)</span></p>
-<h3 id="解答-2">解答</h3>
-<p>将 <span class="math inline">\(f\)</span> 完全展开，得 <span
-class="math display">\[f=2x_1^2-3x_2^2-3x_3^2+2x_1x_2+2x_1x_3+8x_2x_3\]</span>
-那么 <span
-class="math display">\[f_1=\dfrac{1}{2}\pdv{f}{x_1}=\dfrac{1}{2}(4x_1+2x_2+2x_3)=2x_1+x_2+x_3\]</span>
-则 <span
-class="math display">\[f=\dfrac{1}{a_{11}}f_1^2+g=2x_1^2+\dfrac{1}{2}x_2^2+\dfrac{1}{2}x_3^2+2x_1x_2+2x_1x_3+x_2x_3+g\]</span>
-对比可得 <span
-class="math inline">\(g=-\dfrac{7}{2}x_2^2-\dfrac{7}{2}x_3^2+7x_2x_3\)</span>，
-再令 <span
-class="math display">\[g_1=\dfrac{1}{2}\pdv{g}{x_2}=\dfrac{1}{2}(-7x_2+7x_3)=-\dfrac{7}{2}x_2+\dfrac{7}{2}x_3\]</span>
-又 <span
-class="math inline">\(g=\dfrac{1}{a_{22}}g_1^2+h\)</span>，可解出 <span
-class="math inline">\(h=0\)</span>，因此可排除 C，D 选项， <span
-class="math display">\[f=\dfrac{1}{\sqrt{2}^2}(2x_1+x_2+x_3)^2-\sqrt{\dfrac{7}{2}}^2(x_2-x_3)^2\]</span>
-作可逆线性变换 <span class="math inline">\(\begin{cases}
-            y_1=\dfrac{1}{\sqrt{2}} (2x_1+x_2+x_3) \\[6pt]
-            y_2=\sqrt{\dfrac{7}{2} } (x_2-x_3)     \\[6pt]
-            y_3=x_3
-\end{cases}\)</span>，因此 <span
-class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
+        &amp;
+=1-\dfrac{1}{n+2}-\dfrac{H_{n+1}}{n+2}=1-\dfrac{1}{n+1}-\dfrac{H_n}{n+2}
+\end{align*}\]</span> 又因为 <span
+class="math display">\[\lim_{n\to\infty}\dfrac{H_n}{n+2}=\lim_{n\to\infty}\dfrac{\ln
+n+\gamma+\alpha(n)}{n+2}=\lim_{n\to\infty}\dfrac{\ln
+n}{n+2}=0~~(\alpha(n)\to0)\]</span> 所以 <span
+class="math inline">\(\displaystyle\lim_{n\to\infty}S_n=1\)</span>，因此级数收敛，且其和为
+1.</p>
 
                 
               </div>
@@ -482,17 +440,19 @@ class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" class="print-no-link">#高等数学</a>
+      
         <a href="/tags/%E6%95%B0%E5%AD%A6%E6%8A%80%E5%B7%A7/" class="print-no-link">#数学技巧</a>
       
         <a href="/tags/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/" class="print-no-link">#考研数学</a>
       
-        <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="print-no-link">#线性代数</a>
+        <a href="/tags/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/" class="print-no-link">#无穷级数</a>
       
-        <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%9E%8B/" class="print-no-link">#二次型</a>
+        <a href="/tags/%E5%B9%82%E7%BA%A7%E6%95%B0/" class="print-no-link">#幂级数</a>
       
-        <a href="/tags/%E6%A0%87%E5%87%86%E5%BD%A2/" class="print-no-link">#标准形</a>
+        <a href="/tags/%E6%9C%89%E9%99%90%E5%BE%AE%E7%A7%AF%E5%88%86/" class="print-no-link">#有限微积分</a>
       
-        <a href="/tags/%E5%81%8F%E5%AF%BC%E5%87%BD%E6%95%B0/" class="print-no-link">#偏导函数</a>
+        <a href="/tags/%E4%B8%8B%E9%99%8D%E9%98%B6%E4%B9%98%E5%B9%82/" class="print-no-link">#下降阶乘幂</a>
       
     </div>
   
@@ -504,8 +464,8 @@ class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>二次型化为标准形</div>
-      <div>http://example.com/2024/05/04/theQuadraticTypeIsConvertedIntoAStandardType/</div>
+      <div>下降阶乘幂</div>
+      <div>http://example.com/2024/05/04/descendingStepExponentiation/</div>
     </div>
     <div class="license-meta">
       
@@ -554,18 +514,12 @@ class="math inline">\(f(y_1,y_2,y_3)=y_1^2-y_2^2\)</span> 选 B.</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/05/04/differentialArithmeticMethod/" title="微分算子法">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">微分算子法</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/05/03/greatLikelihoodEstimation/" title="极大似然估计">
-                        <span class="hidden-mobile">极大似然估计</span>
+                      <a href="/2024/05/04/differentialArithmeticMethod/" title="微分算子法">
+                        <span class="hidden-mobile">微分算子法</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
