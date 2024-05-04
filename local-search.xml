@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>矩估计法</title>
+    <link href="/2024/05/04/momentEstimationMethod/"/>
+    <url>/2024/05/04/momentEstimationMethod/</url>
+    
+    <content type="html"><![CDATA[<html><script>MathJax = {  loader: {    load: ['[tex]/physics']  },  tex: {    packages: {'[+]': ['physics']}  }};</script><script id="MathJax-script" async  src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js"></script></html><h1 id="矩估计法">矩估计法</h1><p>设总体 <span class="math inline">\(X\)</span> 的分布形式已知，<spanclass="math inline">\(\theta\)</span> 为总体的待估参数，<spanclass="math inline">\(X_{1}, X_{2}, \cdots, X_{n}\)</span> 为从总体<span class="math inline">\(X\)</span> 中抽取的样本， 如果总体 <spanclass="math inline">\(X\)</span> 的数学期望 <spanclass="math inline">\(E(X)\)</span> 存在，那么 <spanclass="math inline">\(E(X)\)</span> 是 <spanclass="math inline">\(\theta\)</span> 的函数. 例如，在泊松分布总体 <spanclass="math inline">\(\pi(\lambda)\)</span> 中， 样本一阶矩 <spanclass="math inline">\(E(X)=\lambda\)</span>; 在指数分布总体 <spanclass="math inline">\(X \sim e(\lambda)\)</span> 中，<spanclass="math inline">\(E(X)=\dfrac{1}{\lambda}\)</span>. 由于 <spanclass="math inline">\(X_{1}, X_{2}, \cdots, X_{n}\)</span>相互独立且与总体 <span class="math inline">\(X\)</span>同分布，由大数定理知，当 <span class="math inline">\(n\)</span>越来越大时，<spanclass="math inline">\(\displaystyle\bar{X}=\dfrac{1}{n} \sum_{i=1}^{n}X_{i}\)</span> 依概率收玫到 <span class="math inline">\(E(X)=h(\theta).\)</span> 要估计 <span class="math inline">\(\theta\)</span>，令 <spanclass="math display">\[E(X)=\frac{1}{n} \sum_{i=1}^{n}X_{i}=\bar{X}\]</span> 解方程 <spanclass="math inline">\(h(\theta)=\bar{X}\)</span>，可求出 <spanclass="math inline">\(\theta\)</span>，此种方法所得的估计 <spanclass="math inline">\(\hat{\theta}\)</span> 称为未知参数 <spanclass="math inline">\(\theta\)</span> 的矩估计.</p><h2 id="例题-1">例题 1</h2><p>设总体 <span class="math inline">\(X \sim U(a, b)\)</span>，<spanclass="math inline">\(a, b\)</span> 未知，<spanclass="math inline">\(X_{1}, X_{2}, \cdots, X_{n}\)</span> 为来自总体<span class="math inline">\(X\)</span> 的样本，<spanclass="math inline">\(x_{1} ,  x_{2}, \cdots, x_{n}\)</span>是样本值，试求 <span class="math inline">\(a, b\)</span>的矩估计量和矩估计值.</p><h3 id="解答">解答</h3><p>令 <span class="math inline">\(\begin{cases}        \displaystyle E(X)=\dfrac{1}{n}\sum_{i=1}^{n}X_i=\bar{X} \\        \displaystyle E\qty(X^2)=\dfrac{1}{n}\sum_{i=1}^{n}X_i^2    \end{cases}\)</span>，且 <span class="math inline">\(X\simU(a,b)\)</span>，那么 <spanclass="math display">\[E(X)=\dfrac{a+b}{2},~E\qty(X^2)=D(X)+E^2(X)=\dfrac{(b-a)^2}{12}+\dfrac{(a+b)^2}{4}\]</span>即 <span class="math inline">\(\begin{cases}        a+b =2\bar{X} \\        \displaystyleb-a=2\sqrt{3}\sqrt{\dfrac{1}{n}\sum_{i=1}^{n}X_i^2-\bar{X}^2}    \end{cases}\)</span> 并且 <spanclass="math inline">\(\displaystyle\dfrac{1}{n}\sum_{i=1}^{n}X_i^2-\bar{X}^2=\dfrac{1}{n}\sum_{i=1}^{n}\qty(X_i-\bar{X})^2\)</span>，解得矩估计量和矩估计值分别为 <span class="math display">\[\begin{cases}        \displaystyle\hat{a}=\bar{X}-\sqrt{\dfrac{3}{n}\sum_{i=1}^{n}\qty(X_i-\bar{X})^2} \\        \displaystyle\hat{b}=\bar{X}+\sqrt{\dfrac{3}{n}\sum_{i=1}^{n}\qty(X_i-\bar{X})^2},    \end{cases}    \begin{cases}        \displaystyle\hat{a}=\bar{x}-\sqrt{\dfrac{3}{n}\sum_{i=1}^{n}\qty(x_i-\bar{x})^2} \\        \displaystyle\hat{b}=\bar{x}+\sqrt{\dfrac{3}{n}\sum_{i=1}^{n}\qty(x_i-\bar{x})^2}.    \end{cases}\]</span></p><h2 id="例题-2">例题 2</h2><p>设总体 <span class="math inline">\(X\)</span> 的分布函数为 <spanclass="math inline">\(F(x)=\begin{cases}        1-\e ^{-(x-\theta)^2}, &amp; x\geqslant \theta \\        0,                     &amp; x&lt;\theta    \end{cases}(\theta&gt;0\text{ 为未知数})\)</span>，<spanclass="math inline">\(X_1,X_2,\cdots,X_n\)</span> 为来自总体 <spanclass="math inline">\(X\)</span> 的简单随机样本，<spanclass="math inline">\(\displaystyle\bar{X}=\dfrac{1}{n}\sum_{i=1}^{n}X_i\)</span>，求<span class="math inline">\(\theta\)</span> 的矩估计量 <spanclass="math inline">\(\bar\theta\)</span>.</p><h3 id="解答-1">解答</h3><p>总体 <span class="math inline">\(X\)</span> 的密度函数为 <spanclass="math inline">\(f(x)=    \begin{cases}        2(x-\theta) \mathrm{e}^{-(x-\theta)^{2}}, &amp; x \geqslant\theta \\ 0, &amp; x&lt;\theta    \end{cases}\)</span>，那么 <spanclass="math display">\[\begin{align*}    E(X) &amp; =\int_{0}^{+\infty} x \cdot 2(x-\theta)\mathrm{e}^{-(x-\theta)^{2}} \dd  x=2\int_{\theta}^{+\infty}[(x-\theta)+\theta] \cdot(x-\theta)\mathrm{e}^{-(x-\theta)^{2}} \dd(x-\theta)                                                      \\         &amp; =2 \int_{0}^{+\infty} x(x+\theta) \mathrm{e}^{-x^{2}}\dd  x=2 \int_{0}^{+\infty} x^{2} \mathrm{e}^{-x^{2}} \dd  x+\theta\int_{0}^{+\infty} \mathrm{e}^{-x^{2}} \dd\left(x^{2}\right)                                                   \\         &amp; \xlongequal{x^{2}=t} 2 \int_{0}^{+\infty} t\mathrm{e}^{-t} \cdot \frac{1}{2 \sqrt{t}}\dd  t+\theta=\int_{0}^{+\infty} t^{\frac{1}{2}} \mathrm{e}^{-t}\dd  t+\theta=\Gamma\left(\frac{1}{2}+1\right)+\theta=\frac{\sqrt{\pi}}{2}+\theta\end{align*}\]</span> 令 <spanclass="math inline">\(E(X)=\bar{X}\)</span> 得参数 <spanclass="math inline">\(\theta\)</span> 的矩估计量为 <spanclass="math inline">\(\displaystyle\hat{\theta}=\bar{X}-\frac{\sqrt{\pi}}{2}.\)</span></p><h2 id="例题-3">例题 3</h2><p>设总体 $ X $ 的概率密度为 <spanclass="math inline">\(f(x)=\begin{cases}        2(x-\theta) \mathrm{e}^{-(x-\theta)^{2}}, &amp; x&gt;\theta \\0, &amp; x \leqslant \theta    \end{cases}\)</span> <span class="math inline">\(\left(X_{1}, X_{2},\cdots, X_{n}\right)\)</span> 为来自总体 <spanclass="math inline">\(X\)</span> 的简单随机样本. 1. 求参数 $ $的矩估计量; 2. 设 <span class="math inline">\(U=\min \left\{X_{1},X_{2}, \cdots, X_{n}\right\}\)</span>，求 <spanclass="math inline">\(E(U) .\)</span></p><h3 id="解答-2">解答</h3><ol type="1"><li>与上题类似，有 $$<span class="math display">\[\begin{align*}E(X) &amp; =\int_{\theta}^{+\infty} x \cdot 2(x-\theta) \mathrm{e}^{-(x-\theta)^{2}} \dd  x\xlongequal{x-\theta=t} \int_{0}^{+\infty}(t+\theta) \cdot 2 t \mathrm{e}^{-t^{2}} \dd  t                                                      \\      &amp; =\int_{0}^{+\infty} 2 t^{2} \mathrm{e}^{-t^{2}} \dd  t+\theta \int_{0}^{+\infty}2 t \mathrm{e}^{-t^{2}} \dd  t=\int_{0}^{+\infty}\left(t^{2}\right)^{\frac{1}{2}}\mathrm{e}^{-t^{2}} \dd \left(t^{2}\right)+\theta \int_{0}^{+\infty} \mathrm{e}^{-t^{2}} \dd \left(t^{2}\right) \\      &amp; =\Gamma\left(\frac{1}{2}+1\right)+\theta=\frac{1}{2} \Gamma\left(\frac{1}{2}\right)+\theta=\theta+\frac{\sqrt{\pi}}{2}\end{align*}\]</span>$$ 由 <spanclass="math inline">\(E(X)=\bar{X}\)</span> 得参数 <spanclass="math inline">\(\theta\)</span> 的矩估计量为 <spanclass="math inline">\(\displaystyle\hat{\theta}=\bar{X}-\frac{\sqrt{\pi}}{2}\)</span>.</li><li>总体 <span class="math inline">\(X\)</span> 的分布函数为 <spanclass="math inline">\(F(x)=P\{X \leqslant x\}\)</span>， 当 <spanclass="math inline">\(x&lt;\theta\)</span> 时，<spanclass="math inline">\(F(x)=0\)</span>;</li></ol><p>当 <span class="math inline">\(x \geqslant \theta\)</span> 时，<spanclass="math inline">\(\displaystyle F(x)=\int_{\theta}^{x} 2(x-\theta)\mathrm{e}^{-(x-\theta)^{2}}\dd  x=1-\mathrm{e}^{-(x-\theta)^{2}}\)</span>，即 <spanclass="math display">\[F(x)=\begin{cases}0,                              &amp; x&lt;\theta           \\1-\mathrm{e}^{-(x-\theta)^{2}}, &amp; x \geqslant \theta\end{cases}\]</span> <span class="math inline">\(U\)</span> 的分布函数为<span class="math display">\[\begin{align*}F_{U}(x) &amp; =P\{U \leqslantx\}=1-P\{U&gt;x\}=1-P\left\{X_{1}&gt;x\right\}P\left\{X_{2}&gt;x\right\} \cdots P\left\{X_{n}&gt;x\right\} \\&amp; =1-[P\{X&gt;x\}]^{n}=1-[1-F(x)]^{n}=\begin{cases}0,                               &amp; x&lt;\theta           \\1-\mathrm{e}^{-n(x-\theta)^{2}}, &amp; x \geqslant \theta\end{cases}\end{align*}\]</span> <span class="math inline">\(U\)</span>的密度函数为 <span class="math display">\[f_{U}(x)=\begin{cases}0,                                           &amp; x \leqslant \theta \\2 n(x-\theta) \mathrm{e}^{-n(x-\theta)^{2}}, &amp; x&gt;\theta\end{cases}\]</span> 则 <span class="math display">\[\begin{align*}E(U) &amp; =\int_{\theta}^{+\infty} 2 n x(x-\theta)\mathrm{e}^{-n(x-\theta)^{2}}\dd  x=\int_{\theta}^{+\infty}\left[\frac{1}{\sqrt{n}}\left[n(x-\theta)^{2}\right]^{\frac{1}{2}}+\theta\right]\mathrm{e}^{-n(x-\theta)^{2}} \dd\left[n(x-\theta)^{2}\right] \\&amp; =\int_{0}^{+\infty}\left(\frac{1}{\sqrt{n}}t^{\frac{1}{2}}+\theta\right) \mathrm{e}^{-t} \dd  t=\frac{1}{\sqrt{n}}\cdot \Gamma\left(\frac{1}{2}+1\right)+\theta=\frac{\sqrt{\pi n}}{2n}+\theta\end{align*}\]</span></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数学笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>考研数学</tag>
+      
+      <tag>概率论与数理统计</tag>
+      
+      <tag>参数的点估计</tag>
+      
+      <tag>矩估计法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>下降阶乘幂</title>
     <link href="/2024/05/04/descendingStepExponentiation/"/>
     <url>/2024/05/04/descendingStepExponentiation/</url>
@@ -302,9 +333,9 @@
       
       <tag>概率论与数理统计</tag>
       
-      <tag>线性代数</tag>
-      
       <tag>数学</tag>
+      
+      <tag>线性代数</tag>
       
       <tag>LaTeX</tag>
       

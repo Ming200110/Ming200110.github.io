@@ -18,30 +18,27 @@
   <meta name="author" content="Guoming Huang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     下降阶乘幂 相关定义与定理  \(x^{\underline{m} }&#x3D;x(x-1)\cdots(x-m+1)~~(m\in\mathb">
+    <meta name="description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     矩估计法 设总体 \(X\) 的分布形式已知，\(\theta\) 为总体的待估参数，\(X_{1}, X_{2}, \cdots, X_{n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="下降阶乘幂">
-<meta property="og:url" content="http://example.com/2024/05/04/descendingStepExponentiation/index.html">
+<meta property="og:title" content="矩估计法">
+<meta property="og:url" content="http://example.com/2024/05/04/momentEstimationMethod/index.html">
 <meta property="og:site_name" content="ChungMG">
-<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     下降阶乘幂 相关定义与定理  \(x^{\underline{m} }&#x3D;x(x-1)\cdots(x-m+1)~~(m\in\mathb">
+<meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     矩估计法 设总体 \(X\) 的分布形式已知，\(\theta\) 为总体的待估参数，\(X_{1}, X_{2}, \cdots, X_{n">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-04T00:28:28.378Z">
-<meta property="article:modified_time" content="2024-05-04T00:36:22.948Z">
+<meta property="article:published_time" content="2024-05-04T01:22:39.369Z">
+<meta property="article:modified_time" content="2024-05-04T01:32:58.997Z">
 <meta property="article:author" content="Guoming Huang">
-<meta property="article:tag" content="高等数学">
-<meta property="article:tag" content="数学技巧">
 <meta property="article:tag" content="考研数学">
-<meta property="article:tag" content="无穷级数">
-<meta property="article:tag" content="幂级数">
-<meta property="article:tag" content="有限微积分">
-<meta property="article:tag" content="下降阶乘幂">
+<meta property="article:tag" content="概率论与数理统计">
+<meta property="article:tag" content="参数的点估计">
+<meta property="article:tag" content="矩估计法">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>下降阶乘幂 - ChungMG</title>
+  <title>矩估计法 - ChungMG</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -234,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="下降阶乘幂"></span>
+            <span id="subtitle" data-typed-text="矩估计法"></span>
           
         </div>
 
@@ -250,7 +247,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-04 08:28" pubdate>
+        <time datetime="2024-05-04 09:22" pubdate>
           May 4, 2024 am
         </time>
       </span>
@@ -262,7 +259,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          561 words
+          1.2k words
         
       </span>
     
@@ -273,7 +270,7 @@
         
         
         
-          5 mins
+          11 mins
         
       </span>
     
@@ -318,7 +315,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">下降阶乘幂</h1>
+            <h1 id="seo-header">矩估计法</h1>
             
             
               <div class="markdown-body">
@@ -338,75 +335,173 @@ MathJax = {
   src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js">
 </script>
 </html>
-<h1 id="下降阶乘幂">下降阶乘幂</h1>
-<h2 id="相关定义与定理">相关定义与定理</h2>
-<ol type="1">
-<li><span class="math inline">\(x^{\underline{m}
-}=x(x-1)\cdots(x-m+1)~~(m\in\mathbb{N}_+).\)</span></li>
-<li><span
-class="math inline">\(x^{\overline{m}}=x(x+1)\cdots(x+m-1)~~(m\in\mathbb{N}_+).\)</span></li>
-<li><span
-class="math inline">\(x^{\underline{0}}=x^{\overline{0}}=1.\)</span></li>
-<li><span
-class="math inline">\(n!=n^{\underline{n}}=1^{\overline{n}}.\)</span></li>
-<li><span class="math inline">\(\varDelta
-\qty(x^{\underline{m}})=mx^{\underline{m-1}}.\)</span></li>
-<li><span class="math inline">\(\displaystyle g(x)=\varDelta f(x)\iff
-\sum g(x)\delta x=f(x)+C.\)</span></li>
-<li><span class="math inline">\(\displaystyle \sum\nolimits_{a}^{b}
-g(x)\delta x=\eval{f(x)}_{a}^{b}=f(b)-f(a).\)</span></li>
-<li><span class="math inline">\(\displaystyle
-\sum\nolimits_{a}^{b}g(x)\delta x=\sum_{k=a}^{b-1}g(k)=\sum_{a\leqslant
-k&lt;b}g(k)~~(b\geqslant a).\)</span></li>
-<li><span class="math inline">\(\displaystyle
-\sum\nolimits_{a}^{b}g(x)\delta x+\sum\nolimits_b^c g(x)\delta
-x=\sum\nolimits_a^cg(x)\delta x.\)</span></li>
-<li><span class="math inline">\(\displaystyle \sum_{0\leqslant
-k&lt;n}k^{\underline{m}}=\eval{\dfrac{k^{\underline{m+1}}}{m+1}}_{0}^{n}=\dfrac{n^{\underline{m+1}}}{m+1}~~(m,n\in\mathbb{N}_+).\)</span></li>
-<li><span
-class="math inline">\(x^{\underline{-m}}=\dfrac{1}{(x+1)(x+2)\cdots(x+m)}~~(m&gt;0).\)</span></li>
-<li><span
-class="math inline">\(x^{\underline{m+n}}=x^{\underline{m}}(x-m)^{\underline{n}}
-~~(m,n\in\mathbb{Z}).\)</span></li>
-<li><span class="math inline">\(\displaystyle\sum\nolimits_a^b
-x^{\underline{m}}\delta x=\begin{cases}
-\eval{\dfrac{x^{\underline{m+1}}}{m+1}}_{a}^{b}, &amp; m\neq -1 \\
-\eval{H_x}_{a}^{b},                              &amp; m=-1
-\end{cases}\)</span>， 其中 <span class="math inline">\(\displaystyle
-H_x=\sum_{k=1}^{x}\dfrac{1}{k}\)</span> 称为调和级数.</li>
-<li><span class="math inline">\(\mathrm{E}f(x)=f(x+1).\)</span></li>
-<li><span class="math inline">\(\displaystyle\sum u\varDelta
-v=uv-\sum\mathrm{E}v\varDelta u.\)</span></li>
-</ol>
-<h2 id="例题">例题</h2>
-<p>判断级数 <span
-class="math inline">\(\displaystyle\sum_{n=1}^{\infty}\dfrac{1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}}{(n+1)(n+2)}\)</span>
-的敛散性，若收敛，则求其和.</p>
+<h1 id="矩估计法">矩估计法</h1>
+<p>设总体 <span class="math inline">\(X\)</span> 的分布形式已知，<span
+class="math inline">\(\theta\)</span> 为总体的待估参数，<span
+class="math inline">\(X_{1}, X_{2}, \cdots, X_{n}\)</span> 为从总体
+<span class="math inline">\(X\)</span> 中抽取的样本， 如果总体 <span
+class="math inline">\(X\)</span> 的数学期望 <span
+class="math inline">\(E(X)\)</span> 存在，那么 <span
+class="math inline">\(E(X)\)</span> 是 <span
+class="math inline">\(\theta\)</span> 的函数. 例如，在泊松分布总体 <span
+class="math inline">\(\pi(\lambda)\)</span> 中， 样本一阶矩 <span
+class="math inline">\(E(X)=\lambda\)</span>; 在指数分布总体 <span
+class="math inline">\(X \sim e(\lambda)\)</span> 中，<span
+class="math inline">\(E(X)=\dfrac{1}{\lambda}\)</span>. 由于 <span
+class="math inline">\(X_{1}, X_{2}, \cdots, X_{n}\)</span>
+相互独立且与总体 <span class="math inline">\(X\)</span>
+同分布，由大数定理知，当 <span class="math inline">\(n\)</span>
+越来越大时，<span
+class="math inline">\(\displaystyle\bar{X}=\dfrac{1}{n} \sum_{i=1}^{n}
+X_{i}\)</span> 依概率收玫到 <span class="math inline">\(E(X)=h(\theta)
+.\)</span> 要估计 <span class="math inline">\(\theta\)</span>，令 <span
+class="math display">\[E(X)=\frac{1}{n} \sum_{i=1}^{n}
+X_{i}=\bar{X}\]</span> 解方程 <span
+class="math inline">\(h(\theta)=\bar{X}\)</span>，可求出 <span
+class="math inline">\(\theta\)</span>，此种方法所得的估计 <span
+class="math inline">\(\hat{\theta}\)</span> 称为未知参数 <span
+class="math inline">\(\theta\)</span> 的矩估计.</p>
+<h2 id="例题-1">例题 1</h2>
+<p>设总体 <span class="math inline">\(X \sim U(a, b)\)</span>，<span
+class="math inline">\(a, b\)</span> 未知，<span
+class="math inline">\(X_{1}, X_{2}, \cdots, X_{n}\)</span> 为来自总体
+<span class="math inline">\(X\)</span> 的样本，<span
+class="math inline">\(x_{1} ,  x_{2}, \cdots, x_{n}\)</span>
+是样本值，试求 <span class="math inline">\(a, b\)</span>
+的矩估计量和矩估计值.</p>
 <h3 id="解答">解答</h3>
-<p>令 <span class="math inline">\(\displaystyle
-H_n=\sum_{k=1}^{n}\dfrac{1}{k}~,S_n=\sum_{k=1}^{n}\dfrac{H_k}{(k+1)(k+2)}=\sum_{\substack{1\leqslant
-k&lt;n+1\\k\in
-\mathbb{N}_+}}\dfrac{H_k}{(k+1)(k+2)}=\sum\nolimits_1^{n+1}\dfrac{H_x}{(x+1)(x+2)}\delta
-x\)</span>， 那么记 <span class="math display">\[u(x)=H_x~,\varDelta
-v(x)=\dfrac{1}{(x+1)(x+2)}=-\dfrac{1}{x+2}-\qty(-\dfrac{1}{x+1})\]</span>
-因此 <span class="math display">\[\varDelta
-u(x)=x^{\underline{-1}},~v(x)=-\dfrac{1}{x+1}=-x^{\underline{-1}},~\mathrm{E}v(x)=-(x+1)^{\underline{-1}}\]</span>
-于是 <span class="math display">\[\begin{align*}
-    S_n &amp; =\sum\nolimits_1^{n+1}\dfrac{H_x}{(x+1)(x+2)}\delta
-x=\eval{-x^{\underline{-1}}H_x}_{1}^{n+1}+\sum\nolimits_{1}^{n+1}(x+1)^{\underline{-1}}x^{\underline{-1}}\delta
-x          \\
-        &amp;
-=-(n+1)^{\underline{-1}}H_{n+1}+1^{\underline{-1}}H_1+\sum\nolimits_{1}^{n+1}x^{\underline{-2}}\delta
-x=\dfrac{1}{2}-\dfrac{H_{n+1}}{n+2} -\eval{x^{\underline{-1}}}_{1}^{n+1}
-\\
-        &amp;
-=1-\dfrac{1}{n+2}-\dfrac{H_{n+1}}{n+2}=1-\dfrac{1}{n+1}-\dfrac{H_n}{n+2}
-\end{align*}\]</span> 又因为 <span
-class="math display">\[\lim_{n\to\infty}\dfrac{H_n}{n+2}=\lim_{n\to\infty}\dfrac{\ln
-n+\gamma+\alpha(n)}{n+2}=\lim_{n\to\infty}\dfrac{\ln
-n}{n+2}=0~~(\alpha(n)\to0)\]</span> 所以 <span
-class="math inline">\(\displaystyle\lim_{n\to\infty}S_n=1\)</span>，因此级数收敛，且其和为
-1.</p>
+<p>令 <span class="math inline">\(\begin{cases}
+        \displaystyle E(X)=\dfrac{1}{n}\sum_{i=1}^{n}X_i=\bar{X} \\
+        \displaystyle E\qty(X^2)=\dfrac{1}{n}\sum_{i=1}^{n}X_i^2
+    \end{cases}\)</span>，且 <span class="math inline">\(X\sim
+U(a,b)\)</span>，那么 <span
+class="math display">\[E(X)=\dfrac{a+b}{2},~E\qty(X^2)=D(X)+E^2(X)=\dfrac{(b-a)^2}{12}+\dfrac{(a+b)^2}{4}\]</span>
+即 <span class="math inline">\(\begin{cases}
+        a+b =2\bar{X} \\
+        \displaystyle
+b-a=2\sqrt{3}\sqrt{\dfrac{1}{n}\sum_{i=1}^{n}X_i^2-\bar{X}^2}
+    \end{cases}\)</span> 并且 <span
+class="math inline">\(\displaystyle\dfrac{1}{n}\sum_{i=1}^{n}X_i^2-\bar{X}^2=\dfrac{1}{n}\sum_{i=1}^{n}\qty(X_i-\bar{X})^2\)</span>，
+解得矩估计量和矩估计值分别为 <span class="math display">\[\begin{cases}
+        \displaystyle
+\hat{a}=\bar{X}-\sqrt{\dfrac{3}{n}\sum_{i=1}^{n}\qty(X_i-\bar{X})^2} \\
+        \displaystyle
+\hat{b}=\bar{X}+\sqrt{\dfrac{3}{n}\sum_{i=1}^{n}\qty(X_i-\bar{X})^2},
+    \end{cases}
+    \begin{cases}
+        \displaystyle
+\hat{a}=\bar{x}-\sqrt{\dfrac{3}{n}\sum_{i=1}^{n}\qty(x_i-\bar{x})^2} \\
+        \displaystyle
+\hat{b}=\bar{x}+\sqrt{\dfrac{3}{n}\sum_{i=1}^{n}\qty(x_i-\bar{x})^2}.
+    \end{cases}\]</span></p>
+<h2 id="例题-2">例题 2</h2>
+<p>设总体 <span class="math inline">\(X\)</span> 的分布函数为 <span
+class="math inline">\(F(x)=\begin{cases}
+        1-\e ^{-(x-\theta)^2}, &amp; x\geqslant \theta \\
+        0,                     &amp; x&lt;\theta
+    \end{cases}(\theta&gt;0\text{ 为未知数})\)</span>，<span
+class="math inline">\(X_1,X_2,\cdots,X_n\)</span> 为来自总体 <span
+class="math inline">\(X\)</span> 的简单随机样本，<span
+class="math inline">\(\displaystyle\bar{X}=\dfrac{1}{n}\sum_{i=1}^{n}X_i\)</span>，求
+<span class="math inline">\(\theta\)</span> 的矩估计量 <span
+class="math inline">\(\bar\theta\)</span>.</p>
+<h3 id="解答-1">解答</h3>
+<p>总体 <span class="math inline">\(X\)</span> 的密度函数为 <span
+class="math inline">\(f(x)=
+    \begin{cases}
+        2(x-\theta) \mathrm{e}^{-(x-\theta)^{2}}, &amp; x \geqslant
+\theta \\ 0, &amp; x&lt;\theta
+    \end{cases}\)</span>，那么 <span
+class="math display">\[\begin{align*}
+    E(X) &amp; =\int_{0}^{+\infty} x \cdot 2(x-\theta)
+\mathrm{e}^{-(x-\theta)^{2}} \dd  x=2
+\int_{\theta}^{+\infty}[(x-\theta)+\theta] \cdot(x-\theta)
+\mathrm{e}^{-(x-\theta)^{2}} \dd
+(x-\theta)                                                      \\
+         &amp; =2 \int_{0}^{+\infty} x(x+\theta) \mathrm{e}^{-x^{2}}
+\dd  x=2 \int_{0}^{+\infty} x^{2} \mathrm{e}^{-x^{2}} \dd  x+\theta
+\int_{0}^{+\infty} \mathrm{e}^{-x^{2}} \dd
+\left(x^{2}\right)                                                   \\
+         &amp; \xlongequal{x^{2}=t} 2 \int_{0}^{+\infty} t
+\mathrm{e}^{-t} \cdot \frac{1}{2 \sqrt{t}}
+\dd  t+\theta=\int_{0}^{+\infty} t^{\frac{1}{2}} \mathrm{e}^{-t}
+\dd  t+\theta=\Gamma\left(\frac{1}{2}+1\right)+\theta=\frac{\sqrt{\pi}}{2}+\theta
+\end{align*}\]</span> 令 <span
+class="math inline">\(E(X)=\bar{X}\)</span> 得参数 <span
+class="math inline">\(\theta\)</span> 的矩估计量为 <span
+class="math inline">\(\displaystyle\hat{\theta}=\bar{X}-\frac{\sqrt{\pi}}{2}
+.\)</span></p>
+<h2 id="例题-3">例题 3</h2>
+<p>设总体 $ X $ 的概率密度为 <span
+class="math inline">\(f(x)=\begin{cases}
+        2(x-\theta) \mathrm{e}^{-(x-\theta)^{2}}, &amp; x&gt;\theta \\
+0, &amp; x \leqslant \theta
+    \end{cases}\)</span> <span class="math inline">\(\left(X_{1}, X_{2},
+\cdots, X_{n}\right)\)</span> 为来自总体 <span
+class="math inline">\(X\)</span> 的简单随机样本. 1. 求参数 $ $
+的矩估计量; 2. 设 <span class="math inline">\(U=\min \left\{X_{1},
+X_{2}, \cdots, X_{n}\right\}\)</span>，求 <span
+class="math inline">\(E(U) .\)</span></p>
+<h3 id="解答-2">解答</h3>
+<ol type="1">
+<li>与上题类似，有 $$<span class="math display">\[\begin{align*}
+E(X) &amp; =\int_{\theta}^{+\infty} x \cdot 2
+(x-\theta) \mathrm{e}^{-(x-\theta)^{2}} \dd  x
+\xlongequal{x-\theta=t} \int_{0}^{+\infty}(t
++\theta) \cdot 2 t \mathrm{e}^{-t^{2}} \dd  
+t                                               
+
+       \\
+      &amp; =\int_{0}^{+\infty} 2 t^{2} \mathrm{e}^
+{-t^{2}} \dd  t+\theta \int_{0}^{+\infty}
+2 t \mathrm{e}^{-t^{2}} \dd  t=\int_{0}^
+{+\infty}\left(t^{2}\right)^{\frac{1}{2}}
+\mathrm{e}^{-t^{2}} \dd \left(t^{2}\right)
++\theta \int_{0}^{+\infty} \mathrm{e}^{-t^
+{2}} \dd \left(t^{2}\right) \\
+      &amp; =\Gamma\left(\frac{1}{2}+1\right)
++\theta=\frac{1}{2} \Gamma\left(\frac{1}{2}
+\right)+\theta=\theta+\frac{\sqrt{\pi}}{2}
+\end{align*}\]</span>$$ 由 <span
+class="math inline">\(E(X)=\bar{X}\)</span> 得参数 <span
+class="math inline">\(\theta\)</span> 的矩估计量为 <span
+class="math inline">\(\displaystyle\hat{\theta}=\bar{X}-\frac{\sqrt{\pi}}
+{2}\)</span>.</li>
+<li>总体 <span class="math inline">\(X\)</span> 的分布函数为 <span
+class="math inline">\(F(x)=P\{X \leqslant x\}\)</span>， 当 <span
+class="math inline">\(x&lt;\theta\)</span> 时，<span
+class="math inline">\(F(x)=0\)</span>;</li>
+</ol>
+<p>当 <span class="math inline">\(x \geqslant \theta\)</span> 时，<span
+class="math inline">\(\displaystyle F(x)=\int_{\theta}^{x} 2(x-\theta)
+\mathrm{e}^{-(x-\theta)^{2}}
+\dd  x=1-\mathrm{e}^{-(x-\theta)^{2}}\)</span>，即 <span
+class="math display">\[F(x)=\begin{cases}
+0,                              &amp; x&lt;\theta           \\
+1-\mathrm{e}^{-(x-\theta)^{2}}, &amp; x \geqslant \theta
+\end{cases}\]</span> <span class="math inline">\(U\)</span> 的分布函数为
+<span class="math display">\[\begin{align*}
+F_{U}(x) &amp; =P\{U \leqslant
+x\}=1-P\{U&gt;x\}=1-P\left\{X_{1}&gt;x\right\}
+P\left\{X_{2}&gt;x\right\} \cdots P\left\{X_{n}&gt;x\right\} \\
+&amp; =1-[P\{X&gt;x\}]^{n}=1-[1-F(x)]^{n}=\begin{cases}
+0,                               &amp; x&lt;\theta           \\
+1-\mathrm{e}^{-n(x-\theta)^{2}}, &amp; x \geqslant \theta
+\end{cases}
+\end{align*}\]</span> <span class="math inline">\(U\)</span>
+的密度函数为 <span class="math display">\[f_{U}(x)=\begin{cases}
+0,                                           &amp; x \leqslant \theta \\
+2 n(x-\theta) \mathrm{e}^{-n(x-\theta)^{2}}, &amp; x&gt;\theta
+\end{cases}\]</span> 则 <span class="math display">\[\begin{align*}
+E(U) &amp; =\int_{\theta}^{+\infty} 2 n x(x-\theta)
+\mathrm{e}^{-n(x-\theta)^{2}}
+\dd  x=\int_{\theta}^{+\infty}\left[\frac{1}{\sqrt{n}}\left[n(x-\theta)^{2}\right]^{\frac{1}{2}}+\theta\right]
+\mathrm{e}^{-n(x-\theta)^{2}} \dd\left[n(x-\theta)^{2}\right] \\
+&amp; =\int_{0}^{+\infty}\left(\frac{1}{\sqrt{n}}
+t^{\frac{1}{2}}+\theta\right) \mathrm{e}^{-t} \dd  t=\frac{1}{\sqrt{n}}
+\cdot \Gamma\left(\frac{1}{2}+1\right)+\theta=\frac{\sqrt{\pi n}}{2
+n}+\theta
+\end{align*}\]</span></p>
 
                 
               </div>
@@ -440,19 +535,13 @@ class="math inline">\(\displaystyle\lim_{n\to\infty}S_n=1\)</span>，因此级�
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" class="print-no-link">#高等数学</a>
-      
-        <a href="/tags/%E6%95%B0%E5%AD%A6%E6%8A%80%E5%B7%A7/" class="print-no-link">#数学技巧</a>
-      
         <a href="/tags/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/" class="print-no-link">#考研数学</a>
       
-        <a href="/tags/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/" class="print-no-link">#无穷级数</a>
+        <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="print-no-link">#概率论与数理统计</a>
       
-        <a href="/tags/%E5%B9%82%E7%BA%A7%E6%95%B0/" class="print-no-link">#幂级数</a>
+        <a href="/tags/%E5%8F%82%E6%95%B0%E7%9A%84%E7%82%B9%E4%BC%B0%E8%AE%A1/" class="print-no-link">#参数的点估计</a>
       
-        <a href="/tags/%E6%9C%89%E9%99%90%E5%BE%AE%E7%A7%AF%E5%88%86/" class="print-no-link">#有限微积分</a>
-      
-        <a href="/tags/%E4%B8%8B%E9%99%8D%E9%98%B6%E4%B9%98%E5%B9%82/" class="print-no-link">#下降阶乘幂</a>
+        <a href="/tags/%E7%9F%A9%E4%BC%B0%E8%AE%A1%E6%B3%95/" class="print-no-link">#矩估计法</a>
       
     </div>
   
@@ -464,8 +553,8 @@ class="math inline">\(\displaystyle\lim_{n\to\infty}S_n=1\)</span>，因此级�
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>下降阶乘幂</div>
-      <div>http://example.com/2024/05/04/descendingStepExponentiation/</div>
+      <div>矩估计法</div>
+      <div>http://example.com/2024/05/04/momentEstimationMethod/</div>
     </div>
     <div class="license-meta">
       
@@ -514,18 +603,12 @@ class="math inline">\(\displaystyle\lim_{n\to\infty}S_n=1\)</span>，因此级�
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/05/04/momentEstimationMethod/" title="矩估计法">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">矩估计法</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/05/04/theQuadraticTypeIsConvertedIntoAStandardType/" title="二次型化为标准形">
-                        <span class="hidden-mobile">二次型化为标准形</span>
+                      <a href="/2024/05/04/descendingStepExponentiation/" title="下降阶乘幂">
+                        <span class="hidden-mobile">下降阶乘幂</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
