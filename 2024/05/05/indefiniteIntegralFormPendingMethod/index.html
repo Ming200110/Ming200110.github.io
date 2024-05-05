@@ -26,7 +26,7 @@
 <meta property="og:description" content="MathJax &#x3D; {   loader: {     load: [&#39;[tex]&#x2F;physics&#39;]   },   tex: {     packages: {&#39;[+]&#39;: [&#39;physics&#39;]}   } };     不定积分形式待定法 定理 情况一： 对于 \(\displaystyle\int\frac{f(x)}{g^2(x)}\dd x\) 型">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-05T00:24:21.921Z">
-<meta property="article:modified_time" content="2024-05-05T00:44:21.450Z">
+<meta property="article:modified_time" content="2024-05-05T11:58:28.701Z">
 <meta property="article:author" content="Guoming Huang">
 <meta property="article:tag" content="高等数学">
 <meta property="article:tag" content="数学技巧">
@@ -464,7 +464,7 @@ x)^2}\dd x=\int\frac{x\sin x(x\sin x+\cos x)-x\cos x(\sin x-x\cos
 x)}{(x\sin x+\cos x)^2}\dd x   \\
                 &amp; =\int\frac{h&#39;(x)(x\sin x+\cos
 x)-h(x)\cdot\left(x\sin x+\cos x\right)&#39;}{(x\sin x+\cos x)^2}\dd
-=\int\dd (\frac{h(x)}{x\sin x+\cos x})
+x=\int\dd (\frac{h(x)}{x\sin x+\cos x})
     =\frac{\sin x-x\cos x}{x\sin x+\cos x}+C.
 \end{align*}\]</span></p>
 <h2 id="例题-3">例题 3</h2>
@@ -509,10 +509,10 @@ class="math inline">\(\displaystyle\dv{x}(x\cos x-3\sin x)=-(2\cos
 x+x\sin x)\)</span>，故可对上式第二个积分利用分部积分公式，得 <span
 class="math display">\[\begin{align*}
         I_1 &amp; =\int\dfrac{(x\sin x+3\cos x)(2\cos x+\sin x)}{(x\cos
-x-3\sin x)^2}\dd x=\int(x\sin x+3\cos x)\dd \qty(\dfrac{1}{x\cos x-3\sin
+x-3\sin x)^2}\dd x=\int(x\sin x+3\cos x)\dd (\dfrac{1}{x\cos x-3\sin
 x})                                                          \\
             &amp; =\dfrac{x\sin x+3\cos x}{x\cos x-3\sin
-x}-\int\dfrac{\dd \qty(x\sin x+3\cos x)}{x\cos x-3\sin x}=\dfrac{x\sin
+x}-\int\dfrac{\dd(x\sin x+3\cos x)}{x\cos x-3\sin x}=\dfrac{x\sin
 x+3\cos x}{x\cos x-3\sin x}-\int\dfrac{x\cos x-2\sin x}{x\cos x-3\sin
 x}\dd x
     \end{align*}\]</span> 所以 <span class="math inline">\(\displaystyle
