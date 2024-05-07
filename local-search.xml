@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>常见的空间曲面及其对应的方程</title>
+    <link href="/2024/05/07/commonSpatialSurfacesAndTheirCorrespondingEquations/"/>
+    <url>/2024/05/07/commonSpatialSurfacesAndTheirCorrespondingEquations/</url>
+    
+    <content type="html"><![CDATA[<h1 id="常见的空间曲面及其对应的方程">常见的空间曲面及其对应的方程</h1><table><thead><tr class="header"><th>曲面名称</th><th>图例</th><th>直角坐标系方程</th><th>参数方程</th></tr></thead><tbody><tr class="odd"><td>椭球面</td><td><img src="tuoqiu-1.png" alt="椭球面" /></td><td><spanclass="math inline">\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1\)</span></td><td><span class="math inline">\(\begin{cases}x=a\sin u\cos v\\y=\sinu\sin v\\z=c\cos u\\u\in[0,\pi],v\in[0,2\pi]\end{cases}\)</span></td></tr><tr class="even"><td>椭圆锥面</td><td><img src="tuoyuanzm-1.png" alt="椭圆锥面" /></td><td><spanclass="math inline">\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=z^2\)</span></td><td><span class="math inline">\(\begin{cases}x=av\cos u\\y=bv\sinu\\z=cv\\u\in[0,2\pi],v\in\mathbb{R}\end{cases}\)</span></td></tr><tr class="odd"><td>椭圆抛物面</td><td><img src="tuoyuanpwm-1.png" alt="椭圆抛物面" /></td><td><spanclass="math inline">\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=z\)</span></td><td><span class="math inline">\(\begin{cases}x=av\cos u\\y=bv\sinu\\z=u^2\\u\in[0,2\pi],v\in[0,+\infty)\end{cases}\)</span></td></tr><tr class="even"><td>双曲抛物面</td><td><img src="shuangqpwm-1.png" alt="双曲抛物面" /></td><td><spanclass="math inline">\(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=z\)</span></td><td><spanclass="math inline">\(\begin{cases}x=a(u+v)\\y=b(u-v)\\z=4uv\\u,v\in\mathbb{R}\end{cases}\)</span></td></tr><tr class="odd"><td>单叶双曲面</td><td><img src="danyesqm-1.png" alt="单叶双曲面" /></td><td><spanclass="math inline">\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}=1\)</span></td><td><span class="math inline">\(\begin{cases}x=a\cosh u\cos v\\y=b\coshu\sin v\\z=c\sinhu\\u\in\mathbb{R},v\in[0,2\pi]\\\end{cases}\)</span></td></tr><tr class="even"><td>双叶双曲面</td><td><img src="shuangyesqm-1.png" alt="双叶双曲面" /></td><td><spanclass="math inline">\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}=-1\)</span></td><td><span class="math inline">\(\begin{cases}x=a\sqrt{u^2-1}\cosv\\y=b\sqrt{u^2-1}\sinv\\z=cu\\u\in(-\infty,-1]\cup[1,+\infty),v\in\mathbb{R}\end{cases}\)</span></td></tr></tbody></table><html><script>MathJax = {  loader: {    load: ['[tex]/physics']  },  tex: {    packages: {'[+]': ['physics']}  }};</script><script id="MathJax-script" async  src="https://cdnjs.loli.net/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js"></script></html>]]></content>
+    
+    
+    <categories>
+      
+      <category>数学笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>高等数学</tag>
+      
+      <tag>考研数学</tag>
+      
+      <tag>解析几何</tag>
+      
+      <tag>曲面方程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>常见的曲线及其对应方程</title>
     <link href="/2024/05/05/commonCurvesAndTheirCorrespondingEquations/"/>
     <url>/2024/05/05/commonCurvesAndTheirCorrespondingEquations/</url>
@@ -57,11 +88,11 @@
       
       <tag>考研数学</tag>
       
+      <tag>一元函数积分学</tag>
+      
       <tag>不定积分</tag>
       
       <tag>形式待定法</tag>
-      
-      <tag>一元函数积分学</tag>
       
     </tags>
     
@@ -271,11 +302,11 @@
       
       <tag>一题多解</tag>
       
-      <tag>一元函数积分学</tag>
-      
       <tag>中值定理</tag>
       
       <tag>积分证明</tag>
+      
+      <tag>一元函数积分学</tag>
       
     </tags>
     
